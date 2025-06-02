@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace MaterialOrderingApp.Models
 {
-    public class User
+    public class Customer
     {
-        public int IdUser { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public int Id_Customer { get; set; }
+        public int Id_User { get; set; }
         public string FullName { get; set; }
         public string Phone { get; set; }
         public string Provinsi { get; set; }
         public string Kabupaten { get; set; }
         public string Kecamatan { get; set; }
+        public int? IdDesa { get; set; }
         public string Jalan { get; set; }
+        public string AlamatDeskripsi { get; set; } 
     }
 }
-

@@ -1,5 +1,5 @@
 using MaterialOrderingApp.Forms;
-using MaterialOrderingApp.Repositories; // Tambahkan namespace untuk DbConnectionHelper
+using MaterialOrderingApp.Repositories; 
 using System;
 using System.Windows.Forms;
 
@@ -12,7 +12,6 @@ namespace Project_PBO
         {
             try
             {
-                // Uji koneksi database sebelum memulai aplikasi
                 if (DbConnectionHelper.TestConnection())
                 {
                     Console.WriteLine("Database connection successful. Starting application...");
@@ -25,7 +24,7 @@ namespace Project_PBO
                                     "Koneksi Gagal",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
-                    return; // Keluar dari aplikasi jika koneksi gagal
+                    return; 
                 }
             }
             catch (Exception ex)

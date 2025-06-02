@@ -1,5 +1,6 @@
 ﻿using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
+using MaterialOrderingApp.Utils;
 
 namespace MaterialOrderingApp.Services
 {
@@ -7,9 +8,9 @@ namespace MaterialOrderingApp.Services
     {
         private readonly UserRepository _userRepository;
 
-        public AuthService()
+        public AuthService(UserRepository userRepository)
         {
-            _userRepository = new UserRepository();
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
         public User Login(string username, string password)
@@ -27,6 +28,21 @@ namespace MaterialOrderingApp.Services
             }
 
             return user;
+        }
+
+        public bool SignUp(string username, string password, string role, Customer customer = null)
+        {
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                throw new ArgumentException("Username dan password tidak boleh kosong.");
+            }
+
+            if (_userRepository.IsUsernameTaken(username))
+            {
+                throw new Exception("Username sudah digunakan. Pilih username lain.");
+            }
+
+            return _userRepository.CreateUser(username, password, role, customer); // Gunakan role dari parameter
         }
     }
 }

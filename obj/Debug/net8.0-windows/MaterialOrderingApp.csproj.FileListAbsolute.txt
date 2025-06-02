@@ -9,7 +9,6 @@ D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialO
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.LoginControl.resources
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.ProfileControl.resources
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.SignUpControl.resources
-D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.Properties.Resources.resources
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.csproj.GenerateResource.cache
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.AssemblyInfoInputs.cache
@@ -31,3 +30,7 @@ D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\refint\Ma
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.pdb
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.genruntimeconfig.cache
 D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\ref\MaterialOrderingApp.dll
+D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\obj\Debug\net8.0-windows\MaterialOrderingApp.sourcelink.json
+D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\bin\Debug\net8.0-windows\Resources\check_icon.png
+D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\bin\Debug\net8.0-windows\Resources\cross_icon.png
+D:\SEMESTER 2\Projecr\Project_PBO\Project_PBO\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
