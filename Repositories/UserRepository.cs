@@ -50,7 +50,7 @@ namespace MaterialOrderingApp.Repositories
             return GetUserByUsername(username) != null;
         }
 
-        public bool CreateUser(string username, string password, string role, Customer customer = null)
+        public User CreateUser(string username, string password, string role, Customer customer = null)
         {
             using (var conn = DbConnectionHelper.GetConnection())
             {
@@ -61,9 +61,9 @@ namespace MaterialOrderingApp.Repositories
                     {
                         // Insert into users table
                         string userQuery = @"
-                            INSERT INTO public.users (username, password, role, created_at)
-                            VALUES (@username, @password, @role, @created_at)
-                            RETURNING id_user";
+                    INSERT INTO public.users (username, password, role, created_at)
+                    VALUES (@username, @password, @role, @created_at)
+                    RETURNING id_user";
                         int userId;
                         using (var cmd = new NpgsqlCommand(userQuery, conn))
                         {
@@ -78,8 +78,8 @@ namespace MaterialOrderingApp.Repositories
                         if (customer != null)
                         {
                             string customerQuery = @"
-                                INSERT INTO public.customer (id_user, nama_customer, no_hp, alamat_jalan, id_desa, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
-                                VALUES (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_desa, @id_kecamatan, @id_kabupaten, @id_provinsi, @alamat_deskripsi)";
+                        INSERT INTO public.customer (id_user, nama_customer, no_hp, alamat_jalan, id_desa, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
+                        VALUES (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_desa, @id_kecamatan, @id_kabupaten, @id_provinsi, @alamat_deskripsi)";
                             using (var cmd = new NpgsqlCommand(customerQuery, conn))
                             {
                                 cmd.Parameters.AddWithValue("id_user", userId);
@@ -90,13 +90,15 @@ namespace MaterialOrderingApp.Repositories
                                 cmd.Parameters.AddWithValue("id_kecamatan", (object)customer.Kecamatan ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("id_kabupaten", (object)customer.Kabupaten ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("id_provinsi", (object)customer.Provinsi ?? DBNull.Value);
-                                cmd.Parameters.AddWithValue("alamat_deskripsi", (object)customer.AlamatDeskripsi ?? DBNull.Value); // Tambahkan kembali
+                                cmd.Parameters.AddWithValue("alamat_deskripsi", (object)customer.AlamatDeskripsi ?? DBNull.Value);
                                 cmd.ExecuteNonQuery();
                             }
                         }
 
                         transaction.Commit();
-                        return true;
+
+                        // Return the newly created user
+                        return GetUserByUsername(username);
                     }
                     catch
                     {

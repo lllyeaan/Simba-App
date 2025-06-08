@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MaterialOrderingApp.Forms.UserControls;
+using MaterialOrderingApp.Repositories;
+using MaterialOrderingApp.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialOrderingApp.Forms.UserControls;
-using MaterialOrderingApp.Repositories;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.UserControls
@@ -105,7 +106,13 @@ namespace MaterialOrderingApp.Forms.UserControls
                 return;
             }
 
-            _userRepository.CreateUser(username, password, "customer");
+            // Buat user baru
+            var newUser = _userRepository.CreateUser(username, password, "customer");
+
+            // Set user yang baru dibuat sebagai user aktif
+            UserManager.ActiveUser = newUser;
+
+            // Redirect ke ProfileControl
             mainForm.LoadUserControl(new ProfileControl(mainForm));
         }
 

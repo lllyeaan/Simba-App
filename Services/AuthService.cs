@@ -42,7 +42,9 @@ namespace MaterialOrderingApp.Services
                 throw new Exception("Username sudah digunakan. Pilih username lain.");
             }
 
-            return _userRepository.CreateUser(username, password, role, customer); // Gunakan role dari parameter
+            User newUser = _userRepository.CreateUser(username, password, role, customer);
+            return newUser != null; // Return true jika user berhasil dibuat
+
         }
     }
 }

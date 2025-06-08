@@ -1,10 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using MaterialOrderingApp.Forms.Admin;
+﻿using MaterialOrderingApp.Forms.Admin;
 using MaterialOrderingApp.Forms.Customer;
-using MaterialOrderingApp.Services;
 using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
+using MaterialOrderingApp.Services;
+using MaterialOrderingApp.Utils;
+using System;
+using System.Windows.Forms;
 
 namespace MaterialOrderingApp.Forms.UserControls
 {
@@ -43,7 +44,9 @@ namespace MaterialOrderingApp.Forms.UserControls
                 }
 
                 var user = _authService.Login(username, password);
-                Utils.Session.CurrentUser = user;
+                Utils.UserManager.ActiveUser = user;
+               
+                
 
                 if (user.Role.ToLower() == "admin")
                 {
