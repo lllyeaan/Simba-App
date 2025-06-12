@@ -40,6 +40,7 @@
             textBoxPassword = new TextBox();
             btnLogin = new Button();
             label3 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -68,6 +69,7 @@
             splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
             splitContainer1.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(button1);
             splitContainer1.Panel2.ForeColor = SystemColors.ControlText;
             splitContainer1.Size = new Size(914, 480);
             splitContainer1.SplitterDistance = 304;
@@ -89,7 +91,6 @@
             btnSignUp.Text = "Sign Up";
             btnSignUp.TextImageRelation = TextImageRelation.ImageAboveText;
             btnSignUp.UseVisualStyleBackColor = false;
-            btnSignUp.UseWaitCursor = false;
             btnSignUp.Click += btnSignUp_Click;
             // 
             // label5
@@ -103,7 +104,6 @@
             label5.Size = new Size(184, 36);
             label5.TabIndex = 7;
             label5.Text = "Don't you have account?";
-            label5.UseWaitCursor = false;
             // 
             // label4
             // 
@@ -116,7 +116,6 @@
             label4.Size = new Size(282, 91);
             label4.TabIndex = 6;
             label4.Text = "WELCOME !";
-            label4.UseWaitCursor = false;
             // 
             // flowLayoutPanel1
             // 
@@ -130,7 +129,6 @@
             flowLayoutPanel1.Controls.Add(label2);
             flowLayoutPanel1.Controls.Add(textBoxPassword);
             flowLayoutPanel1.Controls.Add(btnLogin);
-            flowLayoutPanel1.Enabled = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.ImeMode = ImeMode.On;
             flowLayoutPanel1.Location = new Point(170, 152);
@@ -138,7 +136,6 @@
             flowLayoutPanel1.Size = new Size(287, 154);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.TabStop = true;
-            flowLayoutPanel1.UseWaitCursor = false;
             // 
             // label1
             // 
@@ -150,7 +147,6 @@
             label1.Size = new Size(74, 14);
             label1.TabIndex = 0;
             label1.Text = "Username";
-            label1.UseWaitCursor = false;
             // 
             // textBoxUsername
             // 
@@ -161,7 +157,6 @@
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.Size = new Size(281, 37);
             textBoxUsername.TabIndex = 2;
-            textBoxUsername.UseWaitCursor = false;
             textBoxUsername.TextChanged += textBoxUsername_TextChanged;
             // 
             // label2
@@ -174,7 +169,6 @@
             label2.Size = new Size(72, 14);
             label2.TabIndex = 1;
             label2.Text = "Password";
-            label2.UseWaitCursor = false;
             // 
             // textBoxPassword
             // 
@@ -184,12 +178,10 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(281, 38);
             textBoxPassword.TabIndex = 3;
-            textBoxPassword.UseWaitCursor = false;
             textBoxPassword.TextChanged += textBoxPassword_TextChanged;
             // 
             // btnLogin
             // 
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             btnLogin.AllowDrop = true;
             btnLogin.Anchor = AnchorStyles.None;
             btnLogin.BackColor = Color.White;
@@ -204,7 +196,7 @@
             btnLogin.Text = "LOGIN";
             btnLogin.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.UseWaitCursor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label3
             // 
@@ -217,7 +209,24 @@
             label3.Size = new Size(157, 84);
             label3.TabIndex = 5;
             label3.Text = "Sign In";
-            label3.UseWaitCursor = false;
+            // 
+            // button1
+            // 
+            button1.AllowDrop = true;
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.White;
+            button1.BackgroundImage = Properties.Resources.cross;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(543, 19);
+            button1.Name = "button1";
+            button1.Size = new Size(35, 33);
+            button1.TabIndex = 5;
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // LoginControl
             // 
@@ -250,5 +259,6 @@
         private Label label5;
         private Button btnSignUp;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button button1;
     }
 }

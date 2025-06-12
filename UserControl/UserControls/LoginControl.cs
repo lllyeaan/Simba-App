@@ -14,12 +14,11 @@ namespace MaterialOrderingApp.Forms.UserControls
         private readonly MainForm mainForm;
         private readonly AuthService _authService;
 
-        // Hanya gunakan konstruktor dengan MainForm
         public LoginControl(MainForm form)
         {
             InitializeComponent();
             this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
-            _authService = new AuthService(new UserRepository()); // Inisialisasi _authService
+            _authService = new AuthService(new UserRepository());
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -45,12 +44,12 @@ namespace MaterialOrderingApp.Forms.UserControls
 
                 var user = _authService.Login(username, password);
                 Utils.UserManager.ActiveUser = user;
-               
-                
+
+
 
                 if (user.Role.ToLower() == "admin")
                 {
-                    mainForm.LoadUserControl(new AdminDashboardControl());
+                    mainForm.LoadUserControl(new AdminDashboardControl(mainForm));
                 }
                 else if (user.Role.ToLower() == "customer")
                 {
@@ -89,5 +88,10 @@ namespace MaterialOrderingApp.Forms.UserControls
         private void textBoxUsername_TextChanged(object sender, EventArgs e) { }
 
         private void textBoxPassword_TextChanged(object sender, EventArgs e) { }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

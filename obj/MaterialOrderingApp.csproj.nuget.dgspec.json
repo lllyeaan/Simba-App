@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SEMESTER 2\\Projecr\\Project_PBO\\Project_PBO\\MaterialOrderingApp.csproj": {}
+    "C:\\Users\\USER\\Source\\Repos\\Simba-App\\MaterialOrderingApp.csproj": {}
   },
   "projects": {
-    "D:\\SEMESTER 2\\Projecr\\Project_PBO\\Project_PBO\\MaterialOrderingApp.csproj": {
+    "C:\\Users\\USER\\Source\\Repos\\Simba-App\\MaterialOrderingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SEMESTER 2\\Projecr\\Project_PBO\\Project_PBO\\MaterialOrderingApp.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\Simba-App\\MaterialOrderingApp.csproj",
         "projectName": "MaterialOrderingApp",
-        "projectPath": "D:\\SEMESTER 2\\Projecr\\Project_PBO\\Project_PBO\\MaterialOrderingApp.csproj",
+        "projectPath": "C:\\Users\\USER\\Source\\Repos\\Simba-App\\MaterialOrderingApp.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\SEMESTER 2\\Projecr\\Project_PBO\\Project_PBO\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Source\\Repos\\Simba-App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Visual Studio\\2022\\Shared\\NuGetPackages"

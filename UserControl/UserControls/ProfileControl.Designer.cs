@@ -211,8 +211,6 @@
             textBoxPhone.TabIndex = 3;
             textBoxPhone.UseWaitCursor = true;
             textBoxPhone.KeyPress += textBoxPhone_KeyPress;
-           
-
             // 
             // groupBoxAddress
             // 

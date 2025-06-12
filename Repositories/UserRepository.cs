@@ -23,20 +23,23 @@ namespace MaterialOrderingApp.Repositories
                     LEFT JOIN public.kabupaten k ON c.id_kabupaten = k.id_kabupaten
                     LEFT JOIN public.kecamatan kc ON c.id_kecamatan = kc.id_kecamatan
                     WHERE u.username = @username";
+
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("username", username);
+
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             user = new User
                             {
-                                IdUser = reader.GetInt32("id_user"),
-                                Username = reader.GetString("username"),
-                                Password = reader.GetString("password"), // Password plaintext
-                                Role = reader.GetString("role"),
-                                CreatedAt = reader.GetDateTime("created_at")
+                                Id = reader.GetInt32(reader.GetOrdinal("id_user")),
+                                Username = reader.GetString(reader.GetOrdinal("username")),
+                                Password = reader.GetString(reader.GetOrdinal("password")),
+                                Role = reader.GetString(reader.GetOrdinal("role")),
+                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"))
+                                // Jika ingin tambahkan properti lain seperti FullName, Phone, dsb, bisa di sini
                             };
                         }
                     }
@@ -61,14 +64,15 @@ namespace MaterialOrderingApp.Repositories
                     {
                         // Insert into users table
                         string userQuery = @"
-                    INSERT INTO public.users (username, password, role, created_at)
-                    VALUES (@username, @password, @role, @created_at)
-                    RETURNING id_user";
+                            INSERT INTO public.users (username, password, role, created_at)
+                            VALUES (@username, @password, @role, @created_at)
+                            RETURNING id_user";
+
                         int userId;
                         using (var cmd = new NpgsqlCommand(userQuery, conn))
                         {
                             cmd.Parameters.AddWithValue("username", username);
-                            cmd.Parameters.AddWithValue("password", password); // Password plaintext
+                            cmd.Parameters.AddWithValue("password", password);
                             cmd.Parameters.AddWithValue("role", role);
                             cmd.Parameters.AddWithValue("created_at", DateTime.Now);
                             userId = (int)cmd.ExecuteScalar();
@@ -78,8 +82,11 @@ namespace MaterialOrderingApp.Repositories
                         if (customer != null)
                         {
                             string customerQuery = @"
-                        INSERT INTO public.customer (id_user, nama_customer, no_hp, alamat_jalan, id_desa, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
-                        VALUES (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_desa, @id_kecamatan, @id_kabupaten, @id_provinsi, @alamat_deskripsi)";
+                                INSERT INTO public.customer 
+                                    (id_user, nama_customer, no_hp, alamat_jalan, id_desa, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
+                                VALUES 
+                                    (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_desa, @id_kecamatan, @id_kabupaten, @id_provinsi, @alamat_deskripsi)";
+
                             using (var cmd = new NpgsqlCommand(customerQuery, conn))
                             {
                                 cmd.Parameters.AddWithValue("id_user", userId);
@@ -97,7 +104,6 @@ namespace MaterialOrderingApp.Repositories
 
                         transaction.Commit();
 
-                        // Return the newly created user
                         return GetUserByUsername(username);
                     }
                     catch
