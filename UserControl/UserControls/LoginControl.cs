@@ -53,15 +53,15 @@ namespace MaterialOrderingApp.Forms.UserControls
                 }
                 else if (user.Role.ToLower() == "customer")
                 {
-                    if (string.IsNullOrWhiteSpace(user.FullName) || string.IsNullOrWhiteSpace(user.Jalan))
-                    {
-                        MessageBox.Show("Lengkapi profil Anda terlebih dahulu.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        mainForm.LoadUserControl(new ProfileControl(mainForm));
-                    }
-                    else
-                    {
-                        mainForm.LoadUserControl(new CustomerDashboardControl());
-                    }
+                    //if (string.IsNullOrWhiteSpace(user.FullName) || string.IsNullOrWhiteSpace(user.Jalan))
+                    //{
+                    //    MessageBox.Show("Lengkapi profil Anda terlebih dahulu.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    mainForm.LoadUserControl(new ProfileControl(mainForm));
+                    //}
+                    //else
+                    //{
+                        mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
+                    //}
                 }
                 else
                 {

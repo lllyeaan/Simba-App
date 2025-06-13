@@ -16,5 +16,10 @@ namespace MaterialOrderingApp.Forms.Customer
         {
             InitializeComponent();
         }
+
+        private void lblhistory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

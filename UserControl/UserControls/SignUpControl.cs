@@ -135,5 +135,10 @@ namespace MaterialOrderingApp.Forms.UserControls
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

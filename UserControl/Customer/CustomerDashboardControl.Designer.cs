@@ -31,11 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboardControl));
             splitContainer1 = new SplitContainer();
             btnLogOut = new Button();
-            label1 = new Label();
             btnRiwayatTransaksi = new Button();
             btnBuatPesanan = new Button();
+            label1 = new Label();
+            lblwelcome3 = new Label();
+            lblwelcome2 = new Label();
+            lblwelcome = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,15 +54,19 @@
             splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
             splitContainer1.Panel1.Controls.Add(btnLogOut);
-            splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(btnRiwayatTransaksi);
             splitContainer1.Panel1.Controls.Add(btnBuatPesanan);
+            splitContainer1.Panel1.Controls.Add(label1);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
-            splitContainer1.Size = new Size(914, 480);
-            splitContainer1.SplitterDistance = 304;
+            splitContainer1.Panel2.Controls.Add(lblwelcome3);
+            splitContainer1.Panel2.Controls.Add(lblwelcome2);
+            splitContainer1.Panel2.Controls.Add(lblwelcome);
+            splitContainer1.Panel2.Font = new Font("Javanese Text", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            splitContainer1.Panel2.ForeColor = Color.White;
+            splitContainer1.Size = new Size(1306, 800);
+            splitContainer1.SplitterDistance = 435;
             splitContainer1.TabIndex = 0;
             // 
             // btnLogOut
@@ -68,28 +76,17 @@
             btnLogOut.BackColor = Color.White;
             btnLogOut.BackgroundImageLayout = ImageLayout.Stretch;
             btnLogOut.Cursor = Cursors.Hand;
-            btnLogOut.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnLogOut.ForeColor = Color.Black;
-            btnLogOut.Location = new Point(36, 325);
+            btnLogOut.Location = new Point(85, 512);
+            btnLogOut.Margin = new Padding(4, 5, 4, 5);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(216, 51);
-            btnLogOut.TabIndex = 18;
+            btnLogOut.Size = new Size(267, 47);
+            btnLogOut.TabIndex = 26;
             btnLogOut.Text = "Log Out";
             btnLogOut.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 95);
-            label1.Name = "label1";
-            label1.Size = new Size(272, 91);
-            label1.TabIndex = 9;
-            label1.Text = "CUSTOMER";
             // 
             // btnRiwayatTransaksi
             // 
@@ -98,12 +95,13 @@
             btnRiwayatTransaksi.BackColor = Color.White;
             btnRiwayatTransaksi.BackgroundImageLayout = ImageLayout.Stretch;
             btnRiwayatTransaksi.Cursor = Cursors.Hand;
-            btnRiwayatTransaksi.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRiwayatTransaksi.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnRiwayatTransaksi.ForeColor = Color.Black;
-            btnRiwayatTransaksi.Location = new Point(36, 257);
+            btnRiwayatTransaksi.Location = new Point(85, 441);
+            btnRiwayatTransaksi.Margin = new Padding(4, 5, 4, 5);
             btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
-            btnRiwayatTransaksi.Size = new Size(216, 51);
-            btnRiwayatTransaksi.TabIndex = 17;
+            btnRiwayatTransaksi.Size = new Size(267, 39);
+            btnRiwayatTransaksi.TabIndex = 25;
             btnRiwayatTransaksi.Text = "Riwayat Transaksi";
             btnRiwayatTransaksi.TextImageRelation = TextImageRelation.ImageAboveText;
             btnRiwayatTransaksi.UseVisualStyleBackColor = false;
@@ -116,27 +114,78 @@
             btnBuatPesanan.BackColor = Color.White;
             btnBuatPesanan.BackgroundImageLayout = ImageLayout.Stretch;
             btnBuatPesanan.Cursor = Cursors.Hand;
-            btnBuatPesanan.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuatPesanan.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnBuatPesanan.ForeColor = Color.Black;
-            btnBuatPesanan.Location = new Point(36, 189);
+            btnBuatPesanan.Location = new Point(85, 369);
+            btnBuatPesanan.Margin = new Padding(4, 5, 4, 5);
             btnBuatPesanan.Name = "btnBuatPesanan";
-            btnBuatPesanan.Size = new Size(216, 51);
-            btnBuatPesanan.TabIndex = 16;
+            btnBuatPesanan.Size = new Size(267, 48);
+            btnBuatPesanan.TabIndex = 24;
             btnBuatPesanan.Text = "Buat Pesanan";
             btnBuatPesanan.TextImageRelation = TextImageRelation.ImageAboveText;
             btnBuatPesanan.UseVisualStyleBackColor = false;
             btnBuatPesanan.UseWaitCursor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(129, 231);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(242, 136);
+            label1.TabIndex = 27;
+            label1.Text = "MENU";
+            // 
+            // lblwelcome3
+            // 
+            lblwelcome3.AutoSize = true;
+            lblwelcome3.Font = new Font("Javanese Text", 28F, FontStyle.Bold);
+            lblwelcome3.Location = new Point(161, 378);
+            lblwelcome3.Name = "lblwelcome3";
+            lblwelcome3.Size = new Size(639, 127);
+            lblwelcome3.TabIndex = 25;
+            lblwelcome3.Text = "CV Pradipta Jaya Abadi";
+            // 
+            // lblwelcome2
+            // 
+            lblwelcome2.AutoSize = true;
+            lblwelcome2.Location = new Point(69, 281);
+            lblwelcome2.Name = "lblwelcome2";
+            lblwelcome2.Size = new Size(841, 136);
+            lblwelcome2.TabIndex = 24;
+            lblwelcome2.Text = "Aplikasi Pemesanan Material ";
+            // 
+            // lblwelcome
+            // 
+            lblwelcome.AutoSize = true;
+            lblwelcome.BackColor = Color.Transparent;
+            lblwelcome.Font = new Font("Javanese Text", 36F, FontStyle.Bold);
+            lblwelcome.ForeColor = Color.White;
+            lblwelcome.Location = new Point(316, 163);
+            lblwelcome.Margin = new Padding(4, 0, 4, 0);
+            lblwelcome.Name = "lblwelcome";
+            lblwelcome.Size = new Size(301, 163);
+            lblwelcome.TabIndex = 23;
+            lblwelcome.Text = "SIMBA";
+            //lblwelcome.Click += lblwelcome_Click;
+            // 
             // CustomerDashboardControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(33, 33, 33);
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(splitContainer1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "CustomerDashboardControl";
-            Size = new Size(914, 480);
+            Size = new Size(1306, 800);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
@@ -149,5 +198,8 @@
         private Button btnLogOut;
         private Button btnRiwayatTransaksi;
         private Button btnBuatPesanan;
+        private Label lblwelcome;
+        private Label lblwelcome2;
+        private Label lblwelcome3;
     }
 }

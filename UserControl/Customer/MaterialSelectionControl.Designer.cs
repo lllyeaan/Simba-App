@@ -29,9 +29,424 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialSelectionControl));
+            npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
+            dbConnectionHelperBindingSource = new BindingSource(components);
+            splitContainer1 = new SplitContainer();
+            btnKembali = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            splitContainer2 = new SplitContainer();
+            dgvMaterialSelection = new DataGridView();
+            btnyakinpesan = new Button();
+            textBox1 = new TextBox();
+            txtJumlah = new TextBox();
+            lblJumlah = new Label();
+            chkPemesanan = new CheckBox();
+            txtSatuan = new TextBox();
+            txtStock = new TextBox();
+            txtHarga = new TextBox();
+            txtNamaMaterial = new TextBox();
+            lblPemesanan = new Label();
+            lblSatuan = new Label();
+            lblStok = new Label();
+            lblHarga = new Label();
+            lblNamaMaterial = new Label();
+            btnPesan = new Button();
+            dbConnectionHelperBindingSource1 = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialSelection).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource1).BeginInit();
+            SuspendLayout();
+            // 
+            // npgsqlDataAdapter1
+            // 
+            npgsqlDataAdapter1.DeleteCommand = null;
+            npgsqlDataAdapter1.InsertCommand = null;
+            npgsqlDataAdapter1.SelectCommand = null;
+            npgsqlDataAdapter1.UpdateCommand = null;
+            // 
+            // dbConnectionHelperBindingSource
+            // 
+            dbConnectionHelperBindingSource.DataSource = typeof(Repositories.DbConnectionHelper);
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
+            splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            splitContainer1.Panel1.Controls.Add(btnKembali);
+            splitContainer1.Panel1.Controls.Add(label3);
+            splitContainer1.Panel1.Controls.Add(label2);
+            splitContainer1.Panel1.Controls.Add(label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(splitContainer2);
+            splitContainer1.Panel2.Controls.Add(btnPesan);
+            splitContainer1.Size = new Size(1306, 800);
+            splitContainer1.SplitterDistance = 427;
+            splitContainer1.TabIndex = 0;
+            // 
+            // btnKembali
+            // 
+            btnKembali.AllowDrop = true;
+            btnKembali.Anchor = AnchorStyles.None;
+            btnKembali.BackColor = Color.White;
+            btnKembali.BackgroundImageLayout = ImageLayout.Stretch;
+            btnKembali.Cursor = Cursors.Hand;
+            btnKembali.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            btnKembali.ForeColor = Color.Black;
+            btnKembali.Location = new Point(124, 477);
+            btnKembali.Margin = new Padding(4, 5, 4, 5);
+            btnKembali.Name = "btnKembali";
+            btnKembali.Size = new Size(150, 39);
+            btnKembali.TabIndex = 36;
+            btnKembali.Text = "Kembali";
+            btnKembali.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnKembali.UseVisualStyleBackColor = false;
+            btnKembali.UseWaitCursor = true;
+            btnKembali.Click += btnKembali_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(82, 382);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(234, 118);
+            label3.TabIndex = 12;
+            label3.Text = "ORDER";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(51, 315);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(324, 118);
+            label2.TabIndex = 11;
+            label2.Text = "MATERIAL";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(36, 172);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 118);
+            label1.TabIndex = 10;
+            // 
+            // splitContainer2
+            // 
+            splitContainer2.Location = new Point(3, 3);
+            splitContainer2.Name = "splitContainer2";
+            splitContainer2.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            splitContainer2.Panel1.Controls.Add(dgvMaterialSelection);
+            // 
+            // splitContainer2.Panel2
+            // 
+            splitContainer2.Panel2.Controls.Add(btnyakinpesan);
+            splitContainer2.Panel2.Controls.Add(textBox1);
+            splitContainer2.Panel2.Controls.Add(txtJumlah);
+            splitContainer2.Panel2.Controls.Add(lblJumlah);
+            splitContainer2.Panel2.Controls.Add(chkPemesanan);
+            splitContainer2.Panel2.Controls.Add(txtSatuan);
+            splitContainer2.Panel2.Controls.Add(txtStock);
+            splitContainer2.Panel2.Controls.Add(txtHarga);
+            splitContainer2.Panel2.Controls.Add(txtNamaMaterial);
+            splitContainer2.Panel2.Controls.Add(lblPemesanan);
+            splitContainer2.Panel2.Controls.Add(lblSatuan);
+            splitContainer2.Panel2.Controls.Add(lblStok);
+            splitContainer2.Panel2.Controls.Add(lblHarga);
+            splitContainer2.Panel2.Controls.Add(lblNamaMaterial);
+            splitContainer2.Size = new Size(869, 794);
+            splitContainer2.SplitterDistance = 313;
+            splitContainer2.TabIndex = 38;
+            // 
+            // dgvMaterialSelection
+            // 
+            dgvMaterialSelection.AutoGenerateColumns = false;
+            dgvMaterialSelection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterialSelection.DataSource = dbConnectionHelperBindingSource;
+            dgvMaterialSelection.Location = new Point(3, -3);
+            dgvMaterialSelection.Name = "dgvMaterialSelection";
+            dgvMaterialSelection.RowHeadersWidth = 62;
+            dgvMaterialSelection.Size = new Size(863, 386);
+            dgvMaterialSelection.TabIndex = 0;
+            // 
+            // btnyakinpesan
+            // 
+            btnyakinpesan.AllowDrop = true;
+            btnyakinpesan.Anchor = AnchorStyles.None;
+            btnyakinpesan.BackColor = Color.White;
+            btnyakinpesan.BackgroundImageLayout = ImageLayout.Stretch;
+            btnyakinpesan.Cursor = Cursors.Hand;
+            btnyakinpesan.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            btnyakinpesan.ForeColor = Color.Black;
+            btnyakinpesan.Location = new Point(668, 418);
+            btnyakinpesan.Margin = new Padding(4, 5, 4, 5);
+            btnyakinpesan.Name = "btnyakinpesan";
+            btnyakinpesan.Size = new Size(173, 39);
+            btnyakinpesan.TabIndex = 51;
+            btnyakinpesan.Text = "Pesan";
+            btnyakinpesan.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnyakinpesan.UseVisualStyleBackColor = false;
+            btnyakinpesan.UseWaitCursor = true;
+            btnyakinpesan.Click += button1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.None;
+            textBox1.Font = new Font("Verdana", 11F);
+            textBox1.Location = new Point(262, 223);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(538, 45);
+            textBox1.TabIndex = 50;
+            // 
+            // txtJumlah
+            // 
+            txtJumlah.Anchor = AnchorStyles.None;
+            txtJumlah.Font = new Font("Verdana", 11F);
+            txtJumlah.Location = new Point(232, 567);
+            txtJumlah.Margin = new Padding(4, 5, 4, 5);
+            txtJumlah.Multiline = true;
+            txtJumlah.Name = "txtJumlah";
+            txtJumlah.Size = new Size(538, 37);
+            txtJumlah.TabIndex = 49;
+            // 
+            // lblJumlah
+            // 
+            lblJumlah.AutoSize = true;
+            lblJumlah.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblJumlah.ForeColor = SystemColors.ButtonHighlight;
+            lblJumlah.Location = new Point(39, 343);
+            lblJumlah.Margin = new Padding(4, 0, 4, 0);
+            lblJumlah.Name = "lblJumlah";
+            lblJumlah.Size = new Size(92, 25);
+            lblJumlah.TabIndex = 48;
+            lblJumlah.Text = "Jumlah";
+            // 
+            // chkPemesanan
+            // 
+            chkPemesanan.AutoSize = true;
+            chkPemesanan.CheckAlign = ContentAlignment.MiddleCenter;
+            chkPemesanan.Font = new Font("Segoe UI", 20F);
+            chkPemesanan.Location = new Point(349, 304);
+            chkPemesanan.Margin = new Padding(4, 5, 4, 5);
+            chkPemesanan.Name = "chkPemesanan";
+            chkPemesanan.Size = new Size(22, 21);
+            chkPemesanan.TabIndex = 47;
+            chkPemesanan.UseVisualStyleBackColor = true;
+            // 
+            // txtSatuan
+            // 
+            txtSatuan.Anchor = AnchorStyles.None;
+            txtSatuan.Font = new Font("Verdana", 11F);
+            txtSatuan.Location = new Point(262, 339);
+            txtSatuan.Margin = new Padding(4, 5, 4, 5);
+            txtSatuan.Multiline = true;
+            txtSatuan.Name = "txtSatuan";
+            txtSatuan.Size = new Size(538, 39);
+            txtSatuan.TabIndex = 46;
+            // 
+            // txtStock
+            // 
+            txtStock.Anchor = AnchorStyles.None;
+            txtStock.Font = new Font("Verdana", 11F);
+            txtStock.Location = new Point(262, 151);
+            txtStock.Margin = new Padding(4, 5, 4, 5);
+            txtStock.Multiline = true;
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(538, 45);
+            txtStock.TabIndex = 45;
+            // 
+            // txtHarga
+            // 
+            txtHarga.Anchor = AnchorStyles.None;
+            txtHarga.Font = new Font("Verdana", 11F);
+            txtHarga.Location = new Point(262, 84);
+            txtHarga.Margin = new Padding(4, 5, 4, 5);
+            txtHarga.Multiline = true;
+            txtHarga.Name = "txtHarga";
+            txtHarga.Size = new Size(538, 43);
+            txtHarga.TabIndex = 44;
+            // 
+            // txtNamaMaterial
+            // 
+            txtNamaMaterial.Anchor = AnchorStyles.None;
+            txtNamaMaterial.Font = new Font("Verdana", 11F);
+            txtNamaMaterial.Location = new Point(262, 20);
+            txtNamaMaterial.Margin = new Padding(4, 5, 4, 5);
+            txtNamaMaterial.Multiline = true;
+            txtNamaMaterial.Name = "txtNamaMaterial";
+            txtNamaMaterial.Size = new Size(538, 41);
+            txtNamaMaterial.TabIndex = 43;
+            // 
+            // lblPemesanan
+            // 
+            lblPemesanan.AutoSize = true;
+            lblPemesanan.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblPemesanan.ForeColor = SystemColors.ButtonHighlight;
+            lblPemesanan.Location = new Point(39, 300);
+            lblPemesanan.Margin = new Padding(4, 0, 4, 0);
+            lblPemesanan.Name = "lblPemesanan";
+            lblPemesanan.Size = new Size(291, 25);
+            lblPemesanan.TabIndex = 42;
+            lblPemesanan.Text = "Lanjutkan ke Pemesanan";
+            // 
+            // lblSatuan
+            // 
+            lblSatuan.AutoSize = true;
+            lblSatuan.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblSatuan.ForeColor = SystemColors.ButtonHighlight;
+            lblSatuan.Location = new Point(39, 227);
+            lblSatuan.Margin = new Padding(4, 0, 4, 0);
+            lblSatuan.Name = "lblSatuan";
+            lblSatuan.Size = new Size(89, 25);
+            lblSatuan.TabIndex = 41;
+            lblSatuan.Text = "Satuan";
+            // 
+            // lblStok
+            // 
+            lblStok.AutoSize = true;
+            lblStok.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblStok.ForeColor = SystemColors.ButtonHighlight;
+            lblStok.Location = new Point(39, 155);
+            lblStok.Margin = new Padding(4, 0, 4, 0);
+            lblStok.Name = "lblStok";
+            lblStok.Size = new Size(62, 25);
+            lblStok.TabIndex = 40;
+            lblStok.Text = "Stok";
+            lblStok.Click += lblStok_Click_1;
+            // 
+            // lblHarga
+            // 
+            lblHarga.AutoSize = true;
+            lblHarga.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblHarga.ForeColor = SystemColors.ButtonHighlight;
+            lblHarga.Location = new Point(39, 88);
+            lblHarga.Margin = new Padding(4, 0, 4, 0);
+            lblHarga.Name = "lblHarga";
+            lblHarga.Size = new Size(79, 25);
+            lblHarga.TabIndex = 39;
+            lblHarga.Text = "Harga";
+            // 
+            // lblNamaMaterial
+            // 
+            lblNamaMaterial.AutoSize = true;
+            lblNamaMaterial.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            lblNamaMaterial.ForeColor = SystemColors.ButtonHighlight;
+            lblNamaMaterial.Location = new Point(39, 24);
+            lblNamaMaterial.Margin = new Padding(4, 0, 4, 0);
+            lblNamaMaterial.Name = "lblNamaMaterial";
+            lblNamaMaterial.Size = new Size(174, 25);
+            lblNamaMaterial.TabIndex = 38;
+            lblNamaMaterial.Text = "Nama Material";
+            // 
+            // btnPesan
+            // 
+            btnPesan.AllowDrop = true;
+            btnPesan.Anchor = AnchorStyles.None;
+            btnPesan.BackColor = Color.White;
+            btnPesan.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPesan.Cursor = Cursors.Hand;
+            btnPesan.Font = new Font("Verdana", 9F, FontStyle.Bold);
+            btnPesan.ForeColor = Color.Black;
+            btnPesan.Location = new Point(936, 592);
+            btnPesan.Margin = new Padding(4, 5, 4, 5);
+            btnPesan.Name = "btnPesan";
+            btnPesan.Size = new Size(109, 32);
+            btnPesan.TabIndex = 34;
+            btnPesan.Text = "Pesan";
+            btnPesan.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnPesan.UseVisualStyleBackColor = false;
+            btnPesan.UseWaitCursor = true;
+            btnPesan.Click += btnPesan_Click;
+            // 
+            // dbConnectionHelperBindingSource1
+            // 
+            dbConnectionHelperBindingSource1.DataSource = typeof(Repositories.DbConnectionHelper);
+            // 
+            // MaterialSelectionControl
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(33, 33, 33);
+            Controls.Add(splitContainer1);
+            Name = "MaterialSelectionControl";
+            Size = new Size(1306, 800);
+            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).EndInit();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel2.ResumeLayout(false);
+            splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialSelection).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
+        private BindingSource dbConnectionHelperBindingSource;
+        private SplitContainer splitContainer1;
+        private BindingSource dbConnectionHelperBindingSource1;
+        private Button btnPesan;
+        private Button btnKembali;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private SplitContainer splitContainer2;
+        private DataGridView dataGridView1;
+        private TextBox txtJumlah;
+        private Label lblJumlah;
+        private CheckBox chkPemesanan;
+        private TextBox txtSatuan;
+        private TextBox txtStock;
+        private TextBox txtHarga;
+        private TextBox txtNamaMaterial;
+        private Label lblPemesanan;
+        private Label lblSatuan;
+        private Label lblStok;
+        private Label lblHarga;
+        private Label lblNamaMaterial;
+        private TextBox textBox1;
+        private Button btnyakinpesan;
+        private DataGridView dgvMaterialSelection;
     }
 }

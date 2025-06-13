@@ -71,3 +71,40 @@ C:\Users\USER\Source\Repos\Simba-App\obj\Debug\net8.0-windows\MaterialOrderingAp
 C:\Users\USER\Source\Repos\Simba-App\obj\Debug\net8.0-windows\MaterialOrderingApp.genruntimeconfig.cache
 C:\Users\USER\Source\Repos\Simba-App\obj\Debug\net8.0-windows\ref\MaterialOrderingApp.dll
 C:\Users\USER\Source\Repos\Simba-App\obj\Debug\net8.0-windows\MaterialOrderingApp.Properties.Resources.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.exe
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\Resources\check_icon.png
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\Resources\cross_icon.png
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.dll.config
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.deps.json
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.runtimeconfig.json
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\MaterialOrderingApp.pdb
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\bin\Debug\net8.0-windows\Npgsql.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.csproj.AssemblyReference.cache
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.MainForm.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Properties.Resources.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Admin.AdminDashboardControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Admin.MaterialManagementControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Admin.OrderManagementControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Customer.CustomerDashboardControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Customer.HistoryControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Customer.MaterialSelectionControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.Customer.TansactionControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.LoginControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.ProfileControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.Forms.UserControls.SignUpControl.resources
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.csproj.GenerateResource.cache
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.AssemblyInfoInputs.cache
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.AssemblyInfo.cs
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.csproj.CoreCompileInputs.cache
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.sourcelink.json
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\Material.6E39D69C.Up2Date
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\refint\MaterialOrderingApp.dll
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.pdb
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\MaterialOrderingApp.genruntimeconfig.cache
+D:\COLLEGE LIFE\Semester 2\PBO 3\obj\Debug\net8.0-windows\ref\MaterialOrderingApp.dll

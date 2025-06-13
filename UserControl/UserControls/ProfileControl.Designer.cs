@@ -142,6 +142,7 @@
             label1.TabIndex = 9;
             label1.Text = "COMPLETE";
             label1.UseWaitCursor = true;
+            label1.Click += label1_Click;
             // 
             // flowLayoutPanel1
             // 
