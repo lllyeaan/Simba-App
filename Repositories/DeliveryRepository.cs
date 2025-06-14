@@ -49,10 +49,10 @@ namespace MaterialOrderingApp.Repositories
             {
                 conn.Open();
                 string query = @"
-                    SELECT o.id_order, o.id_customer, o.order_date, o.delivery_status, o.total
-                    FROM public.orders o
-                    WHERE o.id_customer = @id_customer
-                    ORDER BY o.order_date DESC";
+            SELECT o.id_order, o.id_customer, o.order_date, o.delivery_status
+            FROM public.orders o
+            WHERE o.id_customer = @id_customer
+            ORDER BY o.order_date DESC";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
@@ -66,10 +66,7 @@ namespace MaterialOrderingApp.Repositories
                                 IdOrder = reader.GetInt32(reader.GetOrdinal("id_order")),
                                 IdCustomer = reader.GetInt32(reader.GetOrdinal("id_customer")),
                                 OrderDate = reader.GetDateTime(reader.GetOrdinal("order_date")),
-                                DeliveryStatus = reader.GetString(reader.GetOrdinal("delivery_status")),
-                                Total = reader.GetDecimal(reader.GetOrdinal("total")),
-     
-                                //CustomerName = reader["nama_customer"].ToString()
+                                DeliveryStatus = reader.GetString(reader.GetOrdinal("delivery_status"))
                             };
 
                             orders.Add(order);
@@ -80,27 +77,26 @@ namespace MaterialOrderingApp.Repositories
             return orders;
         }
 
-        public void KonfirmasiPengiriman(int idOrder, int idTruck, int idDriver)
+        public void KonfirmasiPengiriman(int idOrder, int idTruck)
         {
             using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
-                    UPDATE orders 
-                    SET id_truck = @id_truck,
-                        id_driver = @id_driver,
-                        delivery_status = 'Dikirim'
-                    WHERE id_order = @id_order";
+            UPDATE orders 
+            SET id_truck = @id_truck,
+                delivery_status = 'Shipped'
+            WHERE id_order = @id_order";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id_order", idOrder);
                     cmd.Parameters.AddWithValue("@id_truck", idTruck);
-                    cmd.Parameters.AddWithValue("@id_driver", idDriver);
                     cmd.ExecuteNonQuery();
                 }
             }
         }
+
     }
 }
 

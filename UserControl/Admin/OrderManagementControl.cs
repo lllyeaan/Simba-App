@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
@@ -23,14 +24,26 @@ namespace MaterialOrderingApp.Forms.Admin
             _orderService = new OrderService(new DeliveryRepository());
             _truckService = new TruckService(new TruckRepository());
 
+            // Event handler utama
             this.Load += OrderManagementControl_Load;
             dgvPesanan.CellContentClick += dgvPesanan_CellContentClick;
+            btnKonfirmasi.Click += btnKonfirmasi_Click;
+            btnKembali.Click += btnKembali_Click;
+            comboBoxTruk.SelectedIndexChanged += comboBoxTruk_SelectedIndexChanged;
+
+            // Hover effect untuk tombol
+            AddButtonHoverEffect(btnKonfirmasi, Color.FromArgb(65, 105, 225), Color.White);
+            AddButtonHoverEffect(btnKembali, Color.FromArgb(232, 17, 35), Color.White);
+
+            // DataGridView style biar lebih enak dilihat
+            SetDataGridViewStyle(dgvPesanan);
         }
 
         private void OrderManagementControl_Load(object sender, EventArgs e)
         {
             LoadPesanan();
             LoadTruk();
+            ClearFormOrderSelection();
         }
 
         private void LoadPesanan()
@@ -53,7 +66,6 @@ namespace MaterialOrderingApp.Forms.Admin
                 daftarTruk = _truckService.GetTersedia();
                 comboBoxTruk.DataSource = null;
                 comboBoxTruk.DataSource = daftarTruk;
-
                 comboBoxTruk.DisplayMember = "Display";
                 comboBoxTruk.ValueMember = "Id";
             }
@@ -62,7 +74,6 @@ namespace MaterialOrderingApp.Forms.Admin
                 MessageBox.Show($"Gagal memuat data truk: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnKonfirmasi_Click(object sender, EventArgs e)
         {
@@ -80,10 +91,20 @@ namespace MaterialOrderingApp.Forms.Admin
 
             try
             {
-                _orderService.KonfirmasiPengiriman(idOrderDipilih, truk.Id, truk.IdDriver);
+                var result = MessageBox.Show(
+                    "Anda yakin ingin mengkonfirmasi pengiriman ini?",
+                    "Konfirmasi",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                    return;
+
+                _orderService.KonfirmasiPengiriman(idOrderDipilih, truk.Id);
                 MessageBox.Show("Pengiriman berhasil diproses.");
                 LoadPesanan();
-                idOrderDipilih = -1;
+                LoadTruk();
+                ClearFormOrderSelection();
             }
             catch (Exception ex)
             {
@@ -93,12 +114,17 @@ namespace MaterialOrderingApp.Forms.Admin
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
-            mainForm.LoadUserControl(new AdminDashboardControl(mainForm));
-        }
+            var confirm = MessageBox.Show(
+                "Perubahan tidak akan disimpan. Anda yakin ingin kembali ke dashboard?",
+                "Konfirmasi",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
-        private void txtCustomer_TextChanged(object sender, EventArgs e) { }
-        private void txtTanggal_TextChanged(object sender, EventArgs e) { }
-        private void comboBoxTruk_SelectedIndexChanged(object sender, EventArgs e) { }
+            if (confirm == DialogResult.Yes)
+            {
+                mainForm.LoadUserControl(new AdminDashboardControl(mainForm));
+            }
+        }
 
         private void dgvPesanan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -117,9 +143,54 @@ namespace MaterialOrderingApp.Forms.Admin
                 }
                 else
                 {
-                    MessageBox.Show("Pesanan ini sudah dalam proses atau selesai.");
+                    MessageBox.Show("Pesanan ini sudah dalam proses atau selesai.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void comboBoxTruk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Optionally show truck info detail (if you want)
+        }
+
+        private void txtCustomer_TextChanged(object sender, EventArgs e) { }
+        private void txtTanggal_TextChanged(object sender, EventArgs e) { }
+
+        /// <summary>
+        /// Utility: Efek hover untuk tombol
+        /// </summary>
+        private void AddButtonHoverEffect(Button btn, Color hoverBackColor, Color hoverForeColor)
+        {
+            var defaultBackColor = btn.BackColor;
+            var defaultForeColor = btn.ForeColor;
+            btn.MouseEnter += (s, e) => { btn.BackColor = hoverBackColor; btn.ForeColor = hoverForeColor; };
+            btn.MouseLeave += (s, e) => { btn.BackColor = defaultBackColor; btn.ForeColor = defaultForeColor; };
+        }
+
+        /// <summary>
+        /// Utility: Reset field konfirmasi pengiriman
+        /// </summary>
+        private void ClearFormOrderSelection()
+        {
+            idOrderDipilih = -1;
+            txtCustomer.Text = "";
+            txtTanggal.Text = "";
+            if (comboBoxTruk.Items.Count > 0)
+                comboBoxTruk.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Utility: Style DataGridView agar lebih profesional
+        /// </summary>
+        private void SetDataGridViewStyle(DataGridView dgv)
+        {
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(65, 105, 225);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.DefaultCellStyle.Font = new Font("Verdana", 10F);
+            dgv.RowTemplate.Height = 32;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }

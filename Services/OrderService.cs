@@ -22,9 +22,9 @@ namespace MaterialOrderingApp.Services
             return _deliveryRepo.GetAllDeliveries();
         }
 
-        public void KonfirmasiPengiriman(int idOrder, int idTruck, int idDriver)
+        public void KonfirmasiPengiriman(int idOrder, int idTruck)
         {
-            _deliveryRepo.KonfirmasiPengiriman(idOrder, idTruck, idDriver);
+            _deliveryRepo.KonfirmasiPengiriman(idOrder, idTruck);
         }
 
         public List<Order> AmbilPesananByCustomer(int idCustomer)

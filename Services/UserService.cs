@@ -8,13 +8,11 @@ namespace MaterialOrderingApp.Services
 {
     public class UserService
     {
-        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=password;Database=DBSimbaNew";
-
         public void UpdateUser(User user)
         {
             try
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+                using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
                 {
                     conn.Open();
 
@@ -85,7 +83,6 @@ namespace MaterialOrderingApp.Services
                             cmd.Parameters.AddWithValue("kabupaten", user.Kabupaten ?? (object)DBNull.Value);
                             cmd.Parameters.AddWithValue("kecamatan", user.Kecamatan ?? (object)DBNull.Value);
                             cmd.Parameters.AddWithValue("jalan", user.Jalan ?? (object)DBNull.Value);
-                            //cmd.ExecuteNonQuery();
                             newIdCustomer = (int)cmd.ExecuteScalar();
                         }
 
@@ -108,54 +105,39 @@ namespace MaterialOrderingApp.Services
 
         public void InsertCustomerFromProfile(User user, string idKecamatan, string alamatJalan)
         {
-
-            string koneksi = "Host=localhost;Port=5432;Username=postgres;Password=password;Database=DBSimbaNew;";
-
             try
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(koneksi))
+                using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
                 {
                     conn.Open();
 
                     string query = @"
-                INSERT INTO customer (id_user, nama_customer, no_hp, alamat_jalan, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
-                VALUES (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_kecamatan,
-                    (SELECT id_kabupaten FROM kecamatan WHERE id_kecamatan = @id_kecamatan),
-                    (SELECT id_provinsi FROM kecamatan JOIN kabupaten ON kecamatan.id_kabupaten = kabupaten.id_kabupaten WHERE kecamatan.id_kecamatan = @id_kecamatan),
-                    @alamat_jalan)
-                RETURNING id_customer;
-            ";
+                        INSERT INTO customer (id_user, nama_customer, no_hp, alamat_jalan, id_kecamatan, id_kabupaten, id_provinsi, alamat_deskripsi)
+                        VALUES (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_kecamatan,
+                            (SELECT id_kabupaten FROM kecamatan WHERE id_kecamatan = @id_kecamatan),
+                            (SELECT id_provinsi FROM kecamatan JOIN kabupaten ON kecamatan.id_kabupaten = kabupaten.id_kabupaten WHERE kecamatan.id_kecamatan = @id_kecamatan),
+                            @alamat_jalan)
+                        RETURNING id_customer;";
+
                     int newIdCustomer;
-  
+
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
-                        //Console.WriteLine("DEBUG: id_user = " + user.Id);
-                        //Console.WriteLine("DEBUG: nama_customer = " + user.FullName);
-                        //Console.WriteLine("DEBUG: no_hp = " + user.Phone);
-                        //Console.WriteLine("DEBUG: alamat_jalan = " + alamatJalan);
-                        //Console.WriteLine("DEBUG: id_kecamatan = " + idKecamatan);
-
-
                         cmd.Parameters.AddWithValue("id_user", user.Id);
                         cmd.Parameters.AddWithValue("nama_customer", user.FullName);
                         cmd.Parameters.AddWithValue("no_hp", user.Phone);
                         cmd.Parameters.AddWithValue("alamat_jalan", alamatJalan);
                         cmd.Parameters.AddWithValue("id_kecamatan", idKecamatan);
-
                         newIdCustomer = (int)cmd.ExecuteScalar();
-
-                        //cmd.ExecuteNonQuery();
                     }
 
                     string updateUserQuery = "UPDATE users SET id_customer = @id_customer WHERE id_user = @id_user";
-
                     using (NpgsqlCommand updateCmd = new NpgsqlCommand(updateUserQuery, conn))
                     {
                         updateCmd.Parameters.AddWithValue("id_customer", newIdCustomer);
                         updateCmd.Parameters.AddWithValue("id_user", user.Id);
                         updateCmd.ExecuteNonQuery();
                     }
-
                 }
             }
             catch (Exception ex)
@@ -163,10 +145,6 @@ namespace MaterialOrderingApp.Services
                 MessageBox.Show("Gagal menyimpan data customer: " + ex.Message,
                                 "Koneksi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
     }
 }
-
-
