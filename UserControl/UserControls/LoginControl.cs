@@ -4,8 +4,8 @@ using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
 using MaterialOrderingApp.Utils;
-using Microsoft.VisualBasic.ApplicationServices;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MaterialOrderingApp.Forms.UserControls
@@ -15,15 +15,39 @@ namespace MaterialOrderingApp.Forms.UserControls
         private readonly MainForm mainForm;
         private readonly AuthService _authService;
 
-
         public LoginControl(MainForm form)
         {
             InitializeComponent();
             this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
             _authService = new AuthService(new UserRepository());
 
+            // Event handler tombol
+            btnLogin.Click += btnLogin_Click;
+            btnSignUp.Click += btnSignUp_Click;
+            btnClosePictureBox.Click += btnClosePictureBox_Click;
+
+            // Hover effect
+            btnLogin.MouseEnter += (s, e) => { btnLogin.BackColor = Color.FromArgb(65, 105, 225); btnLogin.ForeColor = Color.White; };
+            btnLogin.MouseLeave += (s, e) => { btnLogin.BackColor = Color.White; btnLogin.ForeColor = Color.Black; };
+
+            btnSignUp.MouseEnter += (s, e) => { btnSignUp.BackColor = Color.FromArgb(65, 105, 225); btnSignUp.ForeColor = Color.White; };
+            btnSignUp.MouseLeave += (s, e) => { btnSignUp.BackColor = Color.White; btnSignUp.ForeColor = Color.Black; };
+
+            btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app_white.png");
+
+            btnClosePictureBox.MouseEnter += (s, e) =>
+            {
+                btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app.png");
+                btnClosePictureBox.BackColor = Color.Transparent;
+            };
+            btnClosePictureBox.MouseLeave += (s, e) =>
+            {
+                btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app_white.png");
+                btnClosePictureBox.BackColor = Color.Transparent;
+            };
         }
 
+        // --- LOGIN BUTTON ---
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = textBoxUsername.Text.Trim();
@@ -67,38 +91,25 @@ namespace MaterialOrderingApp.Forms.UserControls
             }
             catch (Exception ex)
             {
-                //System.Diagnostics.Debug.WriteLine($"Login failed: {ex.Message}");
                 MessageBox.Show(ex.Message, "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        // --- SIGNUP BUTTON ---
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             if (mainForm == null)
             {
-                System.Diagnostics.Debug.WriteLine("Error: mainForm is null");
-                throw new Exception("Main form not initialized.");
+                MessageBox.Show("Main form tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             mainForm.LoadUserControl(new SignUpControl(mainForm));
         }
 
-        private void textBoxUsername_TextChanged(object sender, EventArgs e) { }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e) { }
-
-        private void button1_Click(object sender, EventArgs e)
+        // --- CLOSE BUTTON (PictureBox gambar X) ---
+        private void btnClosePictureBox_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
