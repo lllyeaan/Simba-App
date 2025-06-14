@@ -1,4 +1,5 @@
 ﻿using MaterialOrderingApp.Forms.Admin;
+using MaterialOrderingApp.Forms.UserControls;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
 using System;
@@ -23,17 +24,17 @@ namespace MaterialOrderingApp.Forms.Customer
         {
             InitializeComponent();
             this.mainForm = form;
-                //?? throw new ArgumentNullException(nameof(form));
             _authService = new AuthService(new UserRepository());
 
             this.Load += CustomerDashboardControl_Load;
+            btnBuatPesanan.Click += btnBuatPesanan_Click;
         }
 
         private void CustomerDashboardControl_Load(object sender, EventArgs e)
         {
-            
+
         }
-       
+
 
         private void btnBuatPesanan_Click(object sender, EventArgs e)
         {
@@ -42,15 +43,30 @@ namespace MaterialOrderingApp.Forms.Customer
                 MessageBox.Show("MainForm Form tidak tersedia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             mainForm.LoadUserControl(new MaterialSelectionControl(mainForm));
-
         }
-
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (mainForm == null)
+            {
+                MessageBox.Show("MainForm Form tidak tersedia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            mainForm.LoadUserControl(new LoginControl(mainForm));
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
         }
 
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            if (mainForm == null)
+            {
+                MessageBox.Show("MainForm Form tidak tersedia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            mainForm.LoadUserControl(new HistoryControl(mainForm));
+        }
     }
 }

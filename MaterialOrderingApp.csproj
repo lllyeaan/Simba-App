@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UserControl\Admin\ManajemenPesanan\**" />
+    <EmbeddedResource Remove="UserControl\Admin\ManajemenPesanan\**" />
+    <None Remove="UserControl\Admin\ManajemenPesanan\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\calender.png" />
     <None Remove="Resources\check_icon.png" />
     <None Remove="Resources\cross_icon.png" />
@@ -42,10 +48,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UserControl\Admin\ManajemenPesanan\" />
   </ItemGroup>
 
 </Project>

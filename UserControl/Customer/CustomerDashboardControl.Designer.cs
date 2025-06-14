@@ -78,15 +78,16 @@
             btnLogOut.Cursor = Cursors.Hand;
             btnLogOut.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnLogOut.ForeColor = Color.Black;
-            btnLogOut.Location = new Point(85, 512);
+            btnLogOut.Location = new Point(85, 484);
             btnLogOut.Margin = new Padding(4, 5, 4, 5);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(267, 47);
+            btnLogOut.Size = new Size(267, 49);
             btnLogOut.TabIndex = 26;
             btnLogOut.Text = "Log Out";
             btnLogOut.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.UseWaitCursor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnRiwayatTransaksi
             // 
@@ -97,15 +98,16 @@
             btnRiwayatTransaksi.Cursor = Cursors.Hand;
             btnRiwayatTransaksi.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnRiwayatTransaksi.ForeColor = Color.Black;
-            btnRiwayatTransaksi.Location = new Point(85, 441);
+            btnRiwayatTransaksi.Location = new Point(85, 414);
             btnRiwayatTransaksi.Margin = new Padding(4, 5, 4, 5);
             btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
-            btnRiwayatTransaksi.Size = new Size(267, 39);
+            btnRiwayatTransaksi.Size = new Size(267, 51);
             btnRiwayatTransaksi.TabIndex = 25;
             btnRiwayatTransaksi.Text = "Riwayat Transaksi";
             btnRiwayatTransaksi.TextImageRelation = TextImageRelation.ImageAboveText;
             btnRiwayatTransaksi.UseVisualStyleBackColor = false;
             btnRiwayatTransaksi.UseWaitCursor = true;
+            btnRiwayatTransaksi.Click += btnRiwayatTransaksi_Click;
             // 
             // btnBuatPesanan
             // 
@@ -116,15 +118,15 @@
             btnBuatPesanan.Cursor = Cursors.Hand;
             btnBuatPesanan.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnBuatPesanan.ForeColor = Color.Black;
-            btnBuatPesanan.Location = new Point(85, 369);
+            btnBuatPesanan.Location = new Point(85, 336);
             btnBuatPesanan.Margin = new Padding(4, 5, 4, 5);
             btnBuatPesanan.Name = "btnBuatPesanan";
-            btnBuatPesanan.Size = new Size(267, 48);
+            btnBuatPesanan.Size = new Size(267, 53);
             btnBuatPesanan.TabIndex = 24;
             btnBuatPesanan.Text = "Buat Pesanan";
             btnBuatPesanan.TextImageRelation = TextImageRelation.ImageAboveText;
             btnBuatPesanan.UseVisualStyleBackColor = false;
-            btnBuatPesanan.UseWaitCursor = true;
+            btnBuatPesanan.Click += btnBuatPesanan_Click;
             // 
             // label1
             // 
@@ -170,7 +172,6 @@
             lblwelcome.Size = new Size(301, 163);
             lblwelcome.TabIndex = 23;
             lblwelcome.Text = "SIMBA";
-            //lblwelcome.Click += lblwelcome_Click;
             // 
             // CustomerDashboardControl
             // 

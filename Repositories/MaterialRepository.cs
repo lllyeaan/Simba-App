@@ -12,13 +12,13 @@ namespace MaterialOrderingApp.Repositories
     {
         public List<Material> GetAll()
         {
-            var list = new List<Material>();
-            using (var conn = DbConnectionHelper.GetConnection())
+            List<Material> list = new List<Material>();
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = "SELECT * FROM materials ORDER BY id_material ASC";
-                using (var cmd = new NpgsqlCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -39,13 +39,13 @@ namespace MaterialOrderingApp.Repositories
 
         public void Insert(Material material)
         {
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"INSERT INTO materials
                                  (material_name, unit_price, stock, satuan, is_available) 
                                  VALUES (@name, @price, @stock, @satuan, @avail)";
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", material.MaterialName);
                     cmd.Parameters.AddWithValue("@price", material.UnitPrice);
@@ -59,14 +59,14 @@ namespace MaterialOrderingApp.Repositories
 
         public void Update(Material material)
         {
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"UPDATE materials
                                  SET material_name=@name, unit_price=@price, stock=@stock, 
                                      satuan=@satuan, is_available=@avail 
                                  WHERE id_material=@id";
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", material.MaterialName);
                     cmd.Parameters.AddWithValue("@price", material.UnitPrice);
@@ -81,11 +81,11 @@ namespace MaterialOrderingApp.Repositories
 
         public void Delete(int id)
         {
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = "DELETE FROM materials WHERE id_material = @id";
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();

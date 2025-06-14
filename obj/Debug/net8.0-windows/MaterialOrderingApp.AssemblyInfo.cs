@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaterialOrderingApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4942cf8ec7d8113d3750f8e6be5a7241f21a2d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+648a65ca5dd85034484b89272ae8c689ae8f4b27")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaterialOrderingApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaterialOrderingApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

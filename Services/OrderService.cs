@@ -26,6 +26,11 @@ namespace MaterialOrderingApp.Services
         {
             _deliveryRepo.KonfirmasiPengiriman(idOrder, idTruck, idDriver);
         }
+
+        public List<Order> AmbilPesananByCustomer(int idCustomer)
+        {
+            return _deliveryRepo.GetByCustomer(idCustomer);
+        }
     }
 }
 

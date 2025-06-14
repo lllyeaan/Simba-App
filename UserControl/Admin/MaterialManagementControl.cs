@@ -20,7 +20,6 @@ namespace MaterialOrderingApp.Forms.Admin
             _authService = new AuthService(new UserRepository());
             _materialService = new MaterialService(new MaterialRepository());
 
-            // Hubungkan event handler
             dgvMaterial.CellClick += dgvMaterial_CellClick;
             dgvMaterial.AutoGenerateColumns = true;
 
@@ -82,7 +81,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            var material = new Material
+            Material material = new Material
             {
                 MaterialName = txtNamaMaterial.Text.Trim(),
                 UnitPrice = harga,
@@ -114,7 +113,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            var material = new Material
+            Material material = new Material
             {
                 Id = idMaterialTerpilih,
                 MaterialName = txtNamaMaterial.Text.Trim(),
@@ -138,7 +137,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            var konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
+            DialogResult konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
             if (konfirmasi == DialogResult.Yes)
             {
                 _materialService.Delete(idMaterialTerpilih);
@@ -162,5 +161,10 @@ namespace MaterialOrderingApp.Forms.Admin
         private void txtSatuan_TextChanged(object sender, EventArgs e) { }
 
         private void chkTersedia_CheckedChanged(object sender, EventArgs e) { }
+
+        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

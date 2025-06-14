@@ -7,6 +7,8 @@ namespace MaterialOrderingApp.Forms
 {
     public partial class MainForm : Form
     {
+        public int LoggedInUserId { get; set; }
+
         public MainForm()
         {
             InitializeComponent();

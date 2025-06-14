@@ -14,6 +14,7 @@ namespace MaterialOrderingApp.Forms.UserControls
         private readonly MainForm mainForm;
         private readonly AuthService _authService;
 
+
         public LoginControl(MainForm form)
         {
             InitializeComponent();
@@ -34,7 +35,6 @@ namespace MaterialOrderingApp.Forms.UserControls
 
             try
             {
-                // Debugging log
                 System.Diagnostics.Debug.WriteLine($"Attempting login with username: {username}, password: {password}");
                 if (_authService == null)
                 {
@@ -42,10 +42,10 @@ namespace MaterialOrderingApp.Forms.UserControls
                     throw new Exception("Authentication service not initialized.");
                 }
 
-                var user = _authService.Login(username, password);
+                User user = _authService.Login(username, password);
                 Utils.UserManager.ActiveUser = user;
 
-
+                mainForm.LoggedInUserId = user.Id;
 
                 if (user.Role.ToLower() == "admin")
                 {
@@ -53,15 +53,7 @@ namespace MaterialOrderingApp.Forms.UserControls
                 }
                 else if (user.Role.ToLower() == "customer")
                 {
-                    //if (string.IsNullOrWhiteSpace(user.FullName) || string.IsNullOrWhiteSpace(user.Jalan))
-                    //{
-                    //    MessageBox.Show("Lengkapi profil Anda terlebih dahulu.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    mainForm.LoadUserControl(new ProfileControl(mainForm));
-                    //}
-                    //else
-                    //{
-                        mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
-                    //}
+                    mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
                 }
                 else
                 {
@@ -92,6 +84,16 @@ namespace MaterialOrderingApp.Forms.UserControls
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

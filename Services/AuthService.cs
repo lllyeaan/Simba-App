@@ -1,6 +1,7 @@
 ﻿using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Utils;
+using NpgsqlTypes;
 
 namespace MaterialOrderingApp.Services
 {
@@ -15,7 +16,7 @@ namespace MaterialOrderingApp.Services
 
         public User Login(string username, string password)
         {
-            var user = _userRepository.GetUserByUsername(username);
+            User user = _userRepository.GetUserByUsername(username);
 
             if (user == null)
             {
@@ -43,7 +44,7 @@ namespace MaterialOrderingApp.Services
             }
 
             User newUser = _userRepository.CreateUser(username, password, role, customer);
-            return newUser != null; // Return true jika user berhasil dibuat
+            return newUser != null; 
 
         }
     }

@@ -1,6 +1,7 @@
 ﻿using MaterialOrderingApp.Forms.UserControls;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Utils;
+using MaterialOrderingApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace MaterialOrderingApp.Forms.UserControls
 
             if (File.Exists(imagePath))
             {
-                using (var stream = new MemoryStream(File.ReadAllBytes(imagePath)))
+                using (MemoryStream stream = new MemoryStream(File.ReadAllBytes(imagePath)))
                 {
                     return Image.FromStream(stream);
                 }
@@ -106,13 +107,10 @@ namespace MaterialOrderingApp.Forms.UserControls
                 return;
             }
 
-            // Buat user baru
-            var newUser = _userRepository.CreateUser(username, password, "customer");
+            User newUser = _userRepository.CreateUser(username, password, "customer");
 
-            // Set user yang baru dibuat sebagai user aktif
             UserManager.ActiveUser = newUser;
 
-            // Redirect ke ProfileControl
             mainForm.LoadUserControl(new ProfileControl(mainForm));
         }
 

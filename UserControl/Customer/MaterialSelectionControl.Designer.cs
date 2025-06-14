@@ -40,17 +40,12 @@
             splitContainer2 = new SplitContainer();
             dgvMaterialSelection = new DataGridView();
             btnyakinpesan = new Button();
-            textBox1 = new TextBox();
             txtJumlah = new TextBox();
             lblJumlah = new Label();
-            chkPemesanan = new CheckBox();
             txtSatuan = new TextBox();
-            txtStock = new TextBox();
             txtHarga = new TextBox();
             txtNamaMaterial = new TextBox();
-            lblPemesanan = new Label();
             lblSatuan = new Label();
-            lblStok = new Label();
             lblHarga = new Label();
             lblNamaMaterial = new Label();
             btnPesan = new Button();
@@ -173,17 +168,12 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(btnyakinpesan);
-            splitContainer2.Panel2.Controls.Add(textBox1);
             splitContainer2.Panel2.Controls.Add(txtJumlah);
             splitContainer2.Panel2.Controls.Add(lblJumlah);
-            splitContainer2.Panel2.Controls.Add(chkPemesanan);
             splitContainer2.Panel2.Controls.Add(txtSatuan);
-            splitContainer2.Panel2.Controls.Add(txtStock);
             splitContainer2.Panel2.Controls.Add(txtHarga);
             splitContainer2.Panel2.Controls.Add(txtNamaMaterial);
-            splitContainer2.Panel2.Controls.Add(lblPemesanan);
             splitContainer2.Panel2.Controls.Add(lblSatuan);
-            splitContainer2.Panel2.Controls.Add(lblStok);
             splitContainer2.Panel2.Controls.Add(lblHarga);
             splitContainer2.Panel2.Controls.Add(lblNamaMaterial);
             splitContainer2.Size = new Size(869, 794);
@@ -198,7 +188,7 @@
             dgvMaterialSelection.Location = new Point(3, -3);
             dgvMaterialSelection.Name = "dgvMaterialSelection";
             dgvMaterialSelection.RowHeadersWidth = 62;
-            dgvMaterialSelection.Size = new Size(863, 386);
+            dgvMaterialSelection.Size = new Size(863, 313);
             dgvMaterialSelection.TabIndex = 0;
             // 
             // btnyakinpesan
@@ -210,7 +200,7 @@
             btnyakinpesan.Cursor = Cursors.Hand;
             btnyakinpesan.Font = new Font("Verdana", 10F, FontStyle.Bold);
             btnyakinpesan.ForeColor = Color.Black;
-            btnyakinpesan.Location = new Point(668, 418);
+            btnyakinpesan.Location = new Point(651, 328);
             btnyakinpesan.Margin = new Padding(4, 5, 4, 5);
             btnyakinpesan.Name = "btnyakinpesan";
             btnyakinpesan.Size = new Size(173, 39);
@@ -221,79 +211,42 @@
             btnyakinpesan.UseWaitCursor = true;
             btnyakinpesan.Click += button1_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Verdana", 11F);
-            textBox1.Location = new Point(262, 223);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(538, 45);
-            textBox1.TabIndex = 50;
-            // 
             // txtJumlah
             // 
-            txtJumlah.Anchor = AnchorStyles.None;
-            txtJumlah.Font = new Font("Verdana", 11F);
-            txtJumlah.Location = new Point(232, 567);
-            txtJumlah.Margin = new Padding(4, 5, 4, 5);
-            txtJumlah.Multiline = true;
+            txtJumlah.Location = new Point(286, 252);
             txtJumlah.Name = "txtJumlah";
-            txtJumlah.Size = new Size(538, 37);
-            txtJumlah.TabIndex = 49;
+            txtJumlah.Size = new Size(538, 31);
+            txtJumlah.TabIndex = 53;
+            txtJumlah.TextChanged += txtJumlah_TextChanged;
             // 
             // lblJumlah
             // 
             lblJumlah.AutoSize = true;
             lblJumlah.Font = new Font("Verdana", 10F, FontStyle.Bold);
             lblJumlah.ForeColor = SystemColors.ButtonHighlight;
-            lblJumlah.Location = new Point(39, 343);
+            lblJumlah.Location = new Point(39, 252);
             lblJumlah.Margin = new Padding(4, 0, 4, 0);
             lblJumlah.Name = "lblJumlah";
-            lblJumlah.Size = new Size(92, 25);
+            lblJumlah.Size = new Size(227, 25);
             lblJumlah.TabIndex = 48;
-            lblJumlah.Text = "Jumlah";
-            // 
-            // chkPemesanan
-            // 
-            chkPemesanan.AutoSize = true;
-            chkPemesanan.CheckAlign = ContentAlignment.MiddleCenter;
-            chkPemesanan.Font = new Font("Segoe UI", 20F);
-            chkPemesanan.Location = new Point(349, 304);
-            chkPemesanan.Margin = new Padding(4, 5, 4, 5);
-            chkPemesanan.Name = "chkPemesanan";
-            chkPemesanan.Size = new Size(22, 21);
-            chkPemesanan.TabIndex = 47;
-            chkPemesanan.UseVisualStyleBackColor = true;
+            lblJumlah.Text = "Jumlah Pemesanan";
             // 
             // txtSatuan
             // 
             txtSatuan.Anchor = AnchorStyles.None;
             txtSatuan.Font = new Font("Verdana", 11F);
-            txtSatuan.Location = new Point(262, 339);
+            txtSatuan.Location = new Point(286, 173);
             txtSatuan.Margin = new Padding(4, 5, 4, 5);
             txtSatuan.Multiline = true;
             txtSatuan.Name = "txtSatuan";
             txtSatuan.Size = new Size(538, 39);
             txtSatuan.TabIndex = 46;
             // 
-            // txtStock
-            // 
-            txtStock.Anchor = AnchorStyles.None;
-            txtStock.Font = new Font("Verdana", 11F);
-            txtStock.Location = new Point(262, 151);
-            txtStock.Margin = new Padding(4, 5, 4, 5);
-            txtStock.Multiline = true;
-            txtStock.Name = "txtStock";
-            txtStock.Size = new Size(538, 45);
-            txtStock.TabIndex = 45;
-            // 
             // txtHarga
             // 
             txtHarga.Anchor = AnchorStyles.None;
             txtHarga.Font = new Font("Verdana", 11F);
-            txtHarga.Location = new Point(262, 84);
+            txtHarga.Location = new Point(286, 102);
             txtHarga.Margin = new Padding(4, 5, 4, 5);
             txtHarga.Multiline = true;
             txtHarga.Name = "txtHarga";
@@ -304,56 +257,31 @@
             // 
             txtNamaMaterial.Anchor = AnchorStyles.None;
             txtNamaMaterial.Font = new Font("Verdana", 11F);
-            txtNamaMaterial.Location = new Point(262, 20);
+            txtNamaMaterial.Location = new Point(286, 32);
             txtNamaMaterial.Margin = new Padding(4, 5, 4, 5);
             txtNamaMaterial.Multiline = true;
             txtNamaMaterial.Name = "txtNamaMaterial";
             txtNamaMaterial.Size = new Size(538, 41);
             txtNamaMaterial.TabIndex = 43;
             // 
-            // lblPemesanan
-            // 
-            lblPemesanan.AutoSize = true;
-            lblPemesanan.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblPemesanan.ForeColor = SystemColors.ButtonHighlight;
-            lblPemesanan.Location = new Point(39, 300);
-            lblPemesanan.Margin = new Padding(4, 0, 4, 0);
-            lblPemesanan.Name = "lblPemesanan";
-            lblPemesanan.Size = new Size(291, 25);
-            lblPemesanan.TabIndex = 42;
-            lblPemesanan.Text = "Lanjutkan ke Pemesanan";
-            // 
             // lblSatuan
             // 
             lblSatuan.AutoSize = true;
             lblSatuan.Font = new Font("Verdana", 10F, FontStyle.Bold);
             lblSatuan.ForeColor = SystemColors.ButtonHighlight;
-            lblSatuan.Location = new Point(39, 227);
+            lblSatuan.Location = new Point(39, 177);
             lblSatuan.Margin = new Padding(4, 0, 4, 0);
             lblSatuan.Name = "lblSatuan";
             lblSatuan.Size = new Size(89, 25);
             lblSatuan.TabIndex = 41;
             lblSatuan.Text = "Satuan";
             // 
-            // lblStok
-            // 
-            lblStok.AutoSize = true;
-            lblStok.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblStok.ForeColor = SystemColors.ButtonHighlight;
-            lblStok.Location = new Point(39, 155);
-            lblStok.Margin = new Padding(4, 0, 4, 0);
-            lblStok.Name = "lblStok";
-            lblStok.Size = new Size(62, 25);
-            lblStok.TabIndex = 40;
-            lblStok.Text = "Stok";
-            lblStok.Click += lblStok_Click_1;
-            // 
             // lblHarga
             // 
             lblHarga.AutoSize = true;
             lblHarga.Font = new Font("Verdana", 10F, FontStyle.Bold);
             lblHarga.ForeColor = SystemColors.ButtonHighlight;
-            lblHarga.Location = new Point(39, 88);
+            lblHarga.Location = new Point(39, 102);
             lblHarga.Margin = new Padding(4, 0, 4, 0);
             lblHarga.Name = "lblHarga";
             lblHarga.Size = new Size(79, 25);
@@ -365,7 +293,7 @@
             lblNamaMaterial.AutoSize = true;
             lblNamaMaterial.Font = new Font("Verdana", 10F, FontStyle.Bold);
             lblNamaMaterial.ForeColor = SystemColors.ButtonHighlight;
-            lblNamaMaterial.Location = new Point(39, 24);
+            lblNamaMaterial.Location = new Point(39, 36);
             lblNamaMaterial.Margin = new Padding(4, 0, 4, 0);
             lblNamaMaterial.Name = "lblNamaMaterial";
             lblNamaMaterial.Size = new Size(174, 25);
@@ -435,17 +363,14 @@
         private DataGridView dataGridView1;
         private TextBox txtJumlah;
         private Label lblJumlah;
-        private CheckBox chkPemesanan;
         private TextBox txtSatuan;
         private TextBox txtStock;
         private TextBox txtHarga;
         private TextBox txtNamaMaterial;
-        private Label lblPemesanan;
         private Label lblSatuan;
         private Label lblStok;
         private Label lblHarga;
         private Label lblNamaMaterial;
-        private TextBox textBox1;
         private Button btnyakinpesan;
         private DataGridView dgvMaterialSelection;
     }

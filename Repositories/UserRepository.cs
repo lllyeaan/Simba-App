@@ -11,7 +11,7 @@ namespace MaterialOrderingApp.Repositories
         public User GetUserByUsername(string username)
         {
             User user = null;
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
@@ -24,7 +24,7 @@ namespace MaterialOrderingApp.Repositories
                     LEFT JOIN public.kecamatan kc ON c.id_kecamatan = kc.id_kecamatan
                     WHERE u.username = @username";
 
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("username", username);
 
@@ -39,7 +39,6 @@ namespace MaterialOrderingApp.Repositories
                                 Password = reader.GetString(reader.GetOrdinal("password")),
                                 Role = reader.GetString(reader.GetOrdinal("role")),
                                 CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"))
-                                // Jika ingin tambahkan properti lain seperti FullName, Phone, dsb, bisa di sini
                             };
                         }
                     }
@@ -55,21 +54,20 @@ namespace MaterialOrderingApp.Repositories
 
         public User CreateUser(string username, string password, string role, Customer customer = null)
         {
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
-                using (var transaction = conn.BeginTransaction())
+                using (NpgsqlTransaction transaction = conn.BeginTransaction())
                 {
                     try
                     {
-                        // Insert into users table
                         string userQuery = @"
                             INSERT INTO public.users (username, password, role, created_at)
                             VALUES (@username, @password, @role, @created_at)
                             RETURNING id_user";
 
                         int userId;
-                        using (var cmd = new NpgsqlCommand(userQuery, conn))
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(userQuery, conn))
                         {
                             cmd.Parameters.AddWithValue("username", username);
                             cmd.Parameters.AddWithValue("password", password);
@@ -77,8 +75,6 @@ namespace MaterialOrderingApp.Repositories
                             cmd.Parameters.AddWithValue("created_at", DateTime.Now);
                             userId = (int)cmd.ExecuteScalar();
                         }
-
-                        // Insert into customer table if customer data is provided
                         if (customer != null)
                         {
                             string customerQuery = @"
@@ -87,7 +83,7 @@ namespace MaterialOrderingApp.Repositories
                                 VALUES 
                                     (@id_user, @nama_customer, @no_hp, @alamat_jalan, @id_desa, @id_kecamatan, @id_kabupaten, @id_provinsi, @alamat_deskripsi)";
 
-                            using (var cmd = new NpgsqlCommand(customerQuery, conn))
+                            using (NpgsqlCommand cmd = new NpgsqlCommand(customerQuery, conn))
                             {
                                 cmd.Parameters.AddWithValue("id_user", userId);
                                 cmd.Parameters.AddWithValue("nama_customer", (object)customer.FullName ?? DBNull.Value);

@@ -104,7 +104,7 @@ namespace MaterialOrderingApp.Forms.Admin
         {
             if (e.RowIndex >= 0)
             {
-                var row = dgvPesanan.Rows[e.RowIndex];
+                DataGridViewRow row = dgvPesanan.Rows[e.RowIndex];
                 string status = row.Cells["DeliveryStatus"].Value?.ToString();
 
                 if (status == "Pending")

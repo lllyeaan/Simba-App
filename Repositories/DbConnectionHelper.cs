@@ -12,7 +12,7 @@ namespace MaterialOrderingApp.Repositories
         {
             try
             {
-                var connectionStringSettings = ConfigurationManager.ConnectionStrings["DbConnection"];
+                ConnectionStringSettings connectionStringSettings= ConfigurationManager.ConnectionStrings["DbConnection"];
                 if (connectionStringSettings == null)
                 {
                     Console.WriteLine("Connection string 'DbConnection' not found in App.config.");
@@ -46,7 +46,7 @@ namespace MaterialOrderingApp.Repositories
         {
             try
             {
-                using (var conn = GetConnection())
+                using (NpgsqlConnection conn = GetConnection())
                 {
                     conn.Open();
                     Console.WriteLine("Database connection successful!");

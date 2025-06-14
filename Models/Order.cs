@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MaterialOrderingApp.Models
 {
-    public class Transaction
+    public class Order
     {
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }
-        public int IdMaterial { get; set; }
-        public int quantity { get; set; }
-        public decimal subtotal { get; set; }
-    }
+        public DateTime OrderDate { get; set; }
+        public string DeliveryStatus { get; set; }
+        public string CustomerName { get; set; } 
+    }
 }

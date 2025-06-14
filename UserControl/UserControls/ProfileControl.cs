@@ -49,14 +49,14 @@ namespace MaterialOrderingApp.Forms.UserControls
 
             try
             {
-                using (var koneksiDB = new NpgsqlConnection(koneksi))
+                using (NpgsqlConnection koneksiDB = new NpgsqlConnection(koneksi))
                 {
                     koneksiDB.Open();
 
                     string query = "SELECT id_kecamatan, nama_kecamatan FROM kecamatan ORDER BY nama_kecamatan ASC";
 
-                    using (var cmd = new NpgsqlCommand(query, koneksiDB))
-                    using (var reader = cmd.ExecuteReader())
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, koneksiDB))
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         comboBoxKecamatan.Items.Clear();
 
@@ -103,7 +103,7 @@ namespace MaterialOrderingApp.Forms.UserControls
             string provinsi = comboBoxProvinsi.Text;
             string kabupaten = comboBoxKabupaten.Text;
             string jalan = textBoxJalan.Text.Trim();
-            var selectedKecamatan = comboBoxKecamatan.SelectedItem as ComboBoxItem;
+            ComboBoxItem selectedKecamatan = comboBoxKecamatan.SelectedItem as ComboBoxItem;
 
             if (_currentUser == null)
             {
@@ -125,7 +125,6 @@ namespace MaterialOrderingApp.Forms.UserControls
                 return;
             }
 
-            // Simpan ke properti user
             _currentUser.FullName = fullName;
             _currentUser.Phone = phone;
             _currentUser.Provinsi = provinsi;
@@ -133,10 +132,9 @@ namespace MaterialOrderingApp.Forms.UserControls
             _currentUser.Kecamatan = selectedKecamatan.Text;
             _currentUser.Jalan = jalan;
 
-            var userService = new UserService();
-            userService.UpdateUser(_currentUser); // update tabel 'users'
+            UserService userService = new UserService();
+            userService.UpdateUser(_currentUser); 
 
-            // insert ke tabel 'customer'
             userService.InsertCustomerFromProfile(_currentUser, selectedKecamatan.Value, jalan);
 
             MessageBox.Show("Profil berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);

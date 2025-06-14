@@ -9,9 +9,9 @@ namespace MaterialOrderingApp.Repositories
     {
         public List<Truck> GetAllTrucksWithDriver()
         {
-            var list = new List<Truck>();
+            List<Truck> list = new List<Truck>();
 
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
@@ -19,8 +19,8 @@ namespace MaterialOrderingApp.Repositories
                     FROM truck t
                     JOIN driver d ON t.id_driver = d.id_driver";
 
-                using (var cmd = new NpgsqlCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -40,9 +40,9 @@ namespace MaterialOrderingApp.Repositories
 
         public List<Truck> GetTrukTersedia()
         {
-            var list = new List<Truck>();
+            List<Truck> list = new List<Truck>();
 
-            using (var conn = DbConnectionHelper.GetConnection())
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
@@ -53,8 +53,8 @@ namespace MaterialOrderingApp.Repositories
                         SELECT id_truck FROM orders WHERE delivery_status != 'Selesai'
                     )";
 
-                using (var cmd = new NpgsqlCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {

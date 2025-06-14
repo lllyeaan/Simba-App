@@ -58,6 +58,7 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Margin = new Padding(4, 5, 4, 5);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -86,8 +87,9 @@
             splitContainer1.Panel2.Controls.Add(label4);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(dgvMaterial);
-            splitContainer1.Size = new Size(914, 480);
-            splitContainer1.SplitterDistance = 304;
+            splitContainer1.Size = new Size(1306, 800);
+            splitContainer1.SplitterDistance = 434;
+            splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
             // btnKembali
@@ -99,9 +101,10 @@
             btnKembali.Cursor = Cursors.Hand;
             btnKembali.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnKembali.ForeColor = Color.Black;
-            btnKembali.Location = new Point(45, 279);
+            btnKembali.Location = new Point(64, 465);
+            btnKembali.Margin = new Padding(4, 5, 4, 5);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(188, 51);
+            btnKembali.Size = new Size(269, 85);
             btnKembali.TabIndex = 12;
             btnKembali.Text = "Kembali";
             btnKembali.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -115,9 +118,10 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Javanese Text", 39F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(29, 168);
+            label2.Location = new Point(41, 280);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(244, 118);
+            label2.Size = new Size(366, 178);
             label2.TabIndex = 10;
             label2.Text = "Material";
             // 
@@ -127,9 +131,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Javanese Text", 39F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 88);
+            label1.Location = new Point(4, 147);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(316, 118);
+            label1.Size = new Size(474, 178);
             label1.TabIndex = 9;
             label1.Text = "Manajemen";
             // 
@@ -138,9 +143,10 @@
             chkTersedia.AutoSize = true;
             chkTersedia.CheckAlign = ContentAlignment.MiddleCenter;
             chkTersedia.Font = new Font("Segoe UI", 20F);
-            chkTersedia.Location = new Point(178, 396);
+            chkTersedia.Location = new Point(254, 660);
+            chkTersedia.Margin = new Padding(4, 5, 4, 5);
             chkTersedia.Name = "chkTersedia";
-            chkTersedia.Size = new Size(15, 14);
+            chkTersedia.Size = new Size(22, 21);
             chkTersedia.TabIndex = 21;
             chkTersedia.UseVisualStyleBackColor = true;
             chkTersedia.CheckedChanged += chkTersedia_CheckedChanged;
@@ -149,10 +155,11 @@
             // 
             txtSatuan.Anchor = AnchorStyles.None;
             txtSatuan.Font = new Font("Verdana", 11F);
-            txtSatuan.Location = new Point(178, 350);
+            txtSatuan.Location = new Point(254, 583);
+            txtSatuan.Margin = new Padding(4, 5, 4, 5);
             txtSatuan.Multiline = true;
             txtSatuan.Name = "txtSatuan";
-            txtSatuan.Size = new Size(378, 32);
+            txtSatuan.Size = new Size(538, 51);
             txtSatuan.TabIndex = 20;
             txtSatuan.TextChanged += txtSatuan_TextChanged;
             // 
@@ -160,10 +167,11 @@
             // 
             txtStock.Anchor = AnchorStyles.None;
             txtStock.Font = new Font("Verdana", 11F);
-            txtStock.Location = new Point(178, 312);
+            txtStock.Location = new Point(254, 520);
+            txtStock.Margin = new Padding(4, 5, 4, 5);
             txtStock.Multiline = true;
             txtStock.Name = "txtStock";
-            txtStock.Size = new Size(378, 32);
+            txtStock.Size = new Size(538, 51);
             txtStock.TabIndex = 19;
             txtStock.TextChanged += txtStock_TextChanged;
             // 
@@ -171,10 +179,11 @@
             // 
             txtHarga.Anchor = AnchorStyles.None;
             txtHarga.Font = new Font("Verdana", 11F);
-            txtHarga.Location = new Point(178, 273);
+            txtHarga.Location = new Point(254, 455);
+            txtHarga.Margin = new Padding(4, 5, 4, 5);
             txtHarga.Multiline = true;
             txtHarga.Name = "txtHarga";
-            txtHarga.Size = new Size(378, 32);
+            txtHarga.Size = new Size(538, 51);
             txtHarga.TabIndex = 18;
             txtHarga.TextChanged += txtHarga_TextChanged;
             // 
@@ -182,10 +191,11 @@
             // 
             txtNamaMaterial.Anchor = AnchorStyles.None;
             txtNamaMaterial.Font = new Font("Verdana", 11F);
-            txtNamaMaterial.Location = new Point(178, 235);
+            txtNamaMaterial.Location = new Point(254, 392);
+            txtNamaMaterial.Margin = new Padding(4, 5, 4, 5);
             txtNamaMaterial.Multiline = true;
             txtNamaMaterial.Name = "txtNamaMaterial";
-            txtNamaMaterial.Size = new Size(378, 32);
+            txtNamaMaterial.Size = new Size(538, 51);
             txtNamaMaterial.TabIndex = 17;
             txtNamaMaterial.TextChanged += txtNamaMaterial_TextChanged;
             // 
@@ -198,9 +208,10 @@
             btnClear.Cursor = Cursors.Hand;
             btnClear.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Black;
-            btnClear.Location = new Point(441, 423);
+            btnClear.Location = new Point(630, 705);
+            btnClear.Margin = new Padding(4, 5, 4, 5);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(132, 38);
+            btnClear.Size = new Size(189, 63);
             btnClear.TabIndex = 16;
             btnClear.Text = "Clear";
             btnClear.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -217,9 +228,10 @@
             btnHapus.Cursor = Cursors.Hand;
             btnHapus.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHapus.ForeColor = Color.Black;
-            btnHapus.Location = new Point(303, 423);
+            btnHapus.Location = new Point(433, 705);
+            btnHapus.Margin = new Padding(4, 5, 4, 5);
             btnHapus.Name = "btnHapus";
-            btnHapus.Size = new Size(132, 38);
+            btnHapus.Size = new Size(189, 63);
             btnHapus.TabIndex = 15;
             btnHapus.Text = "Hapus";
             btnHapus.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -236,9 +248,10 @@
             btnEdit.Cursor = Cursors.Hand;
             btnEdit.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEdit.ForeColor = Color.Black;
-            btnEdit.Location = new Point(165, 423);
+            btnEdit.Location = new Point(236, 705);
+            btnEdit.Margin = new Padding(4, 5, 4, 5);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(132, 38);
+            btnEdit.Size = new Size(189, 63);
             btnEdit.TabIndex = 14;
             btnEdit.Text = "Edit";
             btnEdit.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -255,9 +268,10 @@
             btnTambah.Cursor = Cursors.Hand;
             btnTambah.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambah.ForeColor = Color.Black;
-            btnTambah.Location = new Point(27, 423);
+            btnTambah.Location = new Point(39, 705);
+            btnTambah.Margin = new Padding(4, 5, 4, 5);
             btnTambah.Name = "btnTambah";
-            btnTambah.Size = new Size(132, 38);
+            btnTambah.Size = new Size(189, 63);
             btnTambah.TabIndex = 13;
             btnTambah.Text = "Tambah";
             btnTambah.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -270,9 +284,10 @@
             label7.AutoSize = true;
             label7.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(32, 395);
+            label7.Location = new Point(46, 658);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(117, 18);
+            label7.Size = new Size(177, 26);
             label7.TabIndex = 5;
             label7.Text = "Katersediaan";
             // 
@@ -281,9 +296,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(32, 353);
+            label6.Location = new Point(46, 588);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(66, 18);
+            label6.Size = new Size(100, 26);
             label6.TabIndex = 4;
             label6.Text = "Satuan";
             // 
@@ -292,9 +308,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(32, 315);
+            label5.Location = new Point(46, 525);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(46, 18);
+            label5.Size = new Size(68, 26);
             label5.TabIndex = 3;
             label5.Text = "Stok";
             // 
@@ -303,9 +320,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(32, 279);
+            label4.Location = new Point(46, 465);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(57, 18);
+            label4.Size = new Size(86, 26);
             label4.TabIndex = 2;
             label4.Text = "Harga";
             // 
@@ -314,28 +332,33 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(32, 244);
+            label3.Location = new Point(46, 407);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(127, 18);
+            label3.Size = new Size(195, 26);
             label3.TabIndex = 1;
             label3.Text = "Nama Material";
             // 
             // dgvMaterial
             // 
             dgvMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaterial.Location = new Point(3, 0);
+            dgvMaterial.Location = new Point(4, 0);
+            dgvMaterial.Margin = new Padding(4, 5, 4, 5);
             dgvMaterial.Name = "dgvMaterial";
-            dgvMaterial.Size = new Size(603, 223);
+            dgvMaterial.RowHeadersWidth = 62;
+            dgvMaterial.Size = new Size(861, 372);
             dgvMaterial.TabIndex = 0;
+            dgvMaterial.CellContentClick += dgvMaterial_CellContentClick;
             // 
             // MaterialManagementControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(33, 33, 33);
             Controls.Add(splitContainer1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "MaterialManagementControl";
-            Size = new Size(914, 480);
+            Size = new Size(1306, 800);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
