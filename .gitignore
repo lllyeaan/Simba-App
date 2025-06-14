@@ -1,2 +1,21 @@
-.vs
-.bin
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+
+# Paket NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# User-specific files
+*.userosscache
+*.sln.docstates
+
+# Mac/Linux System Files
+.DS_Store
+Thumbs.db
