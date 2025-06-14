@@ -2,12 +2,14 @@
 using System.Windows.Forms;
 using MaterialOrderingApp.Forms.UserControls;
 using MaterialOrderingApp.Utils;
+using MaterialOrderingApp.Models;
 
 namespace MaterialOrderingApp.Forms
 {
     public partial class MainForm : Form
     {
-        public int LoggedInUserId { get; set; }
+        public User CurrentUser { get; set; }
+       
 
         public MainForm()
         {

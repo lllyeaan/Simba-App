@@ -40,8 +40,7 @@
             splitContainer2 = new SplitContainer();
             dgvMaterialSelection = new DataGridView();
             btnyakinpesan = new Button();
-            txtJumlah = new TextBox();
-            lblJumlah = new Label();
+           
             txtSatuan = new TextBox();
             txtHarga = new TextBox();
             txtNamaMaterial = new TextBox();
@@ -168,8 +167,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(btnyakinpesan);
-            splitContainer2.Panel2.Controls.Add(txtJumlah);
-            splitContainer2.Panel2.Controls.Add(lblJumlah);
+     
             splitContainer2.Panel2.Controls.Add(txtSatuan);
             splitContainer2.Panel2.Controls.Add(txtHarga);
             splitContainer2.Panel2.Controls.Add(txtNamaMaterial);
@@ -213,23 +211,7 @@
             // 
             // txtJumlah
             // 
-            txtJumlah.Location = new Point(286, 252);
-            txtJumlah.Name = "txtJumlah";
-            txtJumlah.Size = new Size(538, 31);
-            txtJumlah.TabIndex = 53;
-            txtJumlah.TextChanged += txtJumlah_TextChanged;
-            // 
-            // lblJumlah
-            // 
-            lblJumlah.AutoSize = true;
-            lblJumlah.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblJumlah.ForeColor = SystemColors.ButtonHighlight;
-            lblJumlah.Location = new Point(39, 252);
-            lblJumlah.Margin = new Padding(4, 0, 4, 0);
-            lblJumlah.Name = "lblJumlah";
-            lblJumlah.Size = new Size(227, 25);
-            lblJumlah.TabIndex = 48;
-            lblJumlah.Text = "Jumlah Pemesanan";
+          
             // 
             // txtSatuan
             // 
@@ -361,8 +343,7 @@
         private Label label3;
         private SplitContainer splitContainer2;
         private DataGridView dataGridView1;
-        private TextBox txtJumlah;
-        private Label lblJumlah;
+        
         private TextBox txtSatuan;
         private TextBox txtStock;
         private TextBox txtHarga;
