@@ -13,5 +13,8 @@ namespace MaterialOrderingApp.Models
         public int IdMaterial { get; set; }
         public int quantity { get; set; }
         public decimal subtotal { get; set; }
+        public string paymentmethod { get; set; }
+        public decimal unitprice { get; set; }
+
     }
 }

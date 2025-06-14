@@ -20,23 +20,43 @@ namespace MaterialOrderingApp.Forms.Customer
             InitializeComponent();
             this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
             _orderService = new OrderService(new DeliveryRepository());
-            int idCustomer = UserManager.ActiveUser.IdCustomer;
             LoadHistoryControl();
         }
+
+        //private void LoadHistoryControl()
+        //{
+        //    try
+        //    {
+        //        dgvhistory.DataSource = _orderService.AmbilPesananByCustomer(UserManager.ActiveUser.IdCustomer);
+        //        dgvhistory.ClearSelection();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Gagal memuat data riwayat: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void LoadHistoryControl()
         {
             try
             {
                 int idCustomer = UserManager.ActiveUser.IdCustomer;
-                dgvhistory.DataSource = _orderService.AmbilPesananByCustomer(idCustomer);
+                var data = _orderService.AmbilPesananByCustomer(idCustomer);
+
+                MessageBox.Show("Jumlah pesanan ditemukan: " + data.Count);
+
+                dgvhistory.DataSource = null;
+                dgvhistory.DataSource = data;
                 dgvhistory.ClearSelection();
+                dgvhistory.Columns["CustomerName"].Visible = false;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Gagal memuat data riwayat: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void lblhistory_Click(object sender, EventArgs e) { }
 
@@ -45,7 +65,9 @@ namespace MaterialOrderingApp.Forms.Customer
             mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
         }
 
-        private void dgvhistory_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void dgvhistory_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        { 
+        }
 
         private void lblhistory2_Click(object sender, EventArgs e) { }
     }

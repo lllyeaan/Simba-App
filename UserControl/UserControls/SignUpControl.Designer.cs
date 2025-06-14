@@ -2,340 +2,353 @@
 {
     partial class SignUpControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpControl));
             splitContainer1 = new SplitContainer();
+            tablePanelKiri = new TableLayoutPanel();
+            labelCreate = new Label();
+            labelAccount = new Label();
+            labelAlready = new Label();
             btnSignIn = new Button();
-            label5 = new Label();
-            label1 = new Label();
-            label4 = new Label();
-            flowLayoutPanelSignUp = new FlowLayoutPanel();
-            panelflowlayoutSignUp = new Panel();
-            pictureBoxValidationConfirmPassword = new PictureBox();
-            pictureBoxValidationUsername = new PictureBox();
-            btnSignUp = new Button();
-            textBoxPassword = new TextBox();
-            label3 = new Label();
-            label7 = new Label();
-            label2 = new Label();
-            textBoxConfirmPassword = new TextBox();
+            tableLayoutPanelSignUp = new TableLayoutPanel();
+            btnClosePictureBox = new PictureBox();
+            pictureBoxLogo = new PictureBox();
+            labelTitle = new Label();
+            labelUsername = new Label();
             textBoxUsername = new TextBox();
-            label6 = new Label();
-            toolTip1 = new ToolTip(components);
+            pictureBoxValidationUsername = new PictureBox();
+            labelPassword = new Label();
+            textBoxPassword = new TextBox();
+            labelConfirmPassword = new Label();
+            textBoxConfirmPassword = new TextBox();
+            pictureBoxValidationConfirmPassword = new PictureBox();
+            btnSignUp = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            flowLayoutPanelSignUp.SuspendLayout();
-            panelflowlayoutSignUp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxValidationConfirmPassword).BeginInit();
+            tablePanelKiri.SuspendLayout();
+            tableLayoutPanelSignUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxValidationUsername).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxValidationConfirmPassword).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
             // 
-            splitContainer1.BackColor = Color.FromArgb(33, 33, 33);
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
+            splitContainer1.Panel1.BackColor = Color.Black;
+            splitContainer1.Panel1.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer1.Panel1.Controls.Add(btnSignIn);
-            splitContainer1.Panel1.Controls.Add(label5);
-            splitContainer1.Panel1.Controls.Add(label1);
-            splitContainer1.Panel1.Controls.Add(label4);
+            splitContainer1.Panel1.Controls.Add(tablePanelKiri);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
-            splitContainer1.Panel2.Controls.Add(flowLayoutPanelSignUp);
-            splitContainer1.Panel2.Controls.Add(label6);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
-            splitContainer1.Size = new Size(914, 480);
-            splitContainer1.SplitterDistance = 304;
+            splitContainer1.Panel2.Controls.Add(tableLayoutPanelSignUp);
+            splitContainer1.Size = new Size(1100, 560);
+            splitContainer1.SplitterDistance = 380;
+            splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
+            // 
+            // tablePanelKiri
+            // 
+            tablePanelKiri.BackColor = Color.Transparent;
+            tablePanelKiri.ColumnCount = 1;
+            tablePanelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tablePanelKiri.Controls.Add(labelCreate, 0, 0);
+            tablePanelKiri.Controls.Add(labelAccount, 0, 1);
+            tablePanelKiri.Controls.Add(labelAlready, 0, 2);
+            tablePanelKiri.Controls.Add(btnSignIn, 0, 3);
+            tablePanelKiri.Dock = DockStyle.Fill;
+            tablePanelKiri.Location = new Point(0, 0);
+            tablePanelKiri.Name = "tablePanelKiri";
+            tablePanelKiri.RowCount = 4;
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tablePanelKiri.Size = new Size(380, 560);
+            tablePanelKiri.TabIndex = 0;
+            // 
+            // labelCreate
+            // 
+            labelCreate.Dock = DockStyle.Fill;
+            labelCreate.Font = new Font("Verdana", 38F, FontStyle.Bold, GraphicsUnit.Pixel);
+            labelCreate.ForeColor = Color.White;
+            labelCreate.Location = new Point(3, 0);
+            labelCreate.Name = "labelCreate";
+            labelCreate.Size = new Size(374, 196);
+            labelCreate.TabIndex = 0;
+            labelCreate.Text = "CREATE";
+            labelCreate.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // labelAccount
+            // 
+            labelAccount.Dock = DockStyle.Fill;
+            labelAccount.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Pixel);
+            labelAccount.ForeColor = Color.White;
+            labelAccount.Location = new Point(3, 196);
+            labelAccount.Name = "labelAccount";
+            labelAccount.Size = new Size(374, 84);
+            labelAccount.TabIndex = 1;
+            labelAccount.Text = "ACCOUNT";
+            labelAccount.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // labelAlready
+            // 
+            labelAlready.Dock = DockStyle.Fill;
+            labelAlready.Font = new Font("Verdana", 18F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelAlready.ForeColor = Color.White;
+            labelAlready.Location = new Point(3, 280);
+            labelAlready.Name = "labelAlready";
+            labelAlready.Size = new Size(374, 84);
+            labelAlready.TabIndex = 2;
+            labelAlready.Text = "Already have an account?";
+            labelAlready.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnSignIn
             // 
-            btnSignIn.AllowDrop = true;
             btnSignIn.Anchor = AnchorStyles.None;
             btnSignIn.BackColor = Color.White;
-            btnSignIn.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSignIn.Cursor = Cursors.Hand;
-            btnSignIn.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignIn.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnSignIn.ForeColor = Color.Black;
-            btnSignIn.Location = new Point(90, 282);
+            btnSignIn.Location = new Point(110, 439);
             btnSignIn.Name = "btnSignIn";
-            btnSignIn.Size = new Size(105, 33);
-            btnSignIn.TabIndex = 10;
+            btnSignIn.Size = new Size(160, 45);
+            btnSignIn.TabIndex = 3;
             btnSignIn.Text = "Sign In";
-            btnSignIn.TextImageRelation = TextImageRelation.ImageAboveText;
             btnSignIn.UseVisualStyleBackColor = false;
-            btnSignIn.UseWaitCursor = true;
-            btnSignIn.Click += btnSignIn_Click;
             // 
-            // label5
+            // tableLayoutPanelSignUp
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Javanese Text", 12F);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(48, 243);
-            label5.Name = "label5";
-            label5.Size = new Size(193, 36);
-            label5.TabIndex = 9;
-            label5.Text = "Already have an account?";
-            label5.UseWaitCursor = true;
+            tableLayoutPanelSignUp.BackColor = Color.FromArgb(33, 33, 33);
+            tableLayoutPanelSignUp.ColumnCount = 3;
+            tableLayoutPanelSignUp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanelSignUp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableLayoutPanelSignUp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanelSignUp.Controls.Add(btnClosePictureBox, 2, 0);
+            tableLayoutPanelSignUp.Controls.Add(pictureBoxLogo, 1, 1);
+            tableLayoutPanelSignUp.Controls.Add(labelTitle, 1, 2);
+            tableLayoutPanelSignUp.Controls.Add(labelUsername, 1, 3);
+            tableLayoutPanelSignUp.Controls.Add(textBoxUsername, 1, 4);
+            tableLayoutPanelSignUp.Controls.Add(pictureBoxValidationUsername, 2, 4);
+            tableLayoutPanelSignUp.Controls.Add(labelPassword, 1, 5);
+            tableLayoutPanelSignUp.Controls.Add(textBoxPassword, 1, 6);
+            tableLayoutPanelSignUp.Controls.Add(labelConfirmPassword, 1, 7);
+            tableLayoutPanelSignUp.Controls.Add(textBoxConfirmPassword, 1, 8);
+            tableLayoutPanelSignUp.Controls.Add(pictureBoxValidationConfirmPassword, 2, 8);
+            tableLayoutPanelSignUp.Controls.Add(btnSignUp, 1, 9);
+            tableLayoutPanelSignUp.Dock = DockStyle.Fill;
+            tableLayoutPanelSignUp.Location = new Point(0, 0);
+            tableLayoutPanelSignUp.Name = "tableLayoutPanelSignUp";
+            tableLayoutPanelSignUp.RowCount = 10;
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Percent, 17F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanelSignUp.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
+            tableLayoutPanelSignUp.Size = new Size(714, 560);
+            tableLayoutPanelSignUp.TabIndex = 0;
             // 
-            // label1
+            // btnClosePictureBox
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(31, 188);
-            label1.Name = "label1";
-            label1.Size = new Size(243, 91);
-            label1.TabIndex = 8;
-            label1.Text = "ACCOUNT";
-            label1.UseWaitCursor = true;
+            btnClosePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClosePictureBox.Cursor = Cursors.Hand;
+            btnClosePictureBox.Image = Properties.Resources.icons8_close_window_100__1_;
+            btnClosePictureBox.Location = new Point(708, 5);
+            btnClosePictureBox.Margin = new Padding(0, 5, 10, 0);
+            btnClosePictureBox.Name = "btnClosePictureBox";
+            btnClosePictureBox.Size = new Size(46, 40);
+            btnClosePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClosePictureBox.TabIndex = 0;
+            btnClosePictureBox.TabStop = false;
             // 
-            // label4
+            // pictureBoxLogo
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 137);
-            label4.Name = "label4";
-            label4.Size = new Size(206, 91);
-            label4.TabIndex = 7;
-            label4.Text = "CREATE";
-            label4.UseWaitCursor = true;
+            pictureBoxLogo.Anchor = AnchorStyles.None;
+            pictureBoxLogo.Image = Properties.Resources.simba_logo;
+            pictureBoxLogo.Location = new Point(266, 54);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(180, 100);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 1;
+            pictureBoxLogo.TabStop = false;
             // 
-            // flowLayoutPanelSignUp
+            // labelTitle
             // 
-            flowLayoutPanelSignUp.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanelSignUp.BackColor = Color.Transparent;
-            flowLayoutPanelSignUp.BackgroundImageLayout = ImageLayout.None;
-            flowLayoutPanelSignUp.Controls.Add(panelflowlayoutSignUp);
-            flowLayoutPanelSignUp.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanelSignUp.Location = new Point(171, 116);
-            flowLayoutPanelSignUp.Name = "flowLayoutPanelSignUp";
-            flowLayoutPanelSignUp.Size = new Size(327, 255);
-            flowLayoutPanelSignUp.TabIndex = 6;
-            flowLayoutPanelSignUp.TabStop = true;
-            flowLayoutPanelSignUp.UseWaitCursor = true;
+            labelTitle.Dock = DockStyle.Fill;
+            labelTitle.Font = new Font("Verdana", 22F, FontStyle.Bold);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(145, 163);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(422, 45);
+            labelTitle.TabIndex = 2;
+            labelTitle.Text = "Sign Up";
+            labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panelflowlayoutSignUp
+            // labelUsername
             // 
-            panelflowlayoutSignUp.Controls.Add(pictureBoxValidationConfirmPassword);
-            panelflowlayoutSignUp.Controls.Add(pictureBoxValidationUsername);
-            panelflowlayoutSignUp.Controls.Add(btnSignUp);
-            panelflowlayoutSignUp.Controls.Add(textBoxPassword);
-            panelflowlayoutSignUp.Controls.Add(label3);
-            panelflowlayoutSignUp.Controls.Add(label7);
-            panelflowlayoutSignUp.Controls.Add(label2);
-            panelflowlayoutSignUp.Controls.Add(textBoxConfirmPassword);
-            panelflowlayoutSignUp.Controls.Add(textBoxUsername);
-            panelflowlayoutSignUp.Location = new Point(3, 3);
-            panelflowlayoutSignUp.Name = "panelflowlayoutSignUp";
-            panelflowlayoutSignUp.Size = new Size(319, 248);
-            panelflowlayoutSignUp.TabIndex = 8;
-            panelflowlayoutSignUp.UseWaitCursor = true;
-            // 
-            // pictureBoxValidationConfirmPassword
-            // 
-            pictureBoxValidationConfirmPassword.BackColor = Color.White;
-            pictureBoxValidationConfirmPassword.Location = new Point(276, 152);
-            pictureBoxValidationConfirmPassword.Name = "pictureBoxValidationConfirmPassword";
-            pictureBoxValidationConfirmPassword.Size = new Size(25, 22);
-            pictureBoxValidationConfirmPassword.TabIndex = 8;
-            pictureBoxValidationConfirmPassword.TabStop = false;
-            pictureBoxValidationConfirmPassword.UseWaitCursor = true;
-            pictureBoxValidationConfirmPassword.Click += pictureBoxValidationConfirmPassword_Click;
-            // 
-            // pictureBoxValidationUsername
-            // 
-            pictureBoxValidationUsername.BackColor = Color.White;
-            pictureBoxValidationUsername.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxValidationUsername.Location = new Point(276, 27);
-            pictureBoxValidationUsername.Name = "pictureBoxValidationUsername";
-            pictureBoxValidationUsername.Size = new Size(25, 22);
-            pictureBoxValidationUsername.TabIndex = 7;
-            pictureBoxValidationUsername.TabStop = false;
-            pictureBoxValidationUsername.UseWaitCursor = true;
-            pictureBoxValidationUsername.Click += pictureBoxValidationUsername_Click;
-            // 
-            // btnSignUp
-            // 
-            btnSignUp.AllowDrop = true;
-            btnSignUp.Anchor = AnchorStyles.None;
-            btnSignUp.BackColor = Color.White;
-            btnSignUp.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSignUp.Cursor = Cursors.Hand;
-            btnSignUp.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSignUp.ForeColor = Color.Black;
-            btnSignUp.Location = new Point(101, 202);
-            btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(118, 33);
-            btnSignUp.TabIndex = 4;
-            btnSignUp.Text = "SIGN UP";
-            btnSignUp.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnSignUp.UseVisualStyleBackColor = false;
-            btnSignUp.UseWaitCursor = true;
-            btnSignUp.Click += btnSignUp_Click;
-            // 
-            // textBoxPassword
-            // 
-            textBoxPassword.Font = new Font("Verdana", 12F);
-            textBoxPassword.Location = new Point(2, 81);
-            textBoxPassword.Multiline = true;
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(312, 37);
-            textBoxPassword.TabIndex = 3;
-            textBoxPassword.UseWaitCursor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(5, 65);
-            label3.Name = "label3";
-            label3.Size = new Size(72, 14);
-            label3.TabIndex = 1;
-            label3.Text = "Password";
-            label3.UseWaitCursor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(4, 129);
-            label7.Name = "label7";
-            label7.Size = new Size(122, 14);
-            label7.TabIndex = 5;
-            label7.Text = "Confim Password";
-            label7.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(5, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 14);
-            label2.TabIndex = 0;
-            label2.Text = "Username";
-            label2.UseWaitCursor = true;
-            // 
-            // textBoxConfirmPassword
-            // 
-            textBoxConfirmPassword.Font = new Font("Verdana", 12F);
-            textBoxConfirmPassword.Location = new Point(2, 146);
-            textBoxConfirmPassword.Multiline = true;
-            textBoxConfirmPassword.Name = "textBoxConfirmPassword";
-            textBoxConfirmPassword.Size = new Size(312, 36);
-            textBoxConfirmPassword.TabIndex = 6;
-            textBoxConfirmPassword.UseWaitCursor = true;
-            textBoxConfirmPassword.TextChanged += textBoxConfirmPassword_TextChanged;
+            labelUsername.Dock = DockStyle.Fill;
+            labelUsername.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelUsername.ForeColor = Color.White;
+            labelUsername.Location = new Point(145, 208);
+            labelUsername.Name = "labelUsername";
+            labelUsername.Size = new Size(422, 28);
+            labelUsername.TabIndex = 3;
+            labelUsername.Text = "Username";
+            labelUsername.TextAlign = ContentAlignment.BottomLeft;
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Font = new Font("Verdana", 12F);
-            textBoxUsername.Location = new Point(3, 20);
-            textBoxUsername.Multiline = true;
+            textBoxUsername.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxUsername.Font = new Font("Verdana", 13F);
+            textBoxUsername.Location = new Point(162, 239);
+            textBoxUsername.Margin = new Padding(20, 0, 20, 0);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(312, 37);
-            textBoxUsername.TabIndex = 2;
-            textBoxUsername.UseWaitCursor = true;
-            textBoxUsername.TextChanged += textBoxUsername_TextChanged;
+            textBoxUsername.Size = new Size(388, 39);
+            textBoxUsername.TabIndex = 4;
             // 
-            // label6
+            // pictureBoxValidationUsername
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Javanese Text", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(223, 50);
-            label6.Name = "label6";
-            label6.Size = new Size(170, 84);
-            label6.TabIndex = 7;
-            label6.Text = "Sign Up";
-            label6.UseWaitCursor = true;
+            pictureBoxValidationUsername.Anchor = AnchorStyles.Left;
+            pictureBoxValidationUsername.BackColor = Color.Transparent;
+            pictureBoxValidationUsername.Location = new Point(573, 246);
+            pictureBoxValidationUsername.Name = "pictureBoxValidationUsername";
+            pictureBoxValidationUsername.Size = new Size(25, 25);
+            pictureBoxValidationUsername.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxValidationUsername.TabIndex = 5;
+            pictureBoxValidationUsername.TabStop = false;
+            // 
+            // labelPassword
+            // 
+            labelPassword.Dock = DockStyle.Fill;
+            labelPassword.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelPassword.ForeColor = Color.White;
+            labelPassword.Location = new Point(145, 281);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(422, 28);
+            labelPassword.TabIndex = 6;
+            labelPassword.Text = "Password";
+            labelPassword.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxPassword.Font = new Font("Verdana", 13F);
+            textBoxPassword.Location = new Point(162, 312);
+            textBoxPassword.Margin = new Padding(20, 0, 20, 0);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '●';
+            textBoxPassword.Size = new Size(388, 39);
+            textBoxPassword.TabIndex = 7;
+            // 
+            // labelConfirmPassword
+            // 
+            labelConfirmPassword.Dock = DockStyle.Fill;
+            labelConfirmPassword.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelConfirmPassword.ForeColor = Color.White;
+            labelConfirmPassword.Location = new Point(145, 354);
+            labelConfirmPassword.Name = "labelConfirmPassword";
+            labelConfirmPassword.Size = new Size(422, 28);
+            labelConfirmPassword.TabIndex = 8;
+            labelConfirmPassword.Text = "Confirm Password";
+            labelConfirmPassword.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // textBoxConfirmPassword
+            // 
+            textBoxConfirmPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxConfirmPassword.Font = new Font("Verdana", 13F);
+            textBoxConfirmPassword.Location = new Point(162, 385);
+            textBoxConfirmPassword.Margin = new Padding(20, 0, 20, 0);
+            textBoxConfirmPassword.Name = "textBoxConfirmPassword";
+            textBoxConfirmPassword.PasswordChar = '●';
+            textBoxConfirmPassword.Size = new Size(388, 39);
+            textBoxConfirmPassword.TabIndex = 9;
+            // 
+            // pictureBoxValidationConfirmPassword
+            // 
+            pictureBoxValidationConfirmPassword.Anchor = AnchorStyles.Left;
+            pictureBoxValidationConfirmPassword.BackColor = Color.Transparent;
+            pictureBoxValidationConfirmPassword.Location = new Point(573, 392);
+            pictureBoxValidationConfirmPassword.Name = "pictureBoxValidationConfirmPassword";
+            pictureBoxValidationConfirmPassword.Size = new Size(25, 25);
+            pictureBoxValidationConfirmPassword.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxValidationConfirmPassword.TabIndex = 10;
+            pictureBoxValidationConfirmPassword.TabStop = false;
+            // 
+            // btnSignUp
+            // 
+            btnSignUp.Anchor = AnchorStyles.None;
+            btnSignUp.BackColor = Color.White;
+            btnSignUp.Font = new Font("Verdana", 13F, FontStyle.Bold);
+            btnSignUp.ForeColor = Color.Black;
+            btnSignUp.Location = new Point(271, 469);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(170, 48);
+            btnSignUp.TabIndex = 11;
+            btnSignUp.Text = "SIGN UP";
+            btnSignUp.UseVisualStyleBackColor = false;
             // 
             // SignUpControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(splitContainer1);
             Name = "SignUpControl";
-            Size = new Size(914, 480);
+            Size = new Size(1100, 560);
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            flowLayoutPanelSignUp.ResumeLayout(false);
-            panelflowlayoutSignUp.ResumeLayout(false);
-            panelflowlayoutSignUp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxValidationConfirmPassword).EndInit();
+            tablePanelKiri.ResumeLayout(false);
+            tableLayoutPanelSignUp.ResumeLayout(false);
+            tableLayoutPanelSignUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxValidationUsername).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxValidationConfirmPassword).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private SplitContainer splitContainer1;
-        private Label label1;
-        private Label label4;
-        private Label label5;
+        private TableLayoutPanel tablePanelKiri;
+        private Label labelCreate;
+        private Label labelAccount;
+        private Label labelAlready;
         private Button btnSignIn;
-        private FlowLayoutPanel flowLayoutPanelSignUp;
-        private Label label2;
+        private TableLayoutPanel tableLayoutPanelSignUp;
+        private PictureBox btnClosePictureBox;
+        private PictureBox pictureBoxLogo;
+        private Label labelTitle;
+        private Label labelUsername;
         private TextBox textBoxUsername;
-        private Label label3;
-        private TextBox textBoxPassword;
-        private Label label7;
-        private TextBox textBoxConfirmPassword;
-        private Button btnSignUp;
-        private Label label6;
-        private Panel panelflowlayoutSignUp;
-        private PictureBox pictureBoxValidationConfirmPassword;
         private PictureBox pictureBoxValidationUsername;
-        private ToolTip toolTip1;
+        private Label labelPassword;
+        private TextBox textBoxPassword;
+        private Label labelConfirmPassword;
+        private TextBox textBoxConfirmPassword;
+        private PictureBox pictureBoxValidationConfirmPassword;
+        private Button btnSignUp;
     }
 }

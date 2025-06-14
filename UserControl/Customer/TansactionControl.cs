@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.Customer
 {
@@ -29,8 +30,8 @@ namespace MaterialOrderingApp.Forms.Customer
             _transactionService = transactionService ?? throw new ArgumentNullException(nameof(transactionService)); ;
             this.mainForm = form ?? throw new ArgumentNullException(nameof(form)); ;
             _currentUser = currentUser ?? throw new ArgumentException(nameof(currentUser));
+            System.Diagnostics.Debug.WriteLine("ID Customer: " + _currentUser.IdCustomer);
             TampilkanRingkasan();
-            _currentUser = currentUser;
         }
 
         private void TampilkanRingkasan()
@@ -44,7 +45,6 @@ namespace MaterialOrderingApp.Forms.Customer
                 }
                 txtboxMaterial.Text = _materialDipilih.MaterialName;
                 txtboxharga.Text = _materialDipilih.UnitPrice.ToString();
-                txtboxjumlah.Text = _materialDipilih.Jumlah.ToString();
                 txtboxtotal.Text = _materialDipilih.Total.ToString();
             }
             catch (Exception ex)
@@ -74,11 +74,11 @@ namespace MaterialOrderingApp.Forms.Customer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnbuatpesanan_Click(object sender, EventArgs e)
-        {
+        { 
             try
             {
                 MaterialDipilih materialDipilih = new MaterialDipilih
@@ -87,7 +87,7 @@ namespace MaterialOrderingApp.Forms.Customer
                     MaterialName = _materialDipilih.MaterialName,
                     UnitPrice = _materialDipilih.UnitPrice,
                     Satuan = _materialDipilih.Satuan,
-                    Jumlah = _materialDipilih.Jumlah,
+                    
                 };
 
                 prosesPesanan();
@@ -101,6 +101,13 @@ namespace MaterialOrderingApp.Forms.Customer
         }
         private void prosesPesanan()
         {
+            string metodePembayaran = cmbboxmethod.SelectedItem?.ToString();
+            
+            if (string.IsNullOrEmpty(metodePembayaran))
+            {
+                MessageBox.Show("Silakan pilih metode pembayaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             try
             {
                 if (_materialDipilih == null)
@@ -111,8 +118,10 @@ namespace MaterialOrderingApp.Forms.Customer
                 {
                     IdCustomer = _currentUser.IdCustomer,
                     IdMaterial = _materialDipilih.Id,
-                    quantity = _materialDipilih.Jumlah,
+                 
                     subtotal = _materialDipilih.Total,
+                    paymentmethod = metodePembayaran,
+                    unitprice = _materialDipilih.UnitPrice
                 };
                 _transactionService.TambahPesanan(transaction);
             }

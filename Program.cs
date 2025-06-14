@@ -1,5 +1,5 @@
 using MaterialOrderingApp.Forms;
-using MaterialOrderingApp.Repositories; 
+using MaterialOrderingApp.Repositories;
 using System;
 using System.Windows.Forms;
 
@@ -15,7 +15,9 @@ namespace Project_PBO
                 if (DbConnectionHelper.TestConnection())
                 {
                     Console.WriteLine("Database connection successful. Starting application...");
-                    ApplicationConfiguration.Initialize();
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+
                     Application.Run(new MainForm());
                 }
                 else
@@ -24,7 +26,7 @@ namespace Project_PBO
                                     "Koneksi Gagal",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
-                    return; 
+                    return;
                 }
             }
             catch (Exception ex)

@@ -4,6 +4,7 @@ using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
 using MaterialOrderingApp.Utils;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Windows.Forms;
 
@@ -20,6 +21,7 @@ namespace MaterialOrderingApp.Forms.UserControls
             InitializeComponent();
             this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
             _authService = new AuthService(new UserRepository());
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,17 +37,20 @@ namespace MaterialOrderingApp.Forms.UserControls
 
             try
             {
-                System.Diagnostics.Debug.WriteLine($"Attempting login with username: {username}, password: {password}");
-                if (_authService == null)
+                MaterialOrderingApp.Models.User user = _authService.Login(username, password);
+                Utils.UserManager.ActiveUser = user;
+                System.Diagnostics.Debug.WriteLine("ID Customer setelah login: " + user.IdCustomer);
+                //System.Diagnostics.Debug.WriteLine($"Attempting login with username: {username}, password: {password}");
+                if (user == null)
                 {
-                    System.Diagnostics.Debug.WriteLine("Error: _authService is null");
-                    throw new Exception("Authentication service not initialized.");
+                    MessageBox.Show("Username atau password salah.", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                    //System.Diagnostics.Debug.WriteLine("Error: _authService is null");
+                    //throw new Exception("Authentication service not initialized.");
                 }
 
-                User user = _authService.Login(username, password);
-                Utils.UserManager.ActiveUser = user;
 
-                mainForm.LoggedInUserId = user.Id;
+                mainForm.CurrentUser = user;
 
                 if (user.Role.ToLower() == "admin")
                 {
@@ -62,7 +67,7 @@ namespace MaterialOrderingApp.Forms.UserControls
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Login failed: {ex.Message}");
+                //System.Diagnostics.Debug.WriteLine($"Login failed: {ex.Message}");
                 MessageBox.Show(ex.Message, "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

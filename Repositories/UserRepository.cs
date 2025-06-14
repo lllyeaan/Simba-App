@@ -3,6 +3,7 @@ using Npgsql;
 using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Utils;
 using System.Data;
+using System.Diagnostics;
 
 namespace MaterialOrderingApp.Repositories
 {
@@ -10,13 +11,14 @@ namespace MaterialOrderingApp.Repositories
     {
         public User GetUserByUsername(string username)
         {
+
             User user = null;
             using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
                     SELECT u.id_user, u.username, u.password, u.role, u.created_at,
-                           c.nama_customer, c.no_hp, p.nama_provinsi, k.nama_kabupaten, kc.nama_kecamatan, c.alamat_jalan
+                           c.id_customer, c.no_hp, p.nama_provinsi, k.nama_kabupaten, kc.nama_kecamatan, c.alamat_jalan
                     FROM public.users u
                     LEFT JOIN public.customer c ON u.id_user = c.id_user
                     LEFT JOIN public.provinsi p ON c.id_provinsi = p.id_provinsi
@@ -38,8 +40,13 @@ namespace MaterialOrderingApp.Repositories
                                 Username = reader.GetString(reader.GetOrdinal("username")),
                                 Password = reader.GetString(reader.GetOrdinal("password")),
                                 Role = reader.GetString(reader.GetOrdinal("role")),
-                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"))
+                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")),
+                                 IdCustomer = reader.IsDBNull(reader.GetOrdinal("id_customer"))
+                                     ? 0
+                                     : reader.GetInt32(reader.GetOrdinal("id_customer"))
                             };
+
+                            Debug.WriteLine("ID Customer dari database: " + user.IdCustomer);
                         }
                     }
                 }

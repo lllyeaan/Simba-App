@@ -2,380 +2,379 @@
 {
     partial class ProfileControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileControl));
             splitContainer1 = new SplitContainer();
-            btnNext = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            label4 = new Label();
+            tablePanelKiri = new TableLayoutPanel();
+            labelWelcome = new Label();
+            labelSub = new Label();
+            btnBack = new Button();
+            tableLayoutPanelProfile = new TableLayoutPanel();
+            labelTitle = new Label();
+            labelFullName = new Label();
             textBoxFullName = new TextBox();
-            label5 = new Label();
+            labelPhone = new Label();
             textBoxPhone = new TextBox();
-            groupBoxAddress = new GroupBox();
-            comboBoxKecamatan = new ComboBox();
-            label9 = new Label();
-            label8 = new Label();
-            comboBoxKabupaten = new ComboBox();
-            label7 = new Label();
-            textBoxJalan = new TextBox();
+            groupBoxAlamat = new GroupBox();
+            panelAlamatScrollable = new Panel();
+            labelProvinsi = new Label();
             comboBoxProvinsi = new ComboBox();
-            label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            labelKabupaten = new Label();
+            comboBoxKabupaten = new ComboBox();
+            labelKecamatan = new Label();
+            comboBoxKecamatan = new ComboBox();
+            labelJalan = new Label();
+            textBoxJalan = new TextBox();
+            btnSimpan = new Button();
+
+            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            groupBoxAddress.SuspendLayout();
+            tablePanelKiri.SuspendLayout();
+            tableLayoutPanelProfile.SuspendLayout();
+            groupBoxAlamat.SuspendLayout();
+            panelAlamatScrollable.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Margin = new Padding(4, 5, 4, 5);
+            splitContainer1.Location = new System.Drawing.Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
+            splitContainer1.Panel1.BackColor = System.Drawing.Color.Black;
+            splitContainer1.Panel1.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer1.Panel1.Controls.Add(btnNext);
-            splitContainer1.Panel1.Controls.Add(label3);
-            splitContainer1.Panel1.Controls.Add(label2);
-            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(tablePanelKiri);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
-            splitContainer1.Panel2.Controls.Add(flowLayoutPanel1);
-            splitContainer1.Size = new Size(1306, 800);
-            splitContainer1.SplitterDistance = 434;
+            splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            splitContainer1.Panel2.Controls.Add(tableLayoutPanelProfile);
+            splitContainer1.Size = new System.Drawing.Size(1151, 561);
+            splitContainer1.SplitterDistance = 380;
             splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
-            // btnNext
+            // tablePanelKiri
             // 
-            btnNext.AllowDrop = true;
-            btnNext.Anchor = AnchorStyles.None;
-            btnNext.BackColor = Color.White;
-            btnNext.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNext.ForeColor = Color.Black;
-            btnNext.Location = new Point(123, 473);
-            btnNext.Margin = new Padding(4, 5, 4, 5);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(150, 55);
-            btnNext.TabIndex = 12;
-            btnNext.Text = "Next";
-            btnNext.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnNext.UseVisualStyleBackColor = false;
-            btnNext.UseWaitCursor = true;
-            btnNext.Click += btnNext_Click;
+            tablePanelKiri.BackColor = System.Drawing.Color.Transparent;
+            tablePanelKiri.ColumnCount = 1;
+            tablePanelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tablePanelKiri.Controls.Add(labelWelcome, 0, 0);
+            tablePanelKiri.Controls.Add(labelSub, 0, 2);
+            tablePanelKiri.Controls.Add(btnBack, 0, 3);
+            tablePanelKiri.Dock = DockStyle.Fill;
+            tablePanelKiri.Location = new System.Drawing.Point(0, 0);
+            tablePanelKiri.Name = "tablePanelKiri";
+            tablePanelKiri.RowCount = 4;
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tablePanelKiri.Size = new System.Drawing.Size(380, 561);
+            tablePanelKiri.TabIndex = 0;
             // 
-            // label3
+            // labelWelcome
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(50, 358);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(319, 136);
-            label3.TabIndex = 11;
-            label3.Text = "PROFILE";
-            label3.UseWaitCursor = true;
+            labelWelcome.Dock = DockStyle.Fill;
+            labelWelcome.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            labelWelcome.ForeColor = System.Drawing.Color.White;
+            labelWelcome.Location = new System.Drawing.Point(3, 0);
+            labelWelcome.Name = "labelWelcome";
+            labelWelcome.Size = new System.Drawing.Size(374, 196);
+            labelWelcome.TabIndex = 0;
+            labelWelcome.Text = "WELCOME !";
+            labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // labelSub
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Javanese Text", 20F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(123, 300);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(154, 91);
-            label2.TabIndex = 10;
-            label2.Text = "YOUR";
-            label2.UseWaitCursor = true;
+            labelSub.Dock = DockStyle.Fill;
+            labelSub.Font = new System.Drawing.Font("Verdana", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            labelSub.ForeColor = System.Drawing.Color.White;
+            labelSub.Location = new System.Drawing.Point(3, 252);
+            labelSub.Name = "labelSub";
+            labelSub.Size = new System.Drawing.Size(374, 84);
+            labelSub.TabIndex = 1;
+            labelSub.Text = "Lengkapi profil Anda";
+            labelSub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // btnBack
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Javanese Text", 30F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(21, 207);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(395, 136);
-            label1.TabIndex = 9;
-            label1.Text = "COMPLETE";
-            label1.UseWaitCursor = true;
-            label1.Click += label1_Click;
+            btnBack.Anchor = AnchorStyles.None;
+            btnBack.BackColor = System.Drawing.Color.White;
+            btnBack.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnBack.ForeColor = System.Drawing.Color.Black;
+            btnBack.Location = new System.Drawing.Point(110, 486);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new System.Drawing.Size(160, 50);
+            btnBack.TabIndex = 2;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
+            // tableLayoutPanelProfile
             // 
-            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.BackgroundImageLayout = ImageLayout.None;
-            flowLayoutPanel1.Controls.Add(label4);
-            flowLayoutPanel1.Controls.Add(textBoxFullName);
-            flowLayoutPanel1.Controls.Add(label5);
-            flowLayoutPanel1.Controls.Add(textBoxPhone);
-            flowLayoutPanel1.Controls.Add(groupBoxAddress);
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(247, 95);
-            flowLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(406, 630);
-            flowLayoutPanel1.TabIndex = 6;
-            flowLayoutPanel1.TabStop = true;
-            flowLayoutPanel1.UseWaitCursor = true;
+            tableLayoutPanelProfile.BackColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            tableLayoutPanelProfile.ColumnCount = 3;
+            tableLayoutPanelProfile.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanelProfile.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanelProfile.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanelProfile.Controls.Add(labelTitle, 1, 0);
+            tableLayoutPanelProfile.Controls.Add(labelFullName, 1, 1);
+            tableLayoutPanelProfile.Controls.Add(textBoxFullName, 1, 2);
+            tableLayoutPanelProfile.Controls.Add(labelPhone, 1, 3);
+            tableLayoutPanelProfile.Controls.Add(textBoxPhone, 1, 4);
+            tableLayoutPanelProfile.Controls.Add(groupBoxAlamat, 1, 5);
+            tableLayoutPanelProfile.Controls.Add(btnSimpan, 1, 6);
+            tableLayoutPanelProfile.Dock = DockStyle.Fill;
+            tableLayoutPanelProfile.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanelProfile.Name = "tableLayoutPanelProfile";
+            tableLayoutPanelProfile.RowCount = 7;
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));     // Title
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));     // Label Full Name
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));     // Input Full Name
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));     // Label Phone
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));     // Input Phone
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));      // Group Alamat (auto grow)
+            tableLayoutPanelProfile.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));     // Button Simpan
+            tableLayoutPanelProfile.Size = new System.Drawing.Size(765, 561);
+            tableLayoutPanelProfile.TabIndex = 0;
             // 
-            // label4
+            // labelTitle
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(4, 0);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(117, 22);
-            label4.TabIndex = 0;
-            label4.Text = "Full  Name";
-            label4.UseWaitCursor = true;
+            labelTitle.Dock = DockStyle.Fill;
+            labelTitle.Font = new System.Drawing.Font("Verdana", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            labelTitle.ForeColor = System.Drawing.Color.White;
+            labelTitle.Location = new System.Drawing.Point(118, 0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new System.Drawing.Size(529, 65);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Lengkapi Profil Anda";
+            labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFullName
+            // 
+            labelFullName.Dock = DockStyle.Bottom;
+            labelFullName.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelFullName.ForeColor = System.Drawing.Color.White;
+            labelFullName.Location = new System.Drawing.Point(118, 65);
+            labelFullName.Name = "labelFullName";
+            labelFullName.Size = new System.Drawing.Size(529, 35);
+            labelFullName.TabIndex = 1;
+            labelFullName.Text = "Full Name";
+            labelFullName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // textBoxFullName
             // 
-            textBoxFullName.Font = new Font("Verdana", 12F);
-            textBoxFullName.Location = new Point(4, 27);
-            textBoxFullName.Margin = new Padding(4, 5, 4, 5);
-            textBoxFullName.Multiline = true;
+            textBoxFullName.Anchor = ((AnchorStyles.Left | AnchorStyles.Right));
+            textBoxFullName.Font = new System.Drawing.Font("Verdana", 12F);
+            textBoxFullName.Location = new System.Drawing.Point(128, 105);
+            textBoxFullName.Margin = new Padding(10, 0, 10, 0);
             textBoxFullName.Name = "textBoxFullName";
-            textBoxFullName.Size = new Size(400, 59);
+            textBoxFullName.Size = new System.Drawing.Size(509, 32);
             textBoxFullName.TabIndex = 2;
-            textBoxFullName.UseWaitCursor = true;
-            textBoxFullName.TextChanged += textBoxUsername_TextChanged;
             // 
-            // label5
+            // labelPhone
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(4, 91);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(73, 22);
-            label5.TabIndex = 1;
-            label5.Text = "Phone";
-            label5.UseWaitCursor = true;
+            labelPhone.Dock = DockStyle.Bottom;
+            labelPhone.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelPhone.ForeColor = System.Drawing.Color.White;
+            labelPhone.Location = new System.Drawing.Point(118, 145);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new System.Drawing.Size(529, 35);
+            labelPhone.TabIndex = 3;
+            labelPhone.Text = "Phone (format: 62...)";
+            labelPhone.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // textBoxPhone
             // 
-            textBoxPhone.Font = new Font("Verdana", 12F);
-            textBoxPhone.Location = new Point(4, 118);
-            textBoxPhone.Margin = new Padding(4, 5, 4, 5);
-            textBoxPhone.Multiline = true;
+            textBoxPhone.Anchor = ((AnchorStyles.Left | AnchorStyles.Right));
+            textBoxPhone.Font = new System.Drawing.Font("Verdana", 12F);
+            textBoxPhone.Location = new System.Drawing.Point(128, 185);
+            textBoxPhone.Margin = new Padding(10, 0, 10, 0);
             textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(400, 54);
-            textBoxPhone.TabIndex = 3;
-            textBoxPhone.UseWaitCursor = true;
-            textBoxPhone.KeyPress += textBoxPhone_KeyPress;
+            textBoxPhone.Size = new System.Drawing.Size(509, 32);
+            textBoxPhone.TabIndex = 4;
             // 
-            // groupBoxAddress
+            // groupBoxAlamat
             // 
-            groupBoxAddress.Controls.Add(comboBoxKecamatan);
-            groupBoxAddress.Controls.Add(label9);
-            groupBoxAddress.Controls.Add(label8);
-            groupBoxAddress.Controls.Add(comboBoxKabupaten);
-            groupBoxAddress.Controls.Add(label7);
-            groupBoxAddress.Controls.Add(textBoxJalan);
-            groupBoxAddress.Controls.Add(comboBoxProvinsi);
-            groupBoxAddress.Controls.Add(label6);
-            groupBoxAddress.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            groupBoxAddress.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxAddress.Location = new Point(4, 182);
-            groupBoxAddress.Margin = new Padding(4, 5, 4, 5);
-            groupBoxAddress.Name = "groupBoxAddress";
-            groupBoxAddress.Padding = new Padding(4, 5, 4, 5);
-            groupBoxAddress.Size = new Size(401, 420);
-            groupBoxAddress.TabIndex = 4;
-            groupBoxAddress.TabStop = false;
-            groupBoxAddress.Text = "Address";
-            groupBoxAddress.UseWaitCursor = true;
-            // 
-            // comboBoxKecamatan
-            // 
-            comboBoxKecamatan.Font = new Font("Verdana", 12F, FontStyle.Bold);
-            comboBoxKecamatan.FormattingEnabled = true;
-            comboBoxKecamatan.Items.AddRange(new object[] { "Bangorejo", "Banyuwangi", "Blimbingsari", "Cluring", "Gambiran", "Genteng", "Giri", "Glagah", "Glenmore", "Kabat", "Kalibaru", "Kalipuro", "Licin", "Muncar", "Pesanggaran", "Purwoharjo", "Rogojampi", "Sempu", "Siliragung", "Singojuruh", "Songgon", "Srono", "Tegaldlimo", "Tegalsari", "Wongsorejo" });
-            comboBoxKecamatan.Location = new Point(14, 247);
-            comboBoxKecamatan.Margin = new Padding(4, 5, 4, 5);
-            comboBoxKecamatan.Name = "comboBoxKecamatan";
-            comboBoxKecamatan.Size = new Size(373, 37);
-            comboBoxKecamatan.TabIndex = 13;
-            comboBoxKecamatan.UseWaitCursor = true;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(19, 308);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(146, 22);
-            label9.TabIndex = 12;
-            label9.Text = "Alamat/Jalan";
-            label9.UseWaitCursor = true;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(20, 218);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(123, 22);
-            label8.TabIndex = 10;
-            label8.Text = "Kecamatan";
-            label8.UseWaitCursor = true;
-            // 
+            groupBoxAlamat.Anchor = ((AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom));
+            groupBoxAlamat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            groupBoxAlamat.ForeColor = System.Drawing.Color.White;
+            groupBoxAlamat.Text = "Alamat";
+            groupBoxAlamat.Controls.Add(panelAlamatScrollable);
+            groupBoxAlamat.Location = new System.Drawing.Point(118, 225);
+            groupBoxAlamat.Name = "groupBoxAlamat";
+            groupBoxAlamat.Size = new System.Drawing.Size(529, 220);
+            groupBoxAlamat.TabIndex = 5;
+            groupBoxAlamat.TabStop = false;
+            //
+            // panelAlamatScrollable
+            //
+            panelAlamatScrollable.AutoScroll = true;
+            panelAlamatScrollable.Dock = DockStyle.Fill;
+            panelAlamatScrollable.BackColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            panelAlamatScrollable.Controls.Add(labelProvinsi);
+            panelAlamatScrollable.Controls.Add(comboBoxProvinsi);
+            panelAlamatScrollable.Controls.Add(labelKabupaten);
+            panelAlamatScrollable.Controls.Add(comboBoxKabupaten);
+            panelAlamatScrollable.Controls.Add(labelKecamatan);
+            panelAlamatScrollable.Controls.Add(comboBoxKecamatan);
+            panelAlamatScrollable.Controls.Add(labelJalan);
+            panelAlamatScrollable.Controls.Add(textBoxJalan);
+            panelAlamatScrollable.Location = new System.Drawing.Point(3, 24);
+            panelAlamatScrollable.Name = "panelAlamatScrollable";
+            panelAlamatScrollable.Size = new System.Drawing.Size(523, 193); // fix height, can be adjusted
+            panelAlamatScrollable.TabIndex = 0;
+            //
+            // labelProvinsi
+            //
+            labelProvinsi.AutoSize = true;
+            labelProvinsi.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            labelProvinsi.ForeColor = System.Drawing.Color.White;
+            labelProvinsi.Location = new System.Drawing.Point(10, 10);
+            labelProvinsi.Name = "labelProvinsi";
+            labelProvinsi.Size = new System.Drawing.Size(75, 20);
+            labelProvinsi.TabIndex = 0;
+            labelProvinsi.Text = "Provinsi";
+            //
+            // comboBoxProvinsi
+            //
+            comboBoxProvinsi.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
+            comboBoxProvinsi.Location = new System.Drawing.Point(10, 35);
+            comboBoxProvinsi.Name = "comboBoxProvinsi";
+            comboBoxProvinsi.Size = new System.Drawing.Size(400, 30);
+            comboBoxProvinsi.TabIndex = 1;
+            //
+            // labelKabupaten
+            //
+            labelKabupaten.AutoSize = true;
+            labelKabupaten.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            labelKabupaten.ForeColor = System.Drawing.Color.White;
+            labelKabupaten.Location = new System.Drawing.Point(10, 70);
+            labelKabupaten.Name = "labelKabupaten";
+            labelKabupaten.Size = new System.Drawing.Size(131, 20);
+            labelKabupaten.TabIndex = 2;
+            labelKabupaten.Text = "Kabupaten/Kota";
+            //
             // comboBoxKabupaten
-            // 
-            comboBoxKabupaten.Font = new Font("Verdana", 12F, FontStyle.Bold);
-            comboBoxKabupaten.FormattingEnabled = true;
-            comboBoxKabupaten.Items.AddRange(new object[] { "Banyuwangi" });
-            comboBoxKabupaten.Location = new Point(14, 162);
-            comboBoxKabupaten.Margin = new Padding(4, 5, 4, 5);
+            //
+            comboBoxKabupaten.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
+            comboBoxKabupaten.Location = new System.Drawing.Point(10, 95);
             comboBoxKabupaten.Name = "comboBoxKabupaten";
-            comboBoxKabupaten.Size = new Size(373, 37);
-            comboBoxKabupaten.TabIndex = 9;
-            comboBoxKabupaten.UseWaitCursor = true;
-            comboBoxKabupaten.SelectedIndexChanged += comboBoxKabupaten_SelectedIndexChanged;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(19, 133);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(178, 22);
-            label7.TabIndex = 8;
-            label7.Text = "Kabupaten/Kota";
-            label7.UseWaitCursor = true;
-            // 
+            comboBoxKabupaten.Size = new System.Drawing.Size(400, 30);
+            comboBoxKabupaten.TabIndex = 3;
+            //
+            // labelKecamatan
+            //
+            labelKecamatan.AutoSize = true;
+            labelKecamatan.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            labelKecamatan.ForeColor = System.Drawing.Color.White;
+            labelKecamatan.Location = new System.Drawing.Point(10, 130);
+            labelKecamatan.Name = "labelKecamatan";
+            labelKecamatan.Size = new System.Drawing.Size(104, 20);
+            labelKecamatan.TabIndex = 4;
+            labelKecamatan.Text = "Kecamatan";
+            //
+            // comboBoxKecamatan
+            //
+            comboBoxKecamatan.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
+            comboBoxKecamatan.Location = new System.Drawing.Point(10, 155);
+            comboBoxKecamatan.Name = "comboBoxKecamatan";
+            comboBoxKecamatan.Size = new System.Drawing.Size(400, 30);
+            comboBoxKecamatan.TabIndex = 5;
+            //
+            // labelJalan
+            //
+            labelJalan.AutoSize = true;
+            labelJalan.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            labelJalan.ForeColor = System.Drawing.Color.White;
+            labelJalan.Location = new System.Drawing.Point(10, 190);
+            labelJalan.Name = "labelJalan";
+            labelJalan.Size = new System.Drawing.Size(56, 20);
+            labelJalan.TabIndex = 6;
+            labelJalan.Text = "Jalan";
+            //
             // textBoxJalan
-            // 
-            textBoxJalan.Font = new Font("Verdana", 12F);
-            textBoxJalan.Location = new Point(14, 337);
-            textBoxJalan.Margin = new Padding(4, 5, 4, 5);
+            //
+            textBoxJalan.Font = new System.Drawing.Font("Verdana", 11F);
+            textBoxJalan.Location = new System.Drawing.Point(10, 215);
             textBoxJalan.Multiline = true;
             textBoxJalan.Name = "textBoxJalan";
-            textBoxJalan.Size = new Size(373, 47);
-            textBoxJalan.TabIndex = 5;
-            textBoxJalan.UseWaitCursor = true;
-            // 
-            // comboBoxProvinsi
-            // 
-            comboBoxProvinsi.Font = new Font("Verdana", 12F, FontStyle.Bold);
-            comboBoxProvinsi.FormattingEnabled = true;
-            comboBoxProvinsi.Items.AddRange(new object[] { "Jawa Timur" });
-            comboBoxProvinsi.Location = new Point(14, 78);
-            comboBoxProvinsi.Margin = new Padding(4, 5, 4, 5);
-            comboBoxProvinsi.Name = "comboBoxProvinsi";
-            comboBoxProvinsi.Size = new Size(373, 37);
-            comboBoxProvinsi.TabIndex = 7;
-            comboBoxProvinsi.UseWaitCursor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(19, 50);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 22);
-            label6.TabIndex = 6;
-            label6.Text = "Provinsi";
-            label6.UseWaitCursor = true;
+            textBoxJalan.Size = new System.Drawing.Size(400, 45);
+            textBoxJalan.TabIndex = 7;
+            //
+            // btnSimpan
+            //
+            btnSimpan.Anchor = AnchorStyles.None;
+            btnSimpan.BackColor = System.Drawing.Color.White;
+            btnSimpan.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
+            btnSimpan.ForeColor = System.Drawing.Color.Black;
+            btnSimpan.Location = new System.Drawing.Point(297, 511);
+            btnSimpan.Name = "btnSimpan";
+            btnSimpan.Size = new System.Drawing.Size(170, 48);
+            btnSimpan.TabIndex = 6;
+            btnSimpan.Text = "SIMPAN";
+            btnSimpan.UseVisualStyleBackColor = false;
+
             // 
             // ProfileControl
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(33, 33, 33);
-            Controls.Add(splitContainer1);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "ProfileControl";
-            Size = new Size(1306, 800);
+            this.Controls.Add(splitContainer1);
+            this.Name = "ProfileControl";
+            this.Size = new System.Drawing.Size(1151, 561);
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).EndInit();
             splitContainer1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
-            groupBoxAddress.ResumeLayout(false);
-            groupBoxAddress.PerformLayout();
-            ResumeLayout(false);
+            tablePanelKiri.ResumeLayout(false);
+            tableLayoutPanelProfile.ResumeLayout(false);
+            tableLayoutPanelProfile.PerformLayout();
+            groupBoxAlamat.ResumeLayout(false);
+            panelAlamatScrollable.ResumeLayout(false);
+            panelAlamatScrollable.PerformLayout();
+            this.ResumeLayout(false);
         }
 
         #endregion
 
         private SplitContainer splitContainer1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Button btnNext;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label label4;
+        private TableLayoutPanel tablePanelKiri;
+        private Label labelWelcome;
+        private Label labelSub;
+        private Button btnBack;
+
+        private TableLayoutPanel tableLayoutPanelProfile;
+        private Label labelTitle;
+        private Label labelFullName;
         private TextBox textBoxFullName;
-        private Label label5;
+        private Label labelPhone;
         private TextBox textBoxPhone;
-        private GroupBox groupBoxAddress;
-        private Label label6;
-        private Label label8;
-        private ComboBox comboBoxKabupaten;
-        private Label label7;
+        private GroupBox groupBoxAlamat;
+        private Panel panelAlamatScrollable;
+        private Label labelProvinsi;
         private ComboBox comboBoxProvinsi;
-        private Label label9;
+        private Label labelKabupaten;
+        private ComboBox comboBoxKabupaten;
+        private Label labelKecamatan;
         private ComboBox comboBoxKecamatan;
+        private Label labelJalan;
         private TextBox textBoxJalan;
+        private Button btnSimpan;
     }
 }

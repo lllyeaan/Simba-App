@@ -105,9 +105,9 @@
             // 
             // dgvhistory
             // 
-            dgvhistory.AutoGenerateColumns = false;
+            dgvhistory.AutoGenerateColumns = true;
             dgvhistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvhistory.ColumnHeadersVisible = false;
+            dgvhistory.ColumnHeadersVisible = true;
             dgvhistory.DataSource = dbConnectionHelperBindingSource;
             dgvhistory.Dock = DockStyle.Fill;
             dgvhistory.Location = new Point(0, 0);

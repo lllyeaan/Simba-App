@@ -12,7 +12,6 @@ namespace MaterialOrderingApp.Models
         public string MaterialName { get; set; }
         public decimal UnitPrice { get; set; }
         public string Satuan { get; set; }
-        public int Jumlah { get; set; }
-        public decimal Total => UnitPrice * Jumlah;
+        public decimal Total => UnitPrice * 1;
     }
 }

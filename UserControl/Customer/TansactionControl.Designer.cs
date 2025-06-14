@@ -35,11 +35,9 @@
             cmbboxmethod = new ComboBox();
             lblmetode = new Label();
             txtboxtotal = new TextBox();
-            txtboxjumlah = new TextBox();
             txtboxharga = new TextBox();
             txtboxMaterial = new TextBox();
             lblringkasan4 = new Label();
-            lblringkasan3 = new Label();
             lblringkasan2 = new Label();
             lblringkasan1 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -67,11 +65,9 @@
             splitContainer1.Panel2.Controls.Add(cmbboxmethod);
             splitContainer1.Panel2.Controls.Add(lblmetode);
             splitContainer1.Panel2.Controls.Add(txtboxtotal);
-            splitContainer1.Panel2.Controls.Add(txtboxjumlah);
             splitContainer1.Panel2.Controls.Add(txtboxharga);
             splitContainer1.Panel2.Controls.Add(txtboxMaterial);
             splitContainer1.Panel2.Controls.Add(lblringkasan4);
-            splitContainer1.Panel2.Controls.Add(lblringkasan3);
             splitContainer1.Panel2.Controls.Add(lblringkasan2);
             splitContainer1.Panel2.Controls.Add(lblringkasan1);
             splitContainer1.Size = new Size(1306, 800);
@@ -117,7 +113,7 @@
             // 
             cmbboxmethod.FormattingEnabled = true;
             cmbboxmethod.Items.AddRange(new object[] { "COD", "Transfer" });
-            cmbboxmethod.Location = new Point(485, 476);
+            cmbboxmethod.Location = new Point(485, 461);
             cmbboxmethod.Name = "cmbboxmethod";
             cmbboxmethod.Size = new Size(248, 33);
             cmbboxmethod.TabIndex = 9;
@@ -129,7 +125,7 @@
             lblmetode.BackColor = Color.Transparent;
             lblmetode.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblmetode.ForeColor = Color.White;
-            lblmetode.Location = new Point(61, 476);
+            lblmetode.Location = new Point(61, 461);
             lblmetode.Name = "lblmetode";
             lblmetode.Size = new Size(297, 25);
             lblmetode.TabIndex = 8;
@@ -138,18 +134,10 @@
             // txtboxtotal
             // 
             txtboxtotal.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtboxtotal.Location = new Point(333, 385);
+            txtboxtotal.Location = new Point(333, 339);
             txtboxtotal.Name = "txtboxtotal";
             txtboxtotal.Size = new Size(454, 32);
             txtboxtotal.TabIndex = 7;
-            // 
-            // txtboxjumlah
-            // 
-            txtboxjumlah.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtboxjumlah.Location = new Point(333, 331);
-            txtboxjumlah.Name = "txtboxjumlah";
-            txtboxjumlah.Size = new Size(454, 32);
-            txtboxjumlah.TabIndex = 6;
             // 
             // txtboxharga
             // 
@@ -173,24 +161,12 @@
             lblringkasan4.BackColor = Color.Transparent;
             lblringkasan4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblringkasan4.ForeColor = Color.White;
-            lblringkasan4.Location = new Point(61, 385);
+            lblringkasan4.Location = new Point(61, 339);
             lblringkasan4.Name = "lblringkasan4";
             lblringkasan4.Size = new Size(69, 25);
             lblringkasan4.TabIndex = 3;
             lblringkasan4.Text = "Total";
             lblringkasan4.Click += label2_Click;
-            // 
-            // lblringkasan3
-            // 
-            lblringkasan3.AutoSize = true;
-            lblringkasan3.BackColor = Color.Transparent;
-            lblringkasan3.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblringkasan3.ForeColor = Color.White;
-            lblringkasan3.Location = new Point(61, 331);
-            lblringkasan3.Name = "lblringkasan3";
-            lblringkasan3.Size = new Size(92, 25);
-            lblringkasan3.TabIndex = 2;
-            lblringkasan3.Text = "Jumlah";
             // 
             // lblringkasan2
             // 
@@ -241,13 +217,11 @@
         private Label lblringkasan2;
         private Label lblringkasan1;
         private Label lblringkasan4;
-        private Label lblringkasan3;
         private TextBox txtboxharga;
         private TextBox txtboxMaterial;
         private ComboBox cmbboxmethod;
         private Label lblmetode;
         private TextBox txtboxtotal;
-        private TextBox txtboxjumlah;
         private Button btnbuatpesanan;
     }
 }

@@ -44,35 +44,40 @@ namespace MaterialOrderingApp.Repositories
 
         public List<Order> GetByCustomer(int idCustomer)
         {
-            var list = new List<Order>();
-            using (var conn = DbConnectionHelper.GetConnection())
+            List<Order> orders = new List<Order>();
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
             {
                 conn.Open();
                 string query = @"
-            SELECT o.id_order, o.order_date, o.delivery_status, c.nama_customer 
-            FROM orders o
-            JOIN customer c ON o.id_customer = c.id_customer
-            WHERE o.id_customer = @id";
+                    SELECT o.id_order, o.id_customer, o.order_date, o.delivery_status, o.total
+                    FROM public.orders o
+                    WHERE o.id_customer = @id_customer
+                    ORDER BY o.order_date DESC";
 
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", idCustomer);
-                    using (var reader = cmd.ExecuteReader())
+                    cmd.Parameters.AddWithValue("id_customer", idCustomer);
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            list.Add(new Order
+                            Order order = new Order
                             {
-                                IdOrder = Convert.ToInt32(reader["id_order"]),
-                                OrderDate = Convert.ToDateTime(reader["order_date"]),
-                                DeliveryStatus = reader["delivery_status"].ToString(),
-                                CustomerName = reader["nama_customer"].ToString()
-                            });
+                                IdOrder = reader.GetInt32(reader.GetOrdinal("id_order")),
+                                IdCustomer = reader.GetInt32(reader.GetOrdinal("id_customer")),
+                                OrderDate = reader.GetDateTime(reader.GetOrdinal("order_date")),
+                                DeliveryStatus = reader.GetString(reader.GetOrdinal("delivery_status")),
+                                Total = reader.GetDecimal(reader.GetOrdinal("total")),
+     
+                                //CustomerName = reader["nama_customer"].ToString()
+                            };
+
+                            orders.Add(order);
                         }
                     }
                 }
             }
-            return list;
+            return orders;
         }
 
         public void KonfirmasiPengiriman(int idOrder, int idTruck, int idDriver)

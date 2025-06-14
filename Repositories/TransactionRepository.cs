@@ -46,14 +46,17 @@ namespace MaterialOrderingApp.Repositories
             {
                 conn.Open();
                 string query = @"INSERT INTO orders
-                                 (id_customer, id_material,quantity, total)
-                                 VALUES (@customer, @material, @quantity, @total)";
+                                 (id_customer, id_material,unit_price, quantity, total, payment_method, payment_status)
+                                 VALUES (@customer, @material, @unitprice, @quantity, @total, @payment, @status)";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@material", transaction.IdMaterial);
                     cmd.Parameters.AddWithValue("@quantity", transaction.quantity);
                     cmd.Parameters.AddWithValue("@total", transaction.subtotal);
                     cmd.Parameters.AddWithValue("@customer", transaction.IdCustomer);
+                    cmd.Parameters.AddWithValue("@payment", transaction.paymentmethod);
+                    cmd.Parameters.AddWithValue("@status", "Pending");
+                    cmd.Parameters.AddWithValue("@unitprice", transaction.IdMaterial);
                     cmd.ExecuteNonQuery();
                 }
             }

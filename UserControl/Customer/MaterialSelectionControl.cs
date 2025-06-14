@@ -22,6 +22,7 @@ namespace MaterialOrderingApp.Forms.Customer
         private readonly MaterialService _materialService;
         private readonly TransactionService _transactionService;
         private readonly MaterialDipilih _materialDipilih;
+        private readonly User _currentUser;
         private int idMaterialTerpilih = -1;
         public MaterialSelectionControl(MainForm form)
         {
@@ -80,6 +81,12 @@ namespace MaterialOrderingApp.Forms.Customer
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            User currentUser = mainForm.CurrentUser;
+            if (currentUser == null)
+            {
+                MessageBox.Show("Pengguna tidak ditemukan");
+                return;
+            }
 
             if (idMaterialTerpilih == -1)
             {
@@ -87,11 +94,11 @@ namespace MaterialOrderingApp.Forms.Customer
                 return;
             }
 
-            if (!int.TryParse(txtJumlah.Text, out int jumlah) || jumlah <= 0)
-            {
-                MessageBox.Show("Jumlah harus angka positif");
-                return;
-            }
+            //if (!int.TryParse(txtJumlah.Text, out int jumlah) || jumlah <= 0)
+            //{
+            //    MessageBox.Show("Jumlah harus angka positif");
+            //    return;
+            //}
 
             MaterialDipilih ringkasan = new MaterialDipilih
             {
@@ -99,11 +106,11 @@ namespace MaterialOrderingApp.Forms.Customer
                 MaterialName = txtNamaMaterial.Text.Trim(),
                 UnitPrice = decimal.Parse(txtHarga.Text.Trim()),
                 Satuan = txtSatuan.Text.Trim(),
-                Jumlah = jumlah
+                //Jumlah = jumlah
                 
             };
 
-            TansactionControl ringkasanControl = new TansactionControl(mainForm, ringkasan, _transactionService);
+            TansactionControl ringkasanControl = new TansactionControl(mainForm, ringkasan, _transactionService, currentUser);
             mainForm.LoadUserControl(ringkasanControl);
 
         }
