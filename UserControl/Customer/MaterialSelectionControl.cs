@@ -5,6 +5,7 @@ using MaterialOrderingApp.Services;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.Customer
 {
@@ -77,6 +78,18 @@ namespace MaterialOrderingApp.Forms.Customer
 
         private void btnPesan_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = dgvMaterialSelection.SelectedRows.Count > 0
+                ? dgvMaterialSelection.SelectedRows[0]
+                : null;
+
+            bool IsAvailable = Convert.ToBoolean(selectedRow.Cells["IsAvailable"].Value);
+            
+            if (!IsAvailable == true)
+            {
+                MessageBox.Show("Material yang Anda pilih sedang tidak tersedia atau habis. Silakan pilih material lain.",
+                    "Stok Kosong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var currentUser = mainForm.CurrentUser;
             if (currentUser == null)
             {

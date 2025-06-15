@@ -12,6 +12,8 @@ namespace MaterialOrderingApp.Models
         public int IdCustomer { get; set; }
         public DateTime OrderDate { get; set; }
         public string DeliveryStatus { get; set; }
-        public string CustomerName { get; set; } 
-    }
+        public string CustomerName { get; set; }
+        public string Alamat { get; set; }
+        public decimal Total { get; set; }
+    }
 }

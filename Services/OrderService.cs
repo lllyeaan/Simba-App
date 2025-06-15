@@ -31,6 +31,11 @@ namespace MaterialOrderingApp.Services
         {
             return _deliveryRepo.GetByCustomer(idCustomer);
         }
+        public void KonfirmasiPesananSelesai(int idOrder)
+        {
+            _deliveryRepo.KonfirmasiSelesai(idOrder);
+        }
+
     }
 }
 

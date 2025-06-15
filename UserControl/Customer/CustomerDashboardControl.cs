@@ -45,10 +45,10 @@ namespace MaterialOrderingApp.Forms.Customer
             int IdCustomer = mainForm.CurrentUser?.IdCustomer ?? 0;
             lblGreeting.Text = $"Selamat datang, {namaCustomer}!";
 
-            // Jika ada fitur total pesanan, ambil dari service (dummy sementara)
+            //// Jika ada fitur total pesanan, ambil dari service (dummy sementara)
             int totalPesanan = AmbilTotalPesanan(IdCustomer);
             lblTotalPesanan.Text = $"Total Pesanan Anda: {totalPesanan}";
-            // lblCompany tetap sebagai identitas
+            //lblCompany tetap sebagai identitas
         }
 
         private int AmbilTotalPesanan(int IdCustomer)
@@ -69,7 +69,11 @@ namespace MaterialOrderingApp.Forms.Customer
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            mainForm?.LoadUserControl(new LoginControl(mainForm));
+            if (MessageBox.Show("Yakin ingin logout?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Utils.UserManager.ActiveUser = null;
+                mainForm.LoadUserControl(new LoginControl(mainForm));
+            }
         }
     }
 }

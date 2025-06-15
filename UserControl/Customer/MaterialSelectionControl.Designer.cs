@@ -63,6 +63,7 @@
             // 
             panelKiri.BackColor = Color.Transparent;
             panelKiri.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
+            panelKiri.BackgroundImageLayout = ImageLayout.Stretch;
             panelKiri.ColumnCount = 1;
             panelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             panelKiri.Controls.Add(labelTitle, 0, 0);
