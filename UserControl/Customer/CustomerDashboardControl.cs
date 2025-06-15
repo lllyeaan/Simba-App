@@ -42,7 +42,7 @@ namespace MaterialOrderingApp.Forms.Customer
         {
             // Ambil user yang sedang login dari MainForm
             string namaCustomer = mainForm.CurrentUser?.Username ?? "Customer";
-            int IdCustomer = mainForm.CurrentUser?.Id ?? 0;
+            int IdCustomer = mainForm.CurrentUser?.IdCustomer ?? 0;
             lblGreeting.Text = $"Selamat datang, {namaCustomer}!";
 
             // Jika ada fitur total pesanan, ambil dari service (dummy sementara)
