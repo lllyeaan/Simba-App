@@ -6,7 +6,8 @@
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null)) components.Dispose();
+            if (disposing && (components != null))
+                components.Dispose();
             base.Dispose(disposing);
         }
 
@@ -75,7 +76,7 @@
             // 
             panelKiri.BackColor = Color.Transparent;
             panelKiri.ColumnCount = 1;
-            panelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            panelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             panelKiri.Controls.Add(label1, 0, 1);
             panelKiri.Controls.Add(label2, 0, 2);
             panelKiri.Controls.Add(btnKembali, 0, 3);
@@ -93,7 +94,7 @@
             // label1
             // 
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Javanese Text", 32F, FontStyle.Bold);
+            label1.Font = new Font("Verdana", 38F, FontStyle.Bold, GraphicsUnit.Pixel);
             label1.ForeColor = Color.White;
             label1.Location = new Point(3, 132);
             label1.Name = "label1";
@@ -105,7 +106,7 @@
             // label2
             // 
             label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Javanese Text", 32F, FontStyle.Bold);
+            label2.Font = new Font("Verdana", 38F, FontStyle.Bold, GraphicsUnit.Pixel);
             label2.ForeColor = Color.White;
             label2.Location = new Point(3, 212);
             label2.Name = "label2";
@@ -133,7 +134,7 @@
             // 
             tablePanelKanan.BackColor = Color.Transparent;
             tablePanelKanan.ColumnCount = 1;
-            tablePanelKanan.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tablePanelKanan.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tablePanelKanan.Controls.Add(dgvMaterial, 0, 0);
             tablePanelKanan.Controls.Add(inputTablePanel, 0, 1);
             tablePanelKanan.Controls.Add(buttonPanel, 0, 2);
@@ -141,8 +142,8 @@
             tablePanelKanan.Location = new Point(0, 0);
             tablePanelKanan.Name = "tablePanelKanan";
             tablePanelKanan.RowCount = 3;
-            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 240F));
-            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 145F));
+            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 228F));
+            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 140F));
             tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tablePanelKanan.Size = new Size(896, 600);
             tablePanelKanan.TabIndex = 0;
@@ -156,15 +157,14 @@
             dgvMaterial.Name = "dgvMaterial";
             dgvMaterial.RowHeadersWidth = 62;
             dgvMaterial.ScrollBars = ScrollBars.Vertical;
-            dgvMaterial.Size = new Size(890, 234);
+            dgvMaterial.Size = new Size(890, 222);
             dgvMaterial.TabIndex = 0;
             dgvMaterial.CellClick += dgvMaterial_CellClick;
-            dgvMaterial.CellContentClick += dgvMaterial_CellContentClick;
             // 
             // inputTablePanel
             // 
             inputTablePanel.ColumnCount = 4;
-            inputTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            inputTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 207F));
             inputTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             inputTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
             inputTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -180,14 +180,14 @@
             inputTablePanel.Controls.Add(chkTersedia, 1, 2);
             inputTablePanel.Controls.Add(pictureBoxKetersediaan, 2, 2);
             inputTablePanel.Dock = DockStyle.Fill;
-            inputTablePanel.Location = new Point(3, 243);
+            inputTablePanel.Location = new Point(3, 231);
             inputTablePanel.Name = "inputTablePanel";
             inputTablePanel.Padding = new Padding(30, 15, 30, 0);
             inputTablePanel.RowCount = 3;
             inputTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             inputTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             inputTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            inputTablePanel.Size = new Size(890, 139);
+            inputTablePanel.Size = new Size(890, 134);
             inputTablePanel.TabIndex = 1;
             // 
             // label3
@@ -197,7 +197,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(33, 15);
             label3.Name = "label3";
-            label3.Size = new Size(134, 40);
+            label3.Size = new Size(201, 40);
             label3.TabIndex = 0;
             label3.Text = "Nama Material";
             // 
@@ -205,9 +205,9 @@
             // 
             txtNamaMaterial.Dock = DockStyle.Fill;
             txtNamaMaterial.Font = new Font("Verdana", 11F);
-            txtNamaMaterial.Location = new Point(173, 18);
+            txtNamaMaterial.Location = new Point(240, 18);
             txtNamaMaterial.Name = "txtNamaMaterial";
-            txtNamaMaterial.Size = new Size(269, 34);
+            txtNamaMaterial.Size = new Size(235, 34);
             txtNamaMaterial.TabIndex = 1;
             // 
             // label4
@@ -215,7 +215,7 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(448, 15);
+            label4.Location = new Point(481, 15);
             label4.Name = "label4";
             label4.Size = new Size(134, 40);
             label4.TabIndex = 2;
@@ -225,9 +225,9 @@
             // 
             txtHarga.Dock = DockStyle.Fill;
             txtHarga.Font = new Font("Verdana", 11F);
-            txtHarga.Location = new Point(588, 18);
+            txtHarga.Location = new Point(621, 18);
             txtHarga.Name = "txtHarga";
-            txtHarga.Size = new Size(269, 34);
+            txtHarga.Size = new Size(236, 34);
             txtHarga.TabIndex = 3;
             // 
             // label5
@@ -237,7 +237,7 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(33, 55);
             label5.Name = "label5";
-            label5.Size = new Size(134, 40);
+            label5.Size = new Size(201, 40);
             label5.TabIndex = 4;
             label5.Text = "Stok";
             // 
@@ -245,9 +245,9 @@
             // 
             txtStock.Dock = DockStyle.Fill;
             txtStock.Font = new Font("Verdana", 11F);
-            txtStock.Location = new Point(173, 58);
+            txtStock.Location = new Point(240, 58);
             txtStock.Name = "txtStock";
-            txtStock.Size = new Size(269, 34);
+            txtStock.Size = new Size(235, 34);
             txtStock.TabIndex = 5;
             // 
             // label6
@@ -255,7 +255,7 @@
             label6.Dock = DockStyle.Fill;
             label6.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(448, 55);
+            label6.Location = new Point(481, 55);
             label6.Name = "label6";
             label6.Size = new Size(134, 40);
             label6.TabIndex = 6;
@@ -265,9 +265,9 @@
             // 
             txtSatuan.Dock = DockStyle.Fill;
             txtSatuan.Font = new Font("Verdana", 11F);
-            txtSatuan.Location = new Point(588, 58);
+            txtSatuan.Location = new Point(621, 58);
             txtSatuan.Name = "txtSatuan";
-            txtSatuan.Size = new Size(269, 34);
+            txtSatuan.Size = new Size(236, 34);
             txtSatuan.TabIndex = 7;
             // 
             // label7
@@ -277,7 +277,7 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(33, 95);
             label7.Name = "label7";
-            label7.Size = new Size(134, 45);
+            label7.Size = new Size(201, 45);
             label7.TabIndex = 8;
             label7.Text = "Ketersediaan";
             // 
@@ -285,7 +285,7 @@
             // 
             chkTersedia.Dock = DockStyle.Left;
             chkTersedia.Font = new Font("Segoe UI", 13F);
-            chkTersedia.Location = new Point(173, 98);
+            chkTersedia.Location = new Point(240, 98);
             chkTersedia.Name = "chkTersedia";
             chkTersedia.Size = new Size(104, 39);
             chkTersedia.TabIndex = 9;
@@ -295,9 +295,9 @@
             // 
             pictureBoxKetersediaan.BackColor = Color.Transparent;
             pictureBoxKetersediaan.Dock = DockStyle.Left;
-            pictureBoxKetersediaan.Location = new Point(448, 98);
+            pictureBoxKetersediaan.Location = new Point(481, 98);
             pictureBoxKetersediaan.Name = "pictureBoxKetersediaan";
-            pictureBoxKetersediaan.Size = new Size(42, 39);
+            pictureBoxKetersediaan.Size = new Size(100, 39);
             pictureBoxKetersediaan.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxKetersediaan.TabIndex = 10;
             pictureBoxKetersediaan.TabStop = false;
@@ -311,7 +311,7 @@
             buttonPanel.Controls.Add(btnEdit);
             buttonPanel.Controls.Add(btnHapus);
             buttonPanel.Controls.Add(btnClear);
-            buttonPanel.Location = new Point(108, 464);
+            buttonPanel.Location = new Point(108, 455);
             buttonPanel.Name = "buttonPanel";
             buttonPanel.Padding = new Padding(0, 15, 0, 0);
             buttonPanel.Size = new Size(680, 57);

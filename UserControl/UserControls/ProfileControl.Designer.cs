@@ -66,7 +66,7 @@
             splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
             splitContainer1.Panel2.Controls.Add(tableLayoutPanelMain);
             splitContainer1.Size = new Size(1129, 569);
-            splitContainer1.SplitterDistance = 389;
+            splitContainer1.SplitterDistance = 380;
             splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
@@ -81,12 +81,13 @@
             tablePanelKiri.Dock = DockStyle.Fill;
             tablePanelKiri.Location = new Point(0, 0);
             tablePanelKiri.Name = "tablePanelKiri";
+            tablePanelKiri.Padding = new Padding(30, 40, 30, 40);
             tablePanelKiri.RowCount = 4;
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
-            tablePanelKiri.Size = new Size(389, 569);
+            tablePanelKiri.Size = new Size(380, 569);
             tablePanelKiri.TabIndex = 0;
             // 
             // labelWelcome
@@ -94,9 +95,9 @@
             labelWelcome.Dock = DockStyle.Fill;
             labelWelcome.Font = new Font("Verdana", 40F, FontStyle.Bold, GraphicsUnit.Pixel);
             labelWelcome.ForeColor = Color.White;
-            labelWelcome.Location = new Point(3, 0);
+            labelWelcome.Location = new Point(33, 40);
             labelWelcome.Name = "labelWelcome";
-            labelWelcome.Size = new Size(383, 199);
+            labelWelcome.Size = new Size(314, 171);
             labelWelcome.TabIndex = 0;
             labelWelcome.Text = "PROFILE";
             labelWelcome.TextAlign = ContentAlignment.BottomCenter;
@@ -106,20 +107,20 @@
             labelSub.Dock = DockStyle.Fill;
             labelSub.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Pixel);
             labelSub.ForeColor = Color.White;
-            labelSub.Location = new Point(3, 199);
+            labelSub.Location = new Point(33, 211);
             labelSub.Name = "labelSub";
-            labelSub.Size = new Size(383, 85);
+            labelSub.Size = new Size(314, 73);
             labelSub.TabIndex = 1;
-            labelSub.Text = "Complete Your Profile";
+            labelSub.Text = "Lengkapi Profil Anda";
             labelSub.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnBack
             // 
-            btnBack.Anchor = AnchorStyles.None;
+            btnBack.Anchor = AnchorStyles.Top;
             btnBack.BackColor = Color.White;
             btnBack.Font = new Font("Verdana", 12F, FontStyle.Bold);
             btnBack.ForeColor = Color.Black;
-            btnBack.Location = new Point(114, 301);
+            btnBack.Location = new Point(110, 287);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(160, 50);
             btnBack.TabIndex = 2;
@@ -130,9 +131,9 @@
             // 
             tableLayoutPanelMain.BackColor = Color.FromArgb(33, 33, 33);
             tableLayoutPanelMain.ColumnCount = 3;
-            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
-            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 84F));
-            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
+            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             tableLayoutPanelMain.Controls.Add(btnClosePictureBox, 2, 0);
             tableLayoutPanelMain.Controls.Add(labelTitle, 1, 1);
             tableLayoutPanelMain.Controls.Add(labelFullName, 1, 2);
@@ -141,32 +142,32 @@
             tableLayoutPanelMain.Controls.Add(textBoxPhone, 1, 5);
             tableLayoutPanelMain.Controls.Add(labelAlamat, 1, 6);
             tableLayoutPanelMain.Controls.Add(panelAlamat, 1, 7);
-            tableLayoutPanelMain.Controls.Add(btnNext, 1, 9);
+            tableLayoutPanelMain.Controls.Add(btnNext, 1, 8);
             tableLayoutPanelMain.Dock = DockStyle.Fill;
             tableLayoutPanelMain.Location = new Point(0, 0);
             tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            tableLayoutPanelMain.RowCount = 10;
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 0F));
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableLayoutPanelMain.Size = new Size(734, 569);
+            tableLayoutPanelMain.RowCount = 9;
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 71.52318F));
+            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 28.4768219F));
+            tableLayoutPanelMain.Size = new Size(743, 569);
             tableLayoutPanelMain.TabIndex = 0;
             // 
             // btnClosePictureBox
             // 
             btnClosePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClosePictureBox.Cursor = Cursors.Hand;
-            btnClosePictureBox.Location = new Point(678, 5);
+            btnClosePictureBox.Image = Properties.Resources.icons8_close_window_100__1_;
+            btnClosePictureBox.Location = new Point(680, 5);
             btnClosePictureBox.Margin = new Padding(0, 5, 10, 0);
             btnClosePictureBox.Name = "btnClosePictureBox";
-            btnClosePictureBox.Size = new Size(46, 40);
+            btnClosePictureBox.Size = new Size(53, 37);
             btnClosePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             btnClosePictureBox.TabIndex = 0;
             btnClosePictureBox.TabStop = false;
@@ -174,11 +175,11 @@
             // labelTitle
             // 
             labelTitle.Dock = DockStyle.Fill;
-            labelTitle.Font = new Font("Verdana", 22F, FontStyle.Bold);
+            labelTitle.Font = new Font("Verdana", 23F, FontStyle.Bold, GraphicsUnit.Pixel);
             labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(61, 45);
+            labelTitle.Location = new Point(77, 42);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(610, 48);
+            labelTitle.Size = new Size(588, 44);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Lengkapi Profil";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -188,9 +189,9 @@
             labelFullName.Dock = DockStyle.Fill;
             labelFullName.Font = new Font("Verdana", 11F, FontStyle.Bold);
             labelFullName.ForeColor = Color.White;
-            labelFullName.Location = new Point(61, 93);
+            labelFullName.Location = new Point(77, 86);
             labelFullName.Name = "labelFullName";
-            labelFullName.Size = new Size(610, 28);
+            labelFullName.Size = new Size(588, 26);
             labelFullName.TabIndex = 2;
             labelFullName.Text = "Nama Lengkap";
             labelFullName.TextAlign = ContentAlignment.BottomLeft;
@@ -199,10 +200,10 @@
             // 
             textBoxFullName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxFullName.Font = new Font("Verdana", 13F);
-            textBoxFullName.Location = new Point(78, 124);
-            textBoxFullName.Margin = new Padding(20, 3, 20, 3);
+            textBoxFullName.Location = new Point(91, 115);
+            textBoxFullName.Margin = new Padding(17, 3, 17, 3);
             textBoxFullName.Name = "textBoxFullName";
-            textBoxFullName.Size = new Size(576, 39);
+            textBoxFullName.Size = new Size(560, 39);
             textBoxFullName.TabIndex = 3;
             // 
             // labelPhone
@@ -210,9 +211,9 @@
             labelPhone.Dock = DockStyle.Fill;
             labelPhone.Font = new Font("Verdana", 11F, FontStyle.Bold);
             labelPhone.ForeColor = Color.White;
-            labelPhone.Location = new Point(61, 166);
+            labelPhone.Location = new Point(77, 150);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(610, 28);
+            labelPhone.Size = new Size(588, 33);
             labelPhone.TabIndex = 4;
             labelPhone.Text = "Nomor HP (ex: 628123xxxxxx)";
             labelPhone.TextAlign = ContentAlignment.BottomLeft;
@@ -221,10 +222,10 @@
             // 
             textBoxPhone.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxPhone.Font = new Font("Verdana", 13F);
-            textBoxPhone.Location = new Point(78, 197);
-            textBoxPhone.Margin = new Padding(20, 3, 20, 3);
+            textBoxPhone.Location = new Point(91, 189);
+            textBoxPhone.Margin = new Padding(17, 3, 17, 3);
             textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(576, 39);
+            textBoxPhone.Size = new Size(560, 39);
             textBoxPhone.TabIndex = 5;
             // 
             // labelAlamat
@@ -232,16 +233,16 @@
             labelAlamat.Dock = DockStyle.Fill;
             labelAlamat.Font = new Font("Verdana", 11F, FontStyle.Bold);
             labelAlamat.ForeColor = Color.White;
-            labelAlamat.Location = new Point(61, 239);
+            labelAlamat.Location = new Point(77, 234);
             labelAlamat.Name = "labelAlamat";
-            labelAlamat.Size = new Size(610, 28);
+            labelAlamat.Size = new Size(588, 33);
             labelAlamat.TabIndex = 6;
             labelAlamat.Text = "Alamat";
             labelAlamat.TextAlign = ContentAlignment.BottomLeft;
             // 
             // panelAlamat
             // 
-            panelAlamat.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelAlamat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAlamat.AutoScroll = true;
             panelAlamat.BackColor = Color.Transparent;
             panelAlamat.Controls.Add(labelProvinsi);
@@ -252,9 +253,9 @@
             panelAlamat.Controls.Add(comboBoxKecamatan);
             panelAlamat.Controls.Add(labelJalan);
             panelAlamat.Controls.Add(textBoxJalan);
-            panelAlamat.Location = new Point(61, 270);
+            panelAlamat.Location = new Point(77, 270);
             panelAlamat.Name = "panelAlamat";
-            panelAlamat.Size = new Size(610, 236);
+            panelAlamat.Size = new Size(588, 180);
             panelAlamat.TabIndex = 7;
             // 
             // labelProvinsi
@@ -262,7 +263,7 @@
             labelProvinsi.AutoSize = true;
             labelProvinsi.Font = new Font("Verdana", 9F, FontStyle.Bold);
             labelProvinsi.ForeColor = Color.White;
-            labelProvinsi.Location = new Point(20, 10);
+            labelProvinsi.Location = new Point(10, 7);
             labelProvinsi.Name = "labelProvinsi";
             labelProvinsi.Size = new Size(92, 22);
             labelProvinsi.TabIndex = 0;
@@ -270,11 +271,11 @@
             // 
             // comboBoxProvinsi
             // 
-            comboBoxProvinsi.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            comboBoxProvinsi.Font = new Font("Verdana", 11F);
             comboBoxProvinsi.FormattingEnabled = true;
-            comboBoxProvinsi.Location = new Point(23, 36);
+            comboBoxProvinsi.Location = new Point(13, 28);
             comboBoxProvinsi.Name = "comboBoxProvinsi";
-            comboBoxProvinsi.Size = new Size(580, 37);
+            comboBoxProvinsi.Size = new Size(560, 34);
             comboBoxProvinsi.TabIndex = 1;
             // 
             // labelKabupaten
@@ -282,7 +283,7 @@
             labelKabupaten.AutoSize = true;
             labelKabupaten.Font = new Font("Verdana", 9F, FontStyle.Bold);
             labelKabupaten.ForeColor = Color.White;
-            labelKabupaten.Location = new Point(20, 76);
+            labelKabupaten.Location = new Point(10, 65);
             labelKabupaten.Name = "labelKabupaten";
             labelKabupaten.Size = new Size(178, 22);
             labelKabupaten.TabIndex = 2;
@@ -290,11 +291,11 @@
             // 
             // comboBoxKabupaten
             // 
-            comboBoxKabupaten.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            comboBoxKabupaten.Font = new Font("Verdana", 11F);
             comboBoxKabupaten.FormattingEnabled = true;
-            comboBoxKabupaten.Location = new Point(23, 102);
+            comboBoxKabupaten.Location = new Point(13, 86);
             comboBoxKabupaten.Name = "comboBoxKabupaten";
-            comboBoxKabupaten.Size = new Size(580, 37);
+            comboBoxKabupaten.Size = new Size(560, 34);
             comboBoxKabupaten.TabIndex = 3;
             // 
             // labelKecamatan
@@ -302,7 +303,7 @@
             labelKecamatan.AutoSize = true;
             labelKecamatan.Font = new Font("Verdana", 9F, FontStyle.Bold);
             labelKecamatan.ForeColor = Color.White;
-            labelKecamatan.Location = new Point(20, 142);
+            labelKecamatan.Location = new Point(10, 124);
             labelKecamatan.Name = "labelKecamatan";
             labelKecamatan.Size = new Size(123, 22);
             labelKecamatan.TabIndex = 4;
@@ -310,11 +311,11 @@
             // 
             // comboBoxKecamatan
             // 
-            comboBoxKecamatan.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            comboBoxKecamatan.Font = new Font("Verdana", 11F);
             comboBoxKecamatan.FormattingEnabled = true;
-            comboBoxKecamatan.Location = new Point(23, 167);
+            comboBoxKecamatan.Location = new Point(13, 145);
             comboBoxKecamatan.Name = "comboBoxKecamatan";
-            comboBoxKecamatan.Size = new Size(580, 37);
+            comboBoxKecamatan.Size = new Size(560, 34);
             comboBoxKecamatan.TabIndex = 5;
             // 
             // labelJalan
@@ -322,7 +323,7 @@
             labelJalan.AutoSize = true;
             labelJalan.Font = new Font("Verdana", 9F, FontStyle.Bold);
             labelJalan.ForeColor = Color.White;
-            labelJalan.Location = new Point(20, 207);
+            labelJalan.Location = new Point(10, 185);
             labelJalan.Name = "labelJalan";
             labelJalan.Size = new Size(146, 22);
             labelJalan.TabIndex = 6;
@@ -330,31 +331,28 @@
             // 
             // textBoxJalan
             // 
-            textBoxJalan.Font = new Font("Verdana", 12F);
-            textBoxJalan.Location = new Point(23, 232);
+            textBoxJalan.Font = new Font("Verdana", 11F);
+            textBoxJalan.Location = new Point(13, 206);
             textBoxJalan.Multiline = true;
             textBoxJalan.Name = "textBoxJalan";
-            textBoxJalan.Size = new Size(580, 47);
+            textBoxJalan.Size = new Size(560, 36);
             textBoxJalan.TabIndex = 7;
             // 
             // btnNext
             // 
-            btnNext.Anchor = AnchorStyles.None;
+            btnNext.Anchor = AnchorStyles.Top;
             btnNext.BackColor = Color.White;
             btnNext.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnNext.ForeColor = Color.Black;
-            btnNext.Location = new Point(281, 516);
+            btnNext.Location = new Point(286, 486);
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(170, 45);
+            btnNext.Size = new Size(170, 48);
             btnNext.TabIndex = 8;
             btnNext.Text = "SIMPAN";
             btnNext.UseVisualStyleBackColor = false;
             // 
             // ProfileControl
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(33, 33, 33);
             Controls.Add(splitContainer1);
             Name = "ProfileControl";
             Size = new Size(1129, 569);

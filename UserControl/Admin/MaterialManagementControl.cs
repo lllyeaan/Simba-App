@@ -11,30 +11,32 @@ namespace MaterialOrderingApp.Forms.Admin
     public partial class MaterialManagementControl : UserControl
     {
         private readonly MainForm mainForm;
-        private readonly AuthService _authService;
         private readonly MaterialService _materialService;
         private int idMaterialTerpilih = -1;
 
         public MaterialManagementControl(MainForm form)
         {
             InitializeComponent();
-            this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
-            _authService = new AuthService(new UserRepository());
+            mainForm = form ?? throw new ArgumentNullException(nameof(form));
             _materialService = new MaterialService(new MaterialRepository());
 
             dgvMaterial.CellClick += dgvMaterial_CellClick;
             dgvMaterial.AutoGenerateColumns = true;
 
-            btnTambah.MouseEnter += (s, e) => btnTambah.BackColor = Color.FromArgb(65, 105, 225);
-            btnTambah.MouseLeave += (s, e) => btnTambah.BackColor = Color.White;
-            btnEdit.MouseEnter += (s, e) => btnEdit.BackColor = Color.FromArgb(65, 105, 225);
-            btnEdit.MouseLeave += (s, e) => btnEdit.BackColor = Color.White;
-            btnHapus.MouseEnter += (s, e) => btnHapus.BackColor = Color.FromArgb(232, 17, 35);
-            btnHapus.MouseLeave += (s, e) => btnHapus.BackColor = Color.White;
-            btnClear.MouseEnter += (s, e) => btnClear.BackColor = Color.Gray;
-            btnClear.MouseLeave += (s, e) => btnClear.BackColor = Color.White;
+            // Hover effect for CRUD buttons
+            RegisterButtonHover(btnTambah, Color.FromArgb(65, 105, 225), Color.White);
+            RegisterButtonHover(btnEdit, Color.FromArgb(65, 105, 225), Color.White);
+            RegisterButtonHover(btnHapus, Color.FromArgb(232, 17, 35), Color.White);
+            RegisterButtonHover(btnClear, Color.Gray, Color.White);
+            RegisterButtonHover(btnKembali, Color.LightGray, Color.White);
 
             LoadMaterial();
+        }
+
+        private void RegisterButtonHover(Button btn, Color hoverColor, Color normalColor)
+        {
+            btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
+            btn.MouseLeave += (s, e) => btn.BackColor = normalColor;
         }
 
         private void LoadMaterial()
@@ -96,7 +98,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            Material material = new Material
+            var material = new Material
             {
                 MaterialName = txtNamaMaterial.Text.Trim(),
                 UnitPrice = harga,
@@ -128,7 +130,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            Material material = new Material
+            var material = new Material
             {
                 Id = idMaterialTerpilih,
                 MaterialName = txtNamaMaterial.Text.Trim(),
@@ -152,7 +154,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            DialogResult konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
+            var konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
             if (konfirmasi == DialogResult.Yes)
             {
                 _materialService.Delete(idMaterialTerpilih);
@@ -172,17 +174,10 @@ namespace MaterialOrderingApp.Forms.Admin
             SetKetersediaanIcon(chkTersedia.Checked);
         }
 
-        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void txtNamaMaterial_TextChanged(object sender, EventArgs e) { }
-        private void txtHarga_TextChanged(object sender, EventArgs e) { }
-        private void txtStock_TextChanged(object sender, EventArgs e) { }
-        private void txtSatuan_TextChanged(object sender, EventArgs e) { }
-
         // Utility untuk icon ketersediaan
         private void SetKetersediaanIcon(bool tersedia)
         {
             var resource = tersedia ? "icons8-check-100.png" : "icons8-cross-100.png";
-            // Ganti sesuai cara load gambar di resource proyek kamu!
             pictureBoxKetersediaan.Image = ResourceHelper.LoadImageFromResources(resource);
             toolTip1.SetToolTip(pictureBoxKetersediaan, tersedia ? "Material tersedia" : "Material tidak tersedia");
         }

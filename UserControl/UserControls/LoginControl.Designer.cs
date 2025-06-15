@@ -56,7 +56,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(tableLayoutPanelLogin);
             splitContainer1.Size = new Size(1151, 561);
-            splitContainer1.SplitterDistance = 381;
+            splitContainer1.SplitterDistance = 373;
             splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
@@ -71,12 +71,13 @@
             tablePanelKiri.Dock = DockStyle.Fill;
             tablePanelKiri.Location = new Point(0, 0);
             tablePanelKiri.Name = "tablePanelKiri";
+            tablePanelKiri.Padding = new Padding(30, 40, 30, 40);
             tablePanelKiri.RowCount = 4;
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
-            tablePanelKiri.Size = new Size(380, 560);
+            tablePanelKiri.Size = new Size(373, 561);
             tablePanelKiri.TabIndex = 0;
             // 
             // labelWelcome
@@ -84,9 +85,9 @@
             labelWelcome.Dock = DockStyle.Fill;
             labelWelcome.Font = new Font("Verdana", 40F, FontStyle.Bold, GraphicsUnit.Pixel);
             labelWelcome.ForeColor = Color.White;
-            labelWelcome.Location = new Point(3, 0);
+            labelWelcome.Location = new Point(33, 40);
             labelWelcome.Name = "labelWelcome";
-            labelWelcome.Size = new Size(375, 252);
+            labelWelcome.Size = new Size(307, 168);
             labelWelcome.TabIndex = 0;
             labelWelcome.Text = "WELCOME !";
             labelWelcome.TextAlign = ContentAlignment.MiddleCenter;
@@ -96,20 +97,20 @@
             labelSub.Dock = DockStyle.Fill;
             labelSub.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Pixel);
             labelSub.ForeColor = Color.White;
-            labelSub.Location = new Point(3, 252);
+            labelSub.Location = new Point(33, 280);
             labelSub.Name = "labelSub";
-            labelSub.Size = new Size(375, 84);
+            labelSub.Size = new Size(307, 72);
             labelSub.TabIndex = 1;
-            labelSub.Text = "Don't you have account?";
+            labelSub.Text = "Belum punya akun?";
             labelSub.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnSignUp
             // 
-            btnSignUp.Anchor = AnchorStyles.None;
+            btnSignUp.Anchor = AnchorStyles.Top;
             btnSignUp.BackColor = Color.White;
             btnSignUp.Font = new Font("Verdana", 12F, FontStyle.Bold);
             btnSignUp.ForeColor = Color.Black;
-            btnSignUp.Location = new Point(110, 353);
+            btnSignUp.Location = new Point(106, 355);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.Size = new Size(160, 50);
             btnSignUp.TabIndex = 2;
@@ -120,9 +121,9 @@
             // 
             tableLayoutPanelLogin.BackColor = Color.FromArgb(33, 33, 33);
             tableLayoutPanelLogin.ColumnCount = 3;
-            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18F));
+            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64F));
+            tableLayoutPanelLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18F));
             tableLayoutPanelLogin.Controls.Add(btnClosePictureBox, 2, 0);
             tableLayoutPanelLogin.Controls.Add(pictureBox1, 1, 1);
             tableLayoutPanelLogin.Controls.Add(label3, 1, 2);
@@ -134,6 +135,7 @@
             tableLayoutPanelLogin.Dock = DockStyle.Fill;
             tableLayoutPanelLogin.Location = new Point(0, 0);
             tableLayoutPanelLogin.Name = "tableLayoutPanelLogin";
+            tableLayoutPanelLogin.Padding = new Padding(10, 30, 10, 30);
             tableLayoutPanelLogin.RowCount = 8;
             tableLayoutPanelLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tableLayoutPanelLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -143,7 +145,7 @@
             tableLayoutPanelLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
             tableLayoutPanelLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 11F));
             tableLayoutPanelLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
-            tableLayoutPanelLogin.Size = new Size(764, 561);
+            tableLayoutPanelLogin.Size = new Size(772, 561);
             tableLayoutPanelLogin.TabIndex = 0;
             // 
             // btnClosePictureBox
@@ -151,7 +153,7 @@
             btnClosePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClosePictureBox.Cursor = Cursors.Hand;
             btnClosePictureBox.Image = Properties.Resources.icons8_close_window_100__1_;
-            btnClosePictureBox.Location = new Point(708, 5);
+            btnClosePictureBox.Location = new Point(706, 35);
             btnClosePictureBox.Margin = new Padding(0, 5, 10, 0);
             btnClosePictureBox.Name = "btnClosePictureBox";
             btnClosePictureBox.Size = new Size(46, 40);
@@ -163,9 +165,9 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.simba_logo;
-            pictureBox1.Location = new Point(281, 48);
+            pictureBox1.Location = new Point(285, 78);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 108);
+            pictureBox1.Size = new Size(200, 95);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -173,11 +175,11 @@
             // label3
             // 
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Verdana", 26F, FontStyle.Bold);
+            label3.Font = new Font("Verdana", 32F, FontStyle.Bold, GraphicsUnit.Pixel);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(155, 159);
+            label3.Location = new Point(148, 176);
             label3.Name = "label3";
-            label3.Size = new Size(452, 63);
+            label3.Size = new Size(475, 55);
             label3.TabIndex = 2;
             label3.Text = "Sign In";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -187,9 +189,9 @@
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(155, 222);
+            label1.Location = new Point(148, 231);
             label1.Name = "label1";
-            label1.Size = new Size(452, 51);
+            label1.Size = new Size(475, 45);
             label1.TabIndex = 3;
             label1.Text = "Username";
             label1.TextAlign = ContentAlignment.BottomLeft;
@@ -198,10 +200,10 @@
             // 
             textBoxUsername.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxUsername.Font = new Font("Verdana", 13F);
-            textBoxUsername.Location = new Point(172, 285);
+            textBoxUsername.Location = new Point(165, 284);
             textBoxUsername.Margin = new Padding(20, 0, 20, 0);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(418, 39);
+            textBoxUsername.Size = new Size(441, 39);
             textBoxUsername.TabIndex = 4;
             // 
             // label2
@@ -209,9 +211,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Verdana", 11F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(155, 336);
+            label2.Location = new Point(148, 331);
             label2.Name = "label2";
-            label2.Size = new Size(452, 51);
+            label2.Size = new Size(475, 45);
             label2.TabIndex = 5;
             label2.Text = "Password";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -220,20 +222,20 @@
             // 
             textBoxPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxPassword.Font = new Font("Verdana", 13F);
-            textBoxPassword.Location = new Point(172, 399);
+            textBoxPassword.Location = new Point(165, 384);
             textBoxPassword.Margin = new Padding(20, 0, 20, 0);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '●';
-            textBoxPassword.Size = new Size(418, 39);
+            textBoxPassword.Size = new Size(441, 39);
             textBoxPassword.TabIndex = 6;
             // 
             // btnLogin
             // 
-            btnLogin.Anchor = AnchorStyles.None;
+            btnLogin.Anchor = AnchorStyles.Top;
             btnLogin.BackColor = Color.White;
             btnLogin.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnLogin.ForeColor = Color.Black;
-            btnLogin.Location = new Point(296, 481);
+            btnLogin.Location = new Point(300, 434);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(170, 48);
             btnLogin.TabIndex = 7;
