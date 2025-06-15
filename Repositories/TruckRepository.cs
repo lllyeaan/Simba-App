@@ -15,9 +15,8 @@ namespace MaterialOrderingApp.Repositories
             {
                 conn.Open();
                 string query = @"
-                    SELECT t.id_truck, t.no_polisi, t.id_driver, d.nama AS driver_name
-                    FROM truck t
-                    JOIN driver d ON t.id_driver = d.id_driver";
+                    SELECT id_truck, no_polisi, nama AS driver_name, no_hp
+                    FROM truck";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
@@ -28,8 +27,8 @@ namespace MaterialOrderingApp.Repositories
                         {
                             Id = Convert.ToInt32(reader["id_truck"]),
                             NoPolisi = reader["no_polisi"].ToString()!,
-                            IdDriver = Convert.ToInt32(reader["id_driver"]),
-                            DriverName = reader["driver_name"].ToString()!
+                            DriverName = reader["driver_name"].ToString()!,
+                            NoHP = reader["no_hp"].ToString()!
                         });
                     }
                 }
@@ -46,12 +45,14 @@ namespace MaterialOrderingApp.Repositories
             {
                 conn.Open();
                 string query = @"
-                    SELECT t.id_truck, t.no_polisi, t.id_driver, d.nama AS driver_name
-                    FROM truck t
-                    JOIN driver d ON t.id_driver = d.id_driver
-                    WHERE t.id_truck NOT IN (
-                        SELECT id_truck FROM orders WHERE delivery_status != 'Selesai'
-                    )";
+            SELECT t.id_truck, t.no_polisi, t.nama AS driver_name, t.no_hp
+            FROM truck t
+            WHERE NOT EXISTS (
+                SELECT 1 
+                FROM orders o
+                WHERE o.id_truck = t.id_truck 
+                  AND o.delivery_status IS DISTINCT FROM 'Delivered'
+            )";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
@@ -62,8 +63,8 @@ namespace MaterialOrderingApp.Repositories
                         {
                             Id = Convert.ToInt32(reader["id_truck"]),
                             NoPolisi = reader["no_polisi"].ToString()!,
-                            IdDriver = Convert.ToInt32(reader["id_driver"]),
-                            DriverName = reader["driver_name"].ToString()!
+                            DriverName = reader["driver_name"].ToString()!,
+                            NoHP = reader["no_hp"].ToString()!
                         });
                     }
                 }

@@ -56,7 +56,7 @@ namespace MaterialOrderingApp.Repositories
                     cmd.Parameters.AddWithValue("@customer", transaction.IdCustomer);
                     cmd.Parameters.AddWithValue("@payment", transaction.paymentmethod);
                     cmd.Parameters.AddWithValue("@status", "Pending");
-                    cmd.Parameters.AddWithValue("@unitprice", transaction.IdMaterial);
+                    cmd.Parameters.AddWithValue("@unitprice", transaction.unitprice);
                     cmd.ExecuteNonQuery();
                 }
             }

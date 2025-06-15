@@ -2,76 +2,44 @@
 {
     partial class MaterialSelectionControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialSelectionControl));
-            npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
-            dbConnectionHelperBindingSource = new BindingSource(components);
             splitContainer1 = new SplitContainer();
+            panelKiri = new TableLayoutPanel();
+            labelTitle = new Label();
+            labelSubtitle = new Label();
             btnKembali = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            splitContainer2 = new SplitContainer();
+            panelKanan = new TableLayoutPanel();
+            lblInstruksi = new Label();
             dgvMaterialSelection = new DataGridView();
-            btnyakinpesan = new Button();
-           
-            txtSatuan = new TextBox();
-            txtHarga = new TextBox();
-            txtNamaMaterial = new TextBox();
-            lblSatuan = new Label();
-            lblHarga = new Label();
+            panelDetail = new TableLayoutPanel();
             lblNamaMaterial = new Label();
+            txtNamaMaterial = new TextBox();
+            lblHarga = new Label();
+            txtHarga = new TextBox();
+            lblSatuan = new Label();
+            txtSatuan = new TextBox();
             btnPesan = new Button();
-            dbConnectionHelperBindingSource1 = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
-            splitContainer2.Panel1.SuspendLayout();
-            splitContainer2.Panel2.SuspendLayout();
-            splitContainer2.SuspendLayout();
+            panelKiri.SuspendLayout();
+            panelKanan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMaterialSelection).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource1).BeginInit();
+            panelDetail.SuspendLayout();
             SuspendLayout();
-            // 
-            // npgsqlDataAdapter1
-            // 
-            npgsqlDataAdapter1.DeleteCommand = null;
-            npgsqlDataAdapter1.InsertCommand = null;
-            npgsqlDataAdapter1.SelectCommand = null;
-            npgsqlDataAdapter1.UpdateCommand = null;
-            // 
-            // dbConnectionHelperBindingSource
-            // 
-            dbConnectionHelperBindingSource.DataSource = typeof(Repositories.DbConnectionHelper);
             // 
             // splitContainer1
             // 
@@ -81,230 +49,224 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
-            splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer1.Panel1.Controls.Add(btnKembali);
-            splitContainer1.Panel1.Controls.Add(label3);
-            splitContainer1.Panel1.Controls.Add(label2);
-            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(panelKiri);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Panel2.Controls.Add(btnPesan);
-            splitContainer1.Size = new Size(1306, 800);
-            splitContainer1.SplitterDistance = 427;
+            splitContainer1.Panel2.Controls.Add(panelKanan);
+            splitContainer1.Size = new Size(1300, 800);
+            splitContainer1.SplitterDistance = 451;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
+            // 
+            // panelKiri
+            // 
+            panelKiri.BackColor = Color.Transparent;
+            panelKiri.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
+            panelKiri.BackgroundImageLayout = ImageLayout.Stretch;
+            panelKiri.ColumnCount = 1;
+            panelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            panelKiri.Controls.Add(labelTitle, 0, 0);
+            panelKiri.Controls.Add(labelSubtitle, 0, 1);
+            panelKiri.Controls.Add(btnKembali, 0, 2);
+            panelKiri.Dock = DockStyle.Fill;
+            panelKiri.Location = new Point(0, 0);
+            panelKiri.Name = "panelKiri";
+            panelKiri.Padding = new Padding(35, 80, 35, 80);
+            panelKiri.RowCount = 4;
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            panelKiri.Size = new Size(451, 800);
+            panelKiri.TabIndex = 0;
+            // 
+            // labelTitle
+            // 
+            labelTitle.Dock = DockStyle.Fill;
+            labelTitle.Font = new Font("Verdana", 32F, FontStyle.Bold, GraphicsUnit.Pixel);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(38, 80);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(375, 120);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "ORDER MATERIAL";
+            labelTitle.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // labelSubtitle
+            // 
+            labelSubtitle.Dock = DockStyle.Fill;
+            labelSubtitle.Font = new Font("Verdana", 17F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelSubtitle.ForeColor = Color.White;
+            labelSubtitle.Location = new Point(38, 200);
+            labelSubtitle.Name = "labelSubtitle";
+            labelSubtitle.Size = new Size(375, 60);
+            labelSubtitle.TabIndex = 1;
+            labelSubtitle.Text = "Pilih material yang ingin kamu pesan dari daftar berikut.";
+            labelSubtitle.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnKembali
             // 
-            btnKembali.AllowDrop = true;
-            btnKembali.Anchor = AnchorStyles.None;
+            btnKembali.Anchor = AnchorStyles.Top;
             btnKembali.BackColor = Color.White;
-            btnKembali.BackgroundImageLayout = ImageLayout.Stretch;
-            btnKembali.Cursor = Cursors.Hand;
-            btnKembali.Font = new Font("Verdana", 10F, FontStyle.Bold);
+            btnKembali.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnKembali.ForeColor = Color.Black;
-            btnKembali.Location = new Point(124, 477);
-            btnKembali.Margin = new Padding(4, 5, 4, 5);
+            btnKembali.Location = new Point(145, 270);
+            btnKembali.Margin = new Padding(110, 10, 110, 10);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(150, 39);
-            btnKembali.TabIndex = 36;
+            btnKembali.Size = new Size(161, 40);
+            btnKembali.TabIndex = 2;
             btnKembali.Text = "Kembali";
-            btnKembali.TextImageRelation = TextImageRelation.ImageAboveText;
             btnKembali.UseVisualStyleBackColor = false;
-            btnKembali.UseWaitCursor = true;
-            btnKembali.Click += btnKembali_Click;
             // 
-            // label3
+            // panelKanan
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(82, 382);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(234, 118);
-            label3.TabIndex = 12;
-            label3.Text = "ORDER";
+            panelKanan.BackColor = Color.Transparent;
+            panelKanan.ColumnCount = 1;
+            panelKanan.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            panelKanan.Controls.Add(lblInstruksi, 0, 0);
+            panelKanan.Controls.Add(dgvMaterialSelection, 0, 1);
+            panelKanan.Controls.Add(panelDetail, 0, 2);
+            panelKanan.Dock = DockStyle.Fill;
+            panelKanan.Location = new Point(0, 0);
+            panelKanan.Name = "panelKanan";
+            panelKanan.Padding = new Padding(20, 30, 20, 30);
+            panelKanan.RowCount = 3;
+            panelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            panelKanan.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            panelKanan.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            panelKanan.Size = new Size(844, 800);
+            panelKanan.TabIndex = 1;
             // 
-            // label2
+            // lblInstruksi
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(51, 315);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(324, 118);
-            label2.TabIndex = 11;
-            label2.Text = "MATERIAL";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Javanese Text", 26F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(36, 172);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 118);
-            label1.TabIndex = 10;
-            // 
-            // splitContainer2
-            // 
-            splitContainer2.Location = new Point(3, 3);
-            splitContainer2.Name = "splitContainer2";
-            splitContainer2.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            splitContainer2.Panel1.Controls.Add(dgvMaterialSelection);
-            // 
-            // splitContainer2.Panel2
-            // 
-            splitContainer2.Panel2.Controls.Add(btnyakinpesan);
-     
-            splitContainer2.Panel2.Controls.Add(txtSatuan);
-            splitContainer2.Panel2.Controls.Add(txtHarga);
-            splitContainer2.Panel2.Controls.Add(txtNamaMaterial);
-            splitContainer2.Panel2.Controls.Add(lblSatuan);
-            splitContainer2.Panel2.Controls.Add(lblHarga);
-            splitContainer2.Panel2.Controls.Add(lblNamaMaterial);
-            splitContainer2.Size = new Size(869, 794);
-            splitContainer2.SplitterDistance = 313;
-            splitContainer2.TabIndex = 38;
+            lblInstruksi.Dock = DockStyle.Fill;
+            lblInstruksi.Font = new Font("Verdana", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblInstruksi.ForeColor = Color.White;
+            lblInstruksi.Location = new Point(23, 30);
+            lblInstruksi.Name = "lblInstruksi";
+            lblInstruksi.Size = new Size(798, 60);
+            lblInstruksi.TabIndex = 0;
+            lblInstruksi.Text = "Daftar Material Tersedia";
+            lblInstruksi.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dgvMaterialSelection
             // 
-            dgvMaterialSelection.AutoGenerateColumns = false;
+            dgvMaterialSelection.BackgroundColor = Color.White;
             dgvMaterialSelection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaterialSelection.DataSource = dbConnectionHelperBindingSource;
-            dgvMaterialSelection.Location = new Point(3, -3);
+            dgvMaterialSelection.Dock = DockStyle.Fill;
+            dgvMaterialSelection.GridColor = Color.Gray;
+            dgvMaterialSelection.Location = new Point(23, 93);
+            dgvMaterialSelection.MultiSelect = false;
             dgvMaterialSelection.Name = "dgvMaterialSelection";
             dgvMaterialSelection.RowHeadersWidth = 62;
-            dgvMaterialSelection.Size = new Size(863, 313);
+            dgvMaterialSelection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterialSelection.Size = new Size(798, 402);
             dgvMaterialSelection.TabIndex = 0;
             // 
-            // btnyakinpesan
+            // panelDetail
             // 
-            btnyakinpesan.AllowDrop = true;
-            btnyakinpesan.Anchor = AnchorStyles.None;
-            btnyakinpesan.BackColor = Color.White;
-            btnyakinpesan.BackgroundImageLayout = ImageLayout.Stretch;
-            btnyakinpesan.Cursor = Cursors.Hand;
-            btnyakinpesan.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            btnyakinpesan.ForeColor = Color.Black;
-            btnyakinpesan.Location = new Point(651, 328);
-            btnyakinpesan.Margin = new Padding(4, 5, 4, 5);
-            btnyakinpesan.Name = "btnyakinpesan";
-            btnyakinpesan.Size = new Size(173, 39);
-            btnyakinpesan.TabIndex = 51;
-            btnyakinpesan.Text = "Pesan";
-            btnyakinpesan.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnyakinpesan.UseVisualStyleBackColor = false;
-            btnyakinpesan.UseWaitCursor = true;
-            btnyakinpesan.Click += button1_Click;
-            // 
-            // txtJumlah
-            // 
-          
-            // 
-            // txtSatuan
-            // 
-            txtSatuan.Anchor = AnchorStyles.None;
-            txtSatuan.Font = new Font("Verdana", 11F);
-            txtSatuan.Location = new Point(286, 173);
-            txtSatuan.Margin = new Padding(4, 5, 4, 5);
-            txtSatuan.Multiline = true;
-            txtSatuan.Name = "txtSatuan";
-            txtSatuan.Size = new Size(538, 39);
-            txtSatuan.TabIndex = 46;
-            // 
-            // txtHarga
-            // 
-            txtHarga.Anchor = AnchorStyles.None;
-            txtHarga.Font = new Font("Verdana", 11F);
-            txtHarga.Location = new Point(286, 102);
-            txtHarga.Margin = new Padding(4, 5, 4, 5);
-            txtHarga.Multiline = true;
-            txtHarga.Name = "txtHarga";
-            txtHarga.Size = new Size(538, 43);
-            txtHarga.TabIndex = 44;
-            // 
-            // txtNamaMaterial
-            // 
-            txtNamaMaterial.Anchor = AnchorStyles.None;
-            txtNamaMaterial.Font = new Font("Verdana", 11F);
-            txtNamaMaterial.Location = new Point(286, 32);
-            txtNamaMaterial.Margin = new Padding(4, 5, 4, 5);
-            txtNamaMaterial.Multiline = true;
-            txtNamaMaterial.Name = "txtNamaMaterial";
-            txtNamaMaterial.Size = new Size(538, 41);
-            txtNamaMaterial.TabIndex = 43;
-            // 
-            // lblSatuan
-            // 
-            lblSatuan.AutoSize = true;
-            lblSatuan.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblSatuan.ForeColor = SystemColors.ButtonHighlight;
-            lblSatuan.Location = new Point(39, 177);
-            lblSatuan.Margin = new Padding(4, 0, 4, 0);
-            lblSatuan.Name = "lblSatuan";
-            lblSatuan.Size = new Size(89, 25);
-            lblSatuan.TabIndex = 41;
-            lblSatuan.Text = "Satuan";
-            // 
-            // lblHarga
-            // 
-            lblHarga.AutoSize = true;
-            lblHarga.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblHarga.ForeColor = SystemColors.ButtonHighlight;
-            lblHarga.Location = new Point(39, 102);
-            lblHarga.Margin = new Padding(4, 0, 4, 0);
-            lblHarga.Name = "lblHarga";
-            lblHarga.Size = new Size(79, 25);
-            lblHarga.TabIndex = 39;
-            lblHarga.Text = "Harga";
+            panelDetail.BackColor = Color.FromArgb(44, 44, 44);
+            panelDetail.ColumnCount = 2;
+            panelDetail.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
+            panelDetail.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            panelDetail.Controls.Add(lblNamaMaterial, 0, 0);
+            panelDetail.Controls.Add(txtNamaMaterial, 1, 0);
+            panelDetail.Controls.Add(lblHarga, 0, 1);
+            panelDetail.Controls.Add(txtHarga, 1, 1);
+            panelDetail.Controls.Add(lblSatuan, 0, 2);
+            panelDetail.Controls.Add(txtSatuan, 1, 2);
+            panelDetail.Controls.Add(btnPesan, 1, 3);
+            panelDetail.Dock = DockStyle.Fill;
+            panelDetail.Location = new Point(23, 501);
+            panelDetail.Name = "panelDetail";
+            panelDetail.Padding = new Padding(10, 30, 10, 30);
+            panelDetail.RowCount = 4;
+            panelDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            panelDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            panelDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            panelDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
+            panelDetail.Size = new Size(798, 266);
+            panelDetail.TabIndex = 1;
             // 
             // lblNamaMaterial
             // 
-            lblNamaMaterial.AutoSize = true;
-            lblNamaMaterial.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            lblNamaMaterial.ForeColor = SystemColors.ButtonHighlight;
-            lblNamaMaterial.Location = new Point(39, 36);
-            lblNamaMaterial.Margin = new Padding(4, 0, 4, 0);
+            lblNamaMaterial.Dock = DockStyle.Fill;
+            lblNamaMaterial.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            lblNamaMaterial.ForeColor = Color.White;
+            lblNamaMaterial.Location = new Point(13, 30);
             lblNamaMaterial.Name = "lblNamaMaterial";
-            lblNamaMaterial.Size = new Size(174, 25);
-            lblNamaMaterial.TabIndex = 38;
-            lblNamaMaterial.Text = "Nama Material";
+            lblNamaMaterial.Size = new Size(154, 50);
+            lblNamaMaterial.TabIndex = 0;
+            lblNamaMaterial.Text = "Nama Material:";
+            lblNamaMaterial.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtNamaMaterial
+            // 
+            txtNamaMaterial.Dock = DockStyle.Fill;
+            txtNamaMaterial.Font = new Font("Verdana", 11F);
+            txtNamaMaterial.Location = new Point(173, 33);
+            txtNamaMaterial.Name = "txtNamaMaterial";
+            txtNamaMaterial.ReadOnly = true;
+            txtNamaMaterial.Size = new Size(612, 34);
+            txtNamaMaterial.TabIndex = 1;
+            // 
+            // lblHarga
+            // 
+            lblHarga.Dock = DockStyle.Fill;
+            lblHarga.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            lblHarga.ForeColor = Color.White;
+            lblHarga.Location = new Point(13, 80);
+            lblHarga.Name = "lblHarga";
+            lblHarga.Size = new Size(154, 50);
+            lblHarga.TabIndex = 2;
+            lblHarga.Text = "Harga:";
+            lblHarga.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtHarga
+            // 
+            txtHarga.Dock = DockStyle.Fill;
+            txtHarga.Font = new Font("Verdana", 11F);
+            txtHarga.Location = new Point(173, 83);
+            txtHarga.Name = "txtHarga";
+            txtHarga.ReadOnly = true;
+            txtHarga.Size = new Size(612, 34);
+            txtHarga.TabIndex = 3;
+            // 
+            // lblSatuan
+            // 
+            lblSatuan.Dock = DockStyle.Fill;
+            lblSatuan.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            lblSatuan.ForeColor = Color.White;
+            lblSatuan.Location = new Point(13, 130);
+            lblSatuan.Name = "lblSatuan";
+            lblSatuan.Size = new Size(154, 50);
+            lblSatuan.TabIndex = 4;
+            lblSatuan.Text = "Satuan:";
+            lblSatuan.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtSatuan
+            // 
+            txtSatuan.Dock = DockStyle.Fill;
+            txtSatuan.Font = new Font("Verdana", 11F);
+            txtSatuan.Location = new Point(173, 133);
+            txtSatuan.Name = "txtSatuan";
+            txtSatuan.ReadOnly = true;
+            txtSatuan.Size = new Size(612, 34);
+            txtSatuan.TabIndex = 5;
             // 
             // btnPesan
             // 
-            btnPesan.AllowDrop = true;
-            btnPesan.Anchor = AnchorStyles.None;
+            btnPesan.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPesan.BackColor = Color.White;
-            btnPesan.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPesan.Cursor = Cursors.Hand;
-            btnPesan.Font = new Font("Verdana", 9F, FontStyle.Bold);
+            btnPesan.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnPesan.ForeColor = Color.Black;
-            btnPesan.Location = new Point(936, 592);
-            btnPesan.Margin = new Padding(4, 5, 4, 5);
+            btnPesan.Location = new Point(635, 202);
             btnPesan.Name = "btnPesan";
-            btnPesan.Size = new Size(109, 32);
-            btnPesan.TabIndex = 34;
+            btnPesan.Size = new Size(150, 45);
+            btnPesan.TabIndex = 4;
             btnPesan.Text = "Pesan";
-            btnPesan.TextImageRelation = TextImageRelation.ImageAboveText;
             btnPesan.UseVisualStyleBackColor = false;
-            btnPesan.UseWaitCursor = true;
-            btnPesan.Click += btnPesan_Click;
-            // 
-            // dbConnectionHelperBindingSource1
-            // 
-            dbConnectionHelperBindingSource1.DataSource = typeof(Repositories.DbConnectionHelper);
             // 
             // MaterialSelectionControl
             // 
@@ -313,46 +275,37 @@
             BackColor = Color.FromArgb(33, 33, 33);
             Controls.Add(splitContainer1);
             Name = "MaterialSelectionControl";
-            Size = new Size(1306, 800);
-            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).EndInit();
+            Size = new Size(1300, 800);
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            splitContainer2.Panel1.ResumeLayout(false);
-            splitContainer2.Panel2.ResumeLayout(false);
-            splitContainer2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
-            splitContainer2.ResumeLayout(false);
+            panelKiri.ResumeLayout(false);
+            panelKanan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMaterialSelection).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource1).EndInit();
+            panelDetail.ResumeLayout(false);
+            panelDetail.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
-        private BindingSource dbConnectionHelperBindingSource;
         private SplitContainer splitContainer1;
-        private BindingSource dbConnectionHelperBindingSource1;
-        private Button btnPesan;
+        private TableLayoutPanel panelKiri;
+        private Label labelTitle;
+        private Label labelSubtitle;
         private Button btnKembali;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private SplitContainer splitContainer2;
-        private DataGridView dataGridView1;
-        
-        private TextBox txtSatuan;
-        private TextBox txtStock;
-        private TextBox txtHarga;
-        private TextBox txtNamaMaterial;
-        private Label lblSatuan;
-        private Label lblStok;
-        private Label lblHarga;
-        private Label lblNamaMaterial;
-        private Button btnyakinpesan;
+
+        private TableLayoutPanel panelKanan;
+        private Label lblInstruksi;
         private DataGridView dgvMaterialSelection;
+        private TableLayoutPanel panelDetail;
+        private Label lblNamaMaterial;
+        private TextBox txtNamaMaterial;
+        private Label lblHarga;
+        private TextBox txtHarga;
+        private Label lblSatuan;
+        private TextBox txtSatuan;
+        private Button btnPesan;
     }
 }

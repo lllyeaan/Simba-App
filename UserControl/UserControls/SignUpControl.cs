@@ -3,15 +3,9 @@ using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Utils;
 using MaterialOrderingApp.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.UserControls
 {
@@ -19,32 +13,42 @@ namespace MaterialOrderingApp.Forms.UserControls
     {
         private readonly MainForm mainForm;
         private readonly UserRepository _userRepository;
-
+        private readonly ToolTip toolTip1 = new ToolTip();
         public SignUpControl(MainForm mainForm)
         {
             InitializeComponent();
-            this.mainForm = mainForm;
+            this.mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
             _userRepository = new UserRepository();
-        }
-        private Image LoadImageFromResources(string fileName)
-        {
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string imagePath = Path.Combine(basePath, "Resources", fileName);
 
-            if (File.Exists(imagePath))
-            {
-                using (MemoryStream stream = new MemoryStream(File.ReadAllBytes(imagePath)))
-                {
-                    return Image.FromStream(stream);
-                }
-            }
-            else
-            {
-                MessageBox.Show($"Gambar '{fileName}' tidak ditemukan di folder Resources.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
+            // Event handler tombol
+            btnSignUp.Click += btnSignUp_Click;
+            btnSignIn.Click += btnSignIn_Click;
+            btnClosePictureBox.Click += btnClosePictureBox_Click;
 
+            // Hover effect
+            btnSignUp.MouseEnter += (s, e) => { btnSignUp.BackColor = Color.FromArgb(65, 105, 225); btnSignUp.ForeColor = Color.White; };
+            btnSignUp.MouseLeave += (s, e) => { btnSignUp.BackColor = Color.White; btnSignUp.ForeColor = Color.Black; };
+
+            btnSignIn.MouseEnter += (s, e) => { btnSignIn.BackColor = Color.FromArgb(65, 105, 225); btnSignIn.ForeColor = Color.White; };
+            btnSignIn.MouseLeave += (s, e) => { btnSignIn.BackColor = Color.White; btnSignIn.ForeColor = Color.Black; };
+
+            btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app_white.png");
+
+            btnClosePictureBox.MouseEnter += (s, e) =>
+            {
+                btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app.png");
+                btnClosePictureBox.BackColor = Color.Transparent;
+            };
+            btnClosePictureBox.MouseLeave += (s, e) =>
+            {
+                btnClosePictureBox.Image = ResourceHelper.LoadImageFromResources("close_app_white.png");
+                btnClosePictureBox.BackColor = Color.Transparent;
+            };
+
+            // Event validasi realtime
+            textBoxUsername.TextChanged += textBoxUsername_TextChanged;
+            textBoxConfirmPassword.TextChanged += textBoxConfirmPassword_TextChanged;
+        }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
         {
@@ -58,12 +62,12 @@ namespace MaterialOrderingApp.Forms.UserControls
 
             if (_userRepository.IsUsernameTaken(username))
             {
-                pictureBoxValidationUsername.Image = LoadImageFromResources("check_icon.png");
+                pictureBoxValidationUsername.Image = ResourceHelper.LoadImageFromResources("icons8-cross-100.png");
                 toolTip1.SetToolTip(pictureBoxValidationUsername, "Username sudah digunakan");
             }
             else
             {
-                pictureBoxValidationUsername.Image = LoadImageFromResources("cross_icon.png");
+                pictureBoxValidationUsername.Image = ResourceHelper.LoadImageFromResources("icons8-check-100.png");
                 toolTip1.SetToolTip(pictureBoxValidationUsername, "Username tersedia");
             }
         }
@@ -72,13 +76,12 @@ namespace MaterialOrderingApp.Forms.UserControls
         {
             if (textBoxPassword.Text == textBoxConfirmPassword.Text)
             {
-                pictureBoxValidationConfirmPassword.Image = LoadImageFromResources("check_icon.png");
-
+                pictureBoxValidationConfirmPassword.Image = ResourceHelper.LoadImageFromResources("icons8-check-100.png");
                 toolTip1.SetToolTip(pictureBoxValidationConfirmPassword, "Password cocok");
             }
             else
             {
-                pictureBoxValidationConfirmPassword.Image = LoadImageFromResources("cross_icon.png");
+                pictureBoxValidationConfirmPassword.Image = ResourceHelper.LoadImageFromResources("icons8-cross-100.png");
                 toolTip1.SetToolTip(pictureBoxValidationConfirmPassword, "Password tidak cocok");
             }
         }
@@ -108,7 +111,6 @@ namespace MaterialOrderingApp.Forms.UserControls
             }
 
             User newUser = _userRepository.CreateUser(username, password, "customer");
-
             UserManager.ActiveUser = newUser;
 
             mainForm.LoadUserControl(new ProfileControl(mainForm));
@@ -119,24 +121,10 @@ namespace MaterialOrderingApp.Forms.UserControls
             mainForm.LoadUserControl(new LoginControl(mainForm));
         }
 
-        private void pictureBoxValidationUsername_Click(object sender, EventArgs e)
+        // --- CLOSE BUTTON (PictureBox gambar X) ---
+        private void btnClosePictureBox_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBoxValidationConfirmPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

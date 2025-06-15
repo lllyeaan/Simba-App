@@ -3,15 +3,9 @@ using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.Customer
 {
@@ -21,28 +15,30 @@ namespace MaterialOrderingApp.Forms.Customer
         private readonly AuthService _authService;
         private readonly MaterialService _materialService;
         private readonly TransactionService _transactionService;
-        private readonly MaterialDipilih _materialDipilih;
-        private readonly User _currentUser;
         private int idMaterialTerpilih = -1;
+
         public MaterialSelectionControl(MainForm form)
         {
-            try
-            {
-                InitializeComponent();
-                this.mainForm = form;
-                _authService = new AuthService(new UserRepository());
-                _materialService = new MaterialService(new MaterialRepository());
-                _transactionService = new TransactionService(new TransactionRepository());
+            InitializeComponent();
+            this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
+            _authService = new AuthService(new UserRepository());
+            _materialService = new MaterialService(new MaterialRepository());
+            _transactionService = new TransactionService(new TransactionRepository());
 
-                dgvMaterialSelection.CellContentClick += dgvMaterialSelection_CellContentClick;
-                dgvMaterialSelection.AutoGenerateColumns = true;
+            // Button event dan hover style
+            btnKembali.Click += btnKembali_Click;
+            btnPesan.Click += btnPesan_Click;
 
-                LoadMaterialSelection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal memuat kontrol: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            btnPesan.MouseEnter += (s, e) => btnPesan.BackColor = Color.FromArgb(65, 105, 225);
+            btnPesan.MouseLeave += (s, e) => btnPesan.BackColor = Color.White;
+            btnKembali.MouseEnter += (s, e) => btnKembali.BackColor = Color.Gray;
+            btnKembali.MouseLeave += (s, e) => btnKembali.BackColor = Color.White;
+
+            dgvMaterialSelection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterialSelection.CellClick += dgvMaterialSelection_CellClick;
+            dgvMaterialSelection.AutoGenerateColumns = true;
+
+            LoadMaterialSelection();
         }
 
         private void LoadMaterialSelection()
@@ -50,7 +46,8 @@ namespace MaterialOrderingApp.Forms.Customer
             try
             {
                 dgvMaterialSelection.DataSource = _materialService.AmbilSemua();
-                dgvMaterialSelection.Columns["Stock"].Visible = false;
+                if (dgvMaterialSelection.Columns.Contains("Stock"))
+                    dgvMaterialSelection.Columns["Stock"].Visible = false;
                 dgvMaterialSelection.ClearSelection();
                 idMaterialTerpilih = -1;
             }
@@ -60,9 +57,8 @@ namespace MaterialOrderingApp.Forms.Customer
             }
         }
 
-        private void dgvMaterialSelection_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMaterialSelection_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvMaterialSelection.Rows[e.RowIndex];
@@ -79,9 +75,22 @@ namespace MaterialOrderingApp.Forms.Customer
                 }
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnPesan_Click(object sender, EventArgs e)
         {
-            User currentUser = mainForm.CurrentUser;
+            DataGridViewRow selectedRow = dgvMaterialSelection.SelectedRows.Count > 0
+                ? dgvMaterialSelection.SelectedRows[0]
+                : null;
+
+            bool IsAvailable = Convert.ToBoolean(selectedRow.Cells["IsAvailable"].Value);
+            
+            if (!IsAvailable == true)
+            {
+                MessageBox.Show("Material yang Anda pilih sedang tidak tersedia atau habis. Silakan pilih material lain.",
+                    "Stok Kosong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var currentUser = mainForm.CurrentUser;
             if (currentUser == null)
             {
                 MessageBox.Show("Pengguna tidak ditemukan");
@@ -94,107 +103,21 @@ namespace MaterialOrderingApp.Forms.Customer
                 return;
             }
 
-            //if (!int.TryParse(txtJumlah.Text, out int jumlah) || jumlah <= 0)
-            //{
-            //    MessageBox.Show("Jumlah harus angka positif");
-            //    return;
-            //}
-
-            MaterialDipilih ringkasan = new MaterialDipilih
+            var selectedMaterial = new MaterialDipilih
             {
                 Id = idMaterialTerpilih,
                 MaterialName = txtNamaMaterial.Text.Trim(),
                 UnitPrice = decimal.Parse(txtHarga.Text.Trim()),
                 Satuan = txtSatuan.Text.Trim(),
-                //Jumlah = jumlah
-                
             };
 
-            TansactionControl ringkasanControl = new TansactionControl(mainForm, ringkasan, _transactionService, currentUser);
-            mainForm.LoadUserControl(ringkasanControl);
-
+            var transactionControl = new TansactionControl(mainForm, selectedMaterial, _transactionService, currentUser);
+            mainForm.LoadUserControl(transactionControl);
         }
+
         private void btnKembali_Click(object sender, EventArgs e)
         {
             mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
-
-        }
-        private void lblHarga_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNamaMaterial_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblStok_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSatuan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNamaMaterial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtHarga_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSatuan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPemesanan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void lblJumlah_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnPesan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblStok_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtJumlah_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

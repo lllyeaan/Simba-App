@@ -2,49 +2,41 @@
 {
     partial class OrderManagementControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            tablePanelKiri = new TableLayoutPanel();
+            labelTitle = new Label();
             btnKembali = new Button();
-            label2 = new Label();
-            label1 = new Label();
+            tablePanelKanan = new TableLayoutPanel();
+            dgvPesanan = new DataGridView();
+            groupPanelForm = new TableLayoutPanel();
+            labelCustomer = new Label();
+            txtCustomer = new TextBox();
+            labelTanggal = new Label();
+            txtTanggal = new TextBox();
+            labelTruk = new Label();
             comboBoxTruk = new ComboBox();
             btnKonfirmasi = new Button();
-            txtTanggal = new TextBox();
-            txtCustomer = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            dgvPesanan = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            tablePanelKiri.SuspendLayout();
+            tablePanelKanan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPesanan).BeginInit();
+            groupPanelForm.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -57,191 +49,230 @@
             // 
             splitContainer1.Panel1.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer1.Panel1.Controls.Add(btnKembali);
-            splitContainer1.Panel1.Controls.Add(label2);
-            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(tablePanelKiri);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(comboBoxTruk);
-            splitContainer1.Panel2.Controls.Add(btnKonfirmasi);
-            splitContainer1.Panel2.Controls.Add(txtTanggal);
-            splitContainer1.Panel2.Controls.Add(txtCustomer);
-            splitContainer1.Panel2.Controls.Add(label5);
-            splitContainer1.Panel2.Controls.Add(label4);
-            splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Controls.Add(dgvPesanan);
-            splitContainer1.Size = new Size(914, 480);
-            splitContainer1.SplitterDistance = 304;
+            splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
+            splitContainer1.Panel2.Controls.Add(tablePanelKanan);
+            splitContainer1.Size = new Size(1151, 561);
+            splitContainer1.SplitterDistance = 380;
+            splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
+            // 
+            // tablePanelKiri
+            // 
+            tablePanelKiri.BackColor = Color.Transparent;
+            tablePanelKiri.ColumnCount = 1;
+            tablePanelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tablePanelKiri.Controls.Add(labelTitle, 0, 1);
+            tablePanelKiri.Controls.Add(btnKembali, 0, 3);
+            tablePanelKiri.Dock = DockStyle.Fill;
+            tablePanelKiri.Location = new Point(0, 0);
+            tablePanelKiri.Name = "tablePanelKiri";
+            tablePanelKiri.Padding = new Padding(30, 45, 30, 45);
+            tablePanelKiri.RowCount = 5;
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tablePanelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 65F));
+            tablePanelKiri.Size = new Size(380, 561);
+            tablePanelKiri.TabIndex = 0;
+            // 
+            // labelTitle
+            // 
+            labelTitle.Dock = DockStyle.Fill;
+            labelTitle.Font = new Font("Verdana", 27F, FontStyle.Bold, GraphicsUnit.Pixel);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(33, 122);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(314, 100);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "MANAJEMEN\nPESANAN";
+            labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnKembali
             // 
-            btnKembali.AllowDrop = true;
-            btnKembali.Anchor = AnchorStyles.None;
+            btnKembali.Anchor = AnchorStyles.Top;
             btnKembali.BackColor = Color.White;
-            btnKembali.BackgroundImageLayout = ImageLayout.Stretch;
-            btnKembali.Cursor = Cursors.Hand;
-            btnKembali.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnKembali.Font = new Font("Verdana", 13F, FontStyle.Bold);
             btnKembali.ForeColor = Color.Black;
-            btnKembali.Location = new Point(50, 290);
+            btnKembali.Location = new Point(90, 256);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(188, 51);
-            btnKembali.TabIndex = 13;
+            btnKembali.Size = new Size(200, 48);
+            btnKembali.TabIndex = 1;
             btnKembali.Text = "Kembali";
-            btnKembali.TextImageRelation = TextImageRelation.ImageAboveText;
             btnKembali.UseVisualStyleBackColor = false;
-            btnKembali.UseWaitCursor = true;
-            btnKembali.Click += btnKembali_Click;
             // 
-            // label2
+            // tablePanelKanan
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Javanese Text", 39F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(29, 193);
-            label2.Name = "label2";
-            label2.Size = new Size(237, 118);
-            label2.TabIndex = 11;
-            label2.Text = "Pesanan";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Javanese Text", 39F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(-1, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(316, 118);
-            label1.TabIndex = 10;
-            label1.Text = "Manajemen";
-            // 
-            // comboBoxTruk
-            // 
-            comboBoxTruk.Font = new Font("Segoe UI", 11F);
-            comboBoxTruk.FormattingEnabled = true;
-            comboBoxTruk.Location = new Point(200, 341);
-            comboBoxTruk.Name = "comboBoxTruk";
-            comboBoxTruk.Size = new Size(350, 28);
-            comboBoxTruk.TabIndex = 30;
-            comboBoxTruk.SelectedIndexChanged += comboBoxTruk_SelectedIndexChanged;
-            // 
-            // btnKonfirmasi
-            // 
-            btnKonfirmasi.AllowDrop = true;
-            btnKonfirmasi.Anchor = AnchorStyles.None;
-            btnKonfirmasi.BackColor = Color.White;
-            btnKonfirmasi.BackgroundImageLayout = ImageLayout.Stretch;
-            btnKonfirmasi.Cursor = Cursors.Hand;
-            btnKonfirmasi.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnKonfirmasi.ForeColor = Color.Black;
-            btnKonfirmasi.Location = new Point(54, 392);
-            btnKonfirmasi.Name = "btnKonfirmasi";
-            btnKonfirmasi.Size = new Size(496, 38);
-            btnKonfirmasi.TabIndex = 29;
-            btnKonfirmasi.Text = "Konfirmasi Pengiriman";
-            btnKonfirmasi.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnKonfirmasi.UseVisualStyleBackColor = false;
-            btnKonfirmasi.UseWaitCursor = true;
-            btnKonfirmasi.Click += btnKonfirmasi_Click;
-            // 
-            // txtTanggal
-            // 
-            txtTanggal.Anchor = AnchorStyles.None;
-            txtTanggal.Font = new Font("Verdana", 11F);
-            txtTanggal.Location = new Point(200, 303);
-            txtTanggal.Multiline = true;
-            txtTanggal.Name = "txtTanggal";
-            txtTanggal.Size = new Size(350, 32);
-            txtTanggal.TabIndex = 26;
-            txtTanggal.TextChanged += txtTanggal_TextChanged;
-            // 
-            // txtCustomer
-            // 
-            txtCustomer.Anchor = AnchorStyles.None;
-            txtCustomer.Font = new Font("Verdana", 11F);
-            txtCustomer.Location = new Point(200, 265);
-            txtCustomer.Multiline = true;
-            txtCustomer.Name = "txtCustomer";
-            txtCustomer.Size = new Size(350, 32);
-            txtCustomer.TabIndex = 25;
-            txtCustomer.TextChanged += txtCustomer_TextChanged;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Verdana", 11F, FontStyle.Bold);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(54, 345);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 18);
-            label5.TabIndex = 23;
-            label5.Text = "Truk";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 11F, FontStyle.Bold);
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(54, 309);
-            label4.Name = "label4";
-            label4.Size = new Size(72, 18);
-            label4.TabIndex = 22;
-            label4.Text = "Tanggal";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 11F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(54, 274);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 18);
-            label3.TabIndex = 21;
-            label3.Text = "Customer";
+            tablePanelKanan.BackColor = Color.Transparent;
+            tablePanelKanan.ColumnCount = 1;
+            tablePanelKanan.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tablePanelKanan.Controls.Add(dgvPesanan, 0, 0);
+            tablePanelKanan.Controls.Add(groupPanelForm, 0, 1);
+            tablePanelKanan.Dock = DockStyle.Fill;
+            tablePanelKanan.Location = new Point(0, 0);
+            tablePanelKanan.Name = "tablePanelKanan";
+            tablePanelKanan.Padding = new Padding(20, 15, 20, 20);
+            tablePanelKanan.RowCount = 2;
+            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Absolute, 240F));
+            tablePanelKanan.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tablePanelKanan.Size = new Size(765, 561);
+            tablePanelKanan.TabIndex = 0;
             // 
             // dgvPesanan
             // 
+            dgvPesanan.BackgroundColor = Color.White;
             dgvPesanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPesanan.Location = new Point(0, 0);
+            dgvPesanan.Dock = DockStyle.Fill;
+            dgvPesanan.GridColor = Color.LightGray;
+            dgvPesanan.Location = new Point(23, 18);
             dgvPesanan.Name = "dgvPesanan";
-            dgvPesanan.Size = new Size(603, 223);
-            dgvPesanan.TabIndex = 1;
-            dgvPesanan.CellContentClick += dgvPesanan_CellContentClick;
+            dgvPesanan.RowHeadersWidth = 62;
+            dgvPesanan.ScrollBars = ScrollBars.Vertical;
+            dgvPesanan.Size = new Size(719, 234);
+            dgvPesanan.TabIndex = 0;
+            // 
+            // groupPanelForm
+            // 
+            groupPanelForm.BackColor = Color.Transparent;
+            groupPanelForm.ColumnCount = 2;
+            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            groupPanelForm.Controls.Add(labelCustomer, 0, 0);
+            groupPanelForm.Controls.Add(txtCustomer, 0, 1);
+            groupPanelForm.Controls.Add(labelTanggal, 0, 2);
+            groupPanelForm.Controls.Add(txtTanggal, 0, 3);
+            groupPanelForm.Controls.Add(labelTruk, 1, 0);
+            groupPanelForm.Controls.Add(comboBoxTruk, 1, 1);
+            groupPanelForm.Controls.Add(btnKonfirmasi, 1, 3);
+            groupPanelForm.Dock = DockStyle.Top;
+            groupPanelForm.Location = new Point(23, 258);
+            groupPanelForm.Name = "groupPanelForm";
+            groupPanelForm.Padding = new Padding(30, 10, 30, 0);
+            groupPanelForm.RowCount = 4;
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            groupPanelForm.Size = new Size(719, 172);
+            groupPanelForm.TabIndex = 1;
+            // 
+            // labelCustomer
+            // 
+            labelCustomer.Dock = DockStyle.Fill;
+            labelCustomer.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelCustomer.ForeColor = Color.White;
+            labelCustomer.Location = new Point(33, 10);
+            labelCustomer.Name = "labelCustomer";
+            labelCustomer.Size = new Size(323, 38);
+            labelCustomer.TabIndex = 0;
+            labelCustomer.Text = "Customer";
+            labelCustomer.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // txtCustomer
+            // 
+            txtCustomer.Dock = DockStyle.Fill;
+            txtCustomer.Font = new Font("Verdana", 11F);
+            txtCustomer.Location = new Point(33, 51);
+            txtCustomer.Name = "txtCustomer";
+            txtCustomer.ReadOnly = true;
+            txtCustomer.Size = new Size(323, 34);
+            txtCustomer.TabIndex = 1;
+            // 
+            // labelTanggal
+            // 
+            labelTanggal.Dock = DockStyle.Fill;
+            labelTanggal.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelTanggal.ForeColor = Color.White;
+            labelTanggal.Location = new Point(33, 92);
+            labelTanggal.Name = "labelTanggal";
+            labelTanggal.Size = new Size(323, 38);
+            labelTanggal.TabIndex = 2;
+            labelTanggal.Text = "Tanggal";
+            labelTanggal.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // txtTanggal
+            // 
+            txtTanggal.Dock = DockStyle.Fill;
+            txtTanggal.Font = new Font("Verdana", 11F);
+            txtTanggal.Location = new Point(33, 133);
+            txtTanggal.Name = "txtTanggal";
+            txtTanggal.ReadOnly = true;
+            txtTanggal.Size = new Size(323, 34);
+            txtTanggal.TabIndex = 3;
+            // 
+            // labelTruk
+            // 
+            labelTruk.Dock = DockStyle.Fill;
+            labelTruk.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelTruk.ForeColor = Color.White;
+            labelTruk.Location = new Point(362, 10);
+            labelTruk.Name = "labelTruk";
+            labelTruk.Size = new Size(324, 38);
+            labelTruk.TabIndex = 4;
+            labelTruk.Text = "Truk";
+            labelTruk.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // comboBoxTruk
+            // 
+            comboBoxTruk.Dock = DockStyle.Fill;
+            comboBoxTruk.Font = new Font("Segoe UI", 11F);
+            comboBoxTruk.Location = new Point(362, 51);
+            comboBoxTruk.Name = "comboBoxTruk";
+            comboBoxTruk.Size = new Size(324, 38);
+            comboBoxTruk.TabIndex = 5;
+            // 
+            // btnKonfirmasi
+            // 
+            btnKonfirmasi.Anchor = AnchorStyles.Top;
+            btnKonfirmasi.BackColor = Color.White;
+            btnKonfirmasi.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            btnKonfirmasi.ForeColor = Color.Black;
+            btnKonfirmasi.Location = new Point(434, 133);
+            btnKonfirmasi.Name = "btnKonfirmasi";
+            btnKonfirmasi.Size = new Size(180, 42);
+            btnKonfirmasi.TabIndex = 6;
+            btnKonfirmasi.Text = "Konfirmasi";
+            btnKonfirmasi.UseVisualStyleBackColor = false;
             // 
             // OrderManagementControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(33, 33, 33);
             Controls.Add(splitContainer1);
             Name = "OrderManagementControl";
-            Size = new Size(914, 480);
+            Size = new Size(1151, 561);
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            tablePanelKiri.ResumeLayout(false);
+            tablePanelKanan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPesanan).EndInit();
+            groupPanelForm.ResumeLayout(false);
+            groupPanelForm.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private SplitContainer splitContainer1;
-        private Label label2;
-        private Label label1;
-        private Button btnKembali;
-        private DataGridView dgvPesanan;
-        private Button btnKonfirmasi;
-        private ComboBox comboBoxTruk;
-        private TextBox txtTanggal;
-        private TextBox txtCustomer;
-        private Label label5;
-        private Label label4;
-        private Label label3;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TableLayoutPanel tablePanelKiri;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Button btnKembali;
+        private System.Windows.Forms.TableLayoutPanel tablePanelKanan;
+        private System.Windows.Forms.DataGridView dgvPesanan;
+        private System.Windows.Forms.TableLayoutPanel groupPanelForm;
+        private System.Windows.Forms.Label labelCustomer;
+        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.Label labelTanggal;
+        private System.Windows.Forms.TextBox txtTanggal;
+        private System.Windows.Forms.Label labelTruk;
+        private System.Windows.Forms.ComboBox comboBoxTruk;
+        private System.Windows.Forms.Button btnKonfirmasi;
     }
 }

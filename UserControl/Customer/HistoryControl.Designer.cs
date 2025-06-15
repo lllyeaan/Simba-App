@@ -2,15 +2,8 @@
 {
     partial class HistoryControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,23 +15,21 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
             splitContainer1 = new SplitContainer();
-            btnkembali = new Button();
-            lblhistory2 = new Label();
+            panelKiri = new TableLayoutPanel();
             lblhistory = new Label();
+            lblhistory2 = new Label();
+            btnkembali = new Button();
             dgvhistory = new DataGridView();
             dbConnectionHelperBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            panelKiri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvhistory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).BeginInit();
             SuspendLayout();
@@ -53,68 +44,95 @@
             // 
             splitContainer1.Panel1.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_05_30_at_13_29_27_f76fd8d4;
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer1.Panel1.Controls.Add(btnkembali);
-            splitContainer1.Panel1.Controls.Add(lblhistory2);
-            splitContainer1.Panel1.Controls.Add(lblhistory);
+            splitContainer1.Panel1.Controls.Add(panelKiri);
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.BackColor = Color.FromArgb(33, 33, 33);
             splitContainer1.Panel2.Controls.Add(dgvhistory);
             splitContainer1.Size = new Size(1306, 800);
-            splitContainer1.SplitterDistance = 435;
+            splitContainer1.SplitterDistance = 430;
+            splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
-            // btnkembali
+            // panelKiri
             // 
-            btnkembali.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnkembali.Location = new Point(161, 464);
-            btnkembali.Name = "btnkembali";
-            btnkembali.Size = new Size(133, 47);
-            btnkembali.TabIndex = 2;
-            btnkembali.Text = "Kembali";
-            btnkembali.UseVisualStyleBackColor = true;
-            btnkembali.Click += btnkembali_Click;
-            // 
-            // lblhistory2
-            // 
-            lblhistory2.AutoSize = true;
-            lblhistory2.BackColor = Color.Transparent;
-            lblhistory2.Font = new Font("Javanese Text", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblhistory2.ForeColor = Color.White;
-            lblhistory2.Location = new Point(60, 345);
-            lblhistory2.Name = "lblhistory2";
-            lblhistory2.Size = new Size(311, 136);
-            lblhistory2.TabIndex = 1;
-            lblhistory2.Text = "Transaksi";
-            lblhistory2.TextAlign = ContentAlignment.MiddleCenter;
-            lblhistory2.Click += lblhistory2_Click;
+            panelKiri.BackColor = Color.Transparent;
+            panelKiri.ColumnCount = 1;
+            panelKiri.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            panelKiri.Controls.Add(lblhistory, 0, 0);
+            panelKiri.Controls.Add(lblhistory2, 0, 1);
+            panelKiri.Controls.Add(btnkembali, 0, 2);
+            panelKiri.Dock = DockStyle.Fill;
+            panelKiri.Location = new Point(0, 0);
+            panelKiri.Name = "panelKiri";
+            panelKiri.Padding = new Padding(30, 100, 30, 100);
+            panelKiri.RowCount = 4;
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));
+            panelKiri.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            panelKiri.Size = new Size(430, 800);
+            panelKiri.TabIndex = 0;
             // 
             // lblhistory
             // 
-            lblhistory.AutoSize = true;
-            lblhistory.BackColor = Color.Transparent;
-            lblhistory.Font = new Font("Javanese Text", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblhistory.Dock = DockStyle.Fill;
+            lblhistory.Font = new Font("Verdana", 30F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblhistory.ForeColor = Color.White;
-            lblhistory.Location = new Point(84, 261);
+            lblhistory.Location = new Point(30, 100);
+            lblhistory.Margin = new Padding(0, 0, 0, 10);
             lblhistory.Name = "lblhistory";
-            lblhistory.Size = new Size(287, 136);
+            lblhistory.Size = new Size(370, 208);
             lblhistory.TabIndex = 0;
-            lblhistory.Text = "Riwayat ";
-            lblhistory.TextAlign = ContentAlignment.MiddleCenter;
-            lblhistory.Click += lblhistory_Click;
+            lblhistory.Text = "RIWAYAT";
+            lblhistory.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // lblhistory2
+            // 
+            lblhistory2.Dock = DockStyle.Fill;
+            lblhistory2.Font = new Font("Verdana", 30F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblhistory2.ForeColor = Color.White;
+            lblhistory2.Location = new Point(30, 328);
+            lblhistory2.Margin = new Padding(0, 10, 0, 10);
+            lblhistory2.Name = "lblhistory2";
+            lblhistory2.Size = new Size(370, 116);
+            lblhistory2.TabIndex = 1;
+            lblhistory2.Text = "TRANSAKSI";
+            lblhistory2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnkembali
+            // 
+            btnkembali.Anchor = AnchorStyles.Top;
+            btnkembali.BackColor = Color.White;
+            btnkembali.Font = new Font("Verdana", 13F, FontStyle.Bold);
+            btnkembali.ForeColor = Color.Black;
+            btnkembali.Location = new Point(65, 457);
+            btnkembali.Name = "btnkembali";
+            btnkembali.Size = new Size(300, 45);
+            btnkembali.TabIndex = 2;
+            btnkembali.Text = "Kembali";
+            btnkembali.UseVisualStyleBackColor = false;
+            btnkembali.Click += btnkembali_Click;
             // 
             // dgvhistory
             // 
+            dgvhistory.AllowUserToAddRows = false;
+            dgvhistory.AllowUserToDeleteRows = false;
             dgvhistory.AutoGenerateColumns = true;
+            dgvhistory.BackgroundColor = Color.White;
             dgvhistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvhistory.ColumnHeadersVisible = true;
             dgvhistory.DataSource = dbConnectionHelperBindingSource;
             dgvhistory.Dock = DockStyle.Fill;
+            dgvhistory.Font = new Font("Verdana", 11F);
+            dgvhistory.GridColor = Color.Gray;
             dgvhistory.Location = new Point(0, 0);
             dgvhistory.Name = "dgvhistory";
+            dgvhistory.ReadOnly = true;
             dgvhistory.RowHeadersWidth = 62;
-            dgvhistory.Size = new Size(867, 800);
+            dgvhistory.Size = new Size(870, 800);
             dgvhistory.TabIndex = 0;
+            dgvhistory.CellClick += dgvhistory_CellContentClick;
             // 
             // dbConnectionHelperBindingSource
             // 
@@ -129,10 +147,10 @@
             Name = "HistoryControl";
             Size = new Size(1306, 800);
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            panelKiri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvhistory).EndInit();
             ((System.ComponentModel.ISupportInitialize)dbConnectionHelperBindingSource).EndInit();
             ResumeLayout(false);
@@ -141,8 +159,9 @@
         #endregion
 
         private SplitContainer splitContainer1;
-        private Label lblhistory2;
+        private TableLayoutPanel panelKiri;
         private Label lblhistory;
+        private Label lblhistory2;
         private Button btnkembali;
         private DataGridView dgvhistory;
         private BindingSource dbConnectionHelperBindingSource;

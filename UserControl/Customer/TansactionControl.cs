@@ -3,15 +3,8 @@ using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MaterialOrderingApp.Forms.Customer
 {
@@ -22,15 +15,26 @@ namespace MaterialOrderingApp.Forms.Customer
         private readonly TransactionService _transactionService;
         private readonly User _currentUser;
 
-
         public TansactionControl(MainForm form, MaterialDipilih materialDipilih, TransactionService transactionService, User currentUser)
         {
             InitializeComponent();
+
             _materialDipilih = materialDipilih ?? throw new ArgumentNullException(nameof(materialDipilih));
-            _transactionService = transactionService ?? throw new ArgumentNullException(nameof(transactionService)); ;
-            this.mainForm = form ?? throw new ArgumentNullException(nameof(form)); ;
-            _currentUser = currentUser ?? throw new ArgumentException(nameof(currentUser));
-            System.Diagnostics.Debug.WriteLine("ID Customer: " + _currentUser.IdCustomer);
+            _transactionService = transactionService ?? throw new ArgumentNullException(nameof(transactionService));
+            mainForm = form ?? throw new ArgumentNullException(nameof(form));
+            _currentUser = currentUser ?? throw new ArgumentNullException(nameof(currentUser));
+
+            // Button Hover Effects (konsisten dengan halaman admin/customer)
+            btnbatal.MouseEnter += (s, e) => btnbatal.BackColor = Color.FromArgb(232, 17, 35);
+            btnbatal.MouseLeave += (s, e) => btnbatal.BackColor = Color.White;
+            btnbuatpesanan.MouseEnter += (s, e) => btnbuatpesanan.BackColor = Color.FromArgb(65, 105, 225);
+            btnbuatpesanan.MouseLeave += (s, e) => btnbuatpesanan.BackColor = Color.White;
+
+            // Event handler
+            btnbatal.Click += btnbatal_Click;
+            cmbboxmethod.SelectedIndexChanged += cmbboxmethod_SelectedIndexChanged;
+
+            // Show transaction summary
             TampilkanRingkasan();
         }
 
@@ -38,7 +42,7 @@ namespace MaterialOrderingApp.Forms.Customer
         {
             try
             {
-                if(_materialDipilih == null)
+                if (_materialDipilih == null)
                 {
                     MessageBox.Show("Material tidak valid");
                     return;
@@ -52,15 +56,6 @@ namespace MaterialOrderingApp.Forms.Customer
                 MessageBox.Show("Gagal menampilkan ringkasan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void lbltransaksi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnbatal_Click(object sender, EventArgs e)
         {
@@ -72,63 +67,51 @@ namespace MaterialOrderingApp.Forms.Customer
             mainForm.LoadUserControl(new MaterialSelectionControl(mainForm));
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnbuatpesanan_Click(object sender, EventArgs e)
-        { 
-            try
-            {
-                MaterialDipilih materialDipilih = new MaterialDipilih
-                {
-                    Id = _materialDipilih.Id,
-                    MaterialName = _materialDipilih.MaterialName,
-                    UnitPrice = _materialDipilih.UnitPrice,
-                    Satuan = _materialDipilih.Satuan,
-                    
-                };
-
-                prosesPesanan();
-                MessageBox.Show("Pesanan Berhasil Dibuat! \nPesanan Anda Akan Diproses.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuat pesanan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void prosesPesanan()
         {
-            string metodePembayaran = cmbboxmethod.SelectedItem?.ToString();
-            
-            if (string.IsNullOrEmpty(metodePembayaran))
-            {
-                MessageBox.Show("Silakan pilih metode pembayaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             try
             {
+                string metodePembayaran = cmbboxmethod.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(metodePembayaran))
+                {
+                    MessageBox.Show("Silakan pilih metode pembayaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (_materialDipilih == null)
                 {
                     throw new InvalidOperationException("Material tidak valid");
                 }
+
+                // Membuat data transaksi
                 Transaction transaction = new Transaction
                 {
                     IdCustomer = _currentUser.IdCustomer,
                     IdMaterial = _materialDipilih.Id,
-                 
                     subtotal = _materialDipilih.Total,
                     paymentmethod = metodePembayaran,
+                    quantity = 1,
                     unitprice = _materialDipilih.UnitPrice
                 };
+
                 _transactionService.TambahPesanan(transaction);
+
+                MessageBox.Show("Pesanan Berhasil Dibuat!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal memproses pesanan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Gagal membuat pesanan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
+
+        private void cmbboxmethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Bisa diisi behavior jika ingin menampilkan instruksi khusus berdasarkan metode pembayaran
+        }
+
+        // Event label dll (optional, jika tidak dipakai bisa dihapus)
+        private void lbltransaksi_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
     }
 }

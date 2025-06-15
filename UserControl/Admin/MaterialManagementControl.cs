@@ -1,29 +1,42 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
-using MaterialOrderingApp.Models;
+using MaterialOrderingApp.Utils;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace MaterialOrderingApp.Forms.Admin
 {
     public partial class MaterialManagementControl : UserControl
     {
         private readonly MainForm mainForm;
-        private readonly AuthService _authService;
         private readonly MaterialService _materialService;
         private int idMaterialTerpilih = -1;
 
         public MaterialManagementControl(MainForm form)
         {
             InitializeComponent();
-            this.mainForm = form ?? throw new ArgumentNullException(nameof(form));
-            _authService = new AuthService(new UserRepository());
+            mainForm = form ?? throw new ArgumentNullException(nameof(form));
             _materialService = new MaterialService(new MaterialRepository());
 
             dgvMaterial.CellClick += dgvMaterial_CellClick;
             dgvMaterial.AutoGenerateColumns = true;
 
+            // Hover effect for CRUD buttons
+            RegisterButtonHover(btnTambah, Color.FromArgb(65, 105, 225), Color.White);
+            RegisterButtonHover(btnEdit, Color.FromArgb(65, 105, 225), Color.White);
+            RegisterButtonHover(btnHapus, Color.FromArgb(232, 17, 35), Color.White);
+            RegisterButtonHover(btnClear, Color.Gray, Color.White);
+            RegisterButtonHover(btnKembali, Color.LightGray, Color.White);
+
             LoadMaterial();
+        }
+
+        private void RegisterButtonHover(Button btn, Color hoverColor, Color normalColor)
+        {
+            btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
+            btn.MouseLeave += (s, e) => btn.BackColor = normalColor;
         }
 
         private void LoadMaterial()
@@ -31,6 +44,7 @@ namespace MaterialOrderingApp.Forms.Admin
             dgvMaterial.DataSource = _materialService.AmbilSemua();
             dgvMaterial.ClearSelection();
             idMaterialTerpilih = -1;
+            ClearKetersediaanIcon();
         }
 
         private void ClearForm()
@@ -41,6 +55,7 @@ namespace MaterialOrderingApp.Forms.Admin
             txtSatuan.Clear();
             chkTersedia.Checked = false;
             idMaterialTerpilih = -1;
+            ClearKetersediaanIcon();
         }
 
         private void btnKembali_Click(object sender, EventArgs e)
@@ -62,6 +77,8 @@ namespace MaterialOrderingApp.Forms.Admin
                     txtStock.Text = row.Cells["Stock"].Value?.ToString() ?? "";
                     txtSatuan.Text = row.Cells["Satuan"].Value?.ToString() ?? "";
                     chkTersedia.Checked = Convert.ToBoolean(row.Cells["IsAvailable"].Value);
+
+                    SetKetersediaanIcon(chkTersedia.Checked);
                 }
                 catch (Exception ex)
                 {
@@ -81,7 +98,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            Material material = new Material
+            var material = new Material
             {
                 MaterialName = txtNamaMaterial.Text.Trim(),
                 UnitPrice = harga,
@@ -113,7 +130,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            Material material = new Material
+            var material = new Material
             {
                 Id = idMaterialTerpilih,
                 MaterialName = txtNamaMaterial.Text.Trim(),
@@ -137,7 +154,7 @@ namespace MaterialOrderingApp.Forms.Admin
                 return;
             }
 
-            DialogResult konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
+            var konfirmasi = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo);
             if (konfirmasi == DialogResult.Yes)
             {
                 _materialService.Delete(idMaterialTerpilih);
@@ -152,19 +169,23 @@ namespace MaterialOrderingApp.Forms.Admin
             ClearForm();
         }
 
-        private void txtNamaMaterial_TextChanged(object sender, EventArgs e) { }
-
-        private void txtHarga_TextChanged(object sender, EventArgs e) { }
-
-        private void txtStock_TextChanged(object sender, EventArgs e) { }
-
-        private void txtSatuan_TextChanged(object sender, EventArgs e) { }
-
-        private void chkTersedia_CheckedChanged(object sender, EventArgs e) { }
-
-        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void chkTersedia_CheckedChanged(object sender, EventArgs e)
         {
+            SetKetersediaanIcon(chkTersedia.Checked);
+        }
 
+        // Utility untuk icon ketersediaan
+        private void SetKetersediaanIcon(bool tersedia)
+        {
+            var resource = tersedia ? "icons8-check-100.png" : "icons8-cross-100.png";
+            pictureBoxKetersediaan.Image = ResourceHelper.LoadImageFromResources(resource);
+            toolTip1.SetToolTip(pictureBoxKetersediaan, tersedia ? "Material tersedia" : "Material tidak tersedia");
+        }
+
+        private void ClearKetersediaanIcon()
+        {
+            pictureBoxKetersediaan.Image = null;
+            toolTip1.SetToolTip(pictureBoxKetersediaan, "");
         }
     }
 }
