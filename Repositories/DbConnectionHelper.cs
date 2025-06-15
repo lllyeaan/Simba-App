@@ -4,63 +4,50 @@ using Npgsql;
 
 namespace MaterialOrderingApp.Repositories
 {
-    public class DbConnectionHelper
+    public static class DbConnectionHelper
     {
-        private static string _connectionString = null!;
+        private static readonly string? _connectionString;
 
         static DbConnectionHelper()
         {
-            try
+            _connectionString = Environment.GetEnvironmentVariable("MATERIALORDERING_DB")
+                ?? ConfigurationManager.ConnectionStrings["DbConnection"]?.ConnectionString;
+
+            if (string.IsNullOrWhiteSpace(_connectionString))
             {
-                var connectionStringSettings = ConfigurationManager.ConnectionStrings["DbConnection"];
-                if (connectionStringSettings == null)
-                {
-                    Console.WriteLine("Connection string 'DbConnection' not found in App.config.");
-                    throw new InvalidOperationException("Connection string 'DbConnection' not found in App.config.");
-                }
-                _connectionString = connectionStringSettings.ConnectionString;
-                Console.WriteLine($"Connection string loaded: {_connectionString}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error loading connection string: {ex.Message}");
-                throw new InvalidOperationException("Database connection string not found in App.config.", ex);
+                Console.Error.WriteLine("Database connection string is missing. Please check environment variables or App.config!");
             }
         }
 
         public static NpgsqlConnection GetConnection()
         {
-            if (string.IsNullOrEmpty(_connectionString))
-            {
-                throw new InvalidOperationException("Database connection string is not initialized. Check App.config and application references.");
-            }
+            if (string.IsNullOrWhiteSpace(_connectionString))
+                throw new InvalidOperationException("Database connection string is not initialized. Check App.config or environment variable.");
+
             return new NpgsqlConnection(_connectionString);
         }
 
-        public static string GetConnectionString()
-        {
-            return _connectionString;
-        }
+        public static string GetConnectionString() => _connectionString ?? "";
 
-        public static bool TestConnection()
+        public static bool TestConnection(out string errorMessage)
         {
+            errorMessage = "";
             try
             {
                 using (var conn = GetConnection())
                 {
                     conn.Open();
-                    Console.WriteLine("Database connection successful!");
-                    return true;
+                    if (conn.State == System.Data.ConnectionState.Open)
+                        return true;
+
+                    errorMessage = "Connection state is not open.";
+                    return false;
                 }
-            }
-            catch (NpgsqlException ex)
-            {
-                Console.WriteLine($"Database connection failed: {ex.Message}");
-                return false;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unexpected error: {ex.Message}");
+                errorMessage = $"Database connection failed: {ex.Message}";
+                Console.Error.WriteLine(errorMessage);
                 return false;
             }
         }

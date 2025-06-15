@@ -7,8 +7,18 @@ using MaterialOrderingApp.Models;
 
 namespace MaterialOrderingApp.Utils
 {
-    public static class Session
+    public static class UserManager
     {
-        public static User CurrentUser { get; set; }
+        public static User ActiveUser { get; set; }
+
+        public static void LoginUser(User user)
+        {
+            ActiveUser = user;
+        }
+
+        public static void LogoutUser()
+        {
+            ActiveUser = null;
+        }
     }
 }

@@ -9,6 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UserControl\Admin\ManajemenPesanan\**" />
+    <EmbeddedResource Remove="UserControl\Admin\ManajemenPesanan\**" />
+    <None Remove="UserControl\Admin\ManajemenPesanan\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\calender.png" />
+    <None Remove="Resources\check_icon.png" />
+    <None Remove="Resources\cross_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\calender.png" />
+    <Content Include="Resources\check_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\cross_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Npgsql" Version="9.0.3" />
   </ItemGroup>
 
