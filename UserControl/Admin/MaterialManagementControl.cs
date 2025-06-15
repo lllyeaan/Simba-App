@@ -1,8 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Services;
-using MaterialOrderingApp.Models;
+using MaterialOrderingApp.Utils;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace MaterialOrderingApp.Forms.Admin
 {
@@ -23,6 +25,15 @@ namespace MaterialOrderingApp.Forms.Admin
             dgvMaterial.CellClick += dgvMaterial_CellClick;
             dgvMaterial.AutoGenerateColumns = true;
 
+            btnTambah.MouseEnter += (s, e) => btnTambah.BackColor = Color.FromArgb(65, 105, 225);
+            btnTambah.MouseLeave += (s, e) => btnTambah.BackColor = Color.White;
+            btnEdit.MouseEnter += (s, e) => btnEdit.BackColor = Color.FromArgb(65, 105, 225);
+            btnEdit.MouseLeave += (s, e) => btnEdit.BackColor = Color.White;
+            btnHapus.MouseEnter += (s, e) => btnHapus.BackColor = Color.FromArgb(232, 17, 35);
+            btnHapus.MouseLeave += (s, e) => btnHapus.BackColor = Color.White;
+            btnClear.MouseEnter += (s, e) => btnClear.BackColor = Color.Gray;
+            btnClear.MouseLeave += (s, e) => btnClear.BackColor = Color.White;
+
             LoadMaterial();
         }
 
@@ -31,6 +42,7 @@ namespace MaterialOrderingApp.Forms.Admin
             dgvMaterial.DataSource = _materialService.AmbilSemua();
             dgvMaterial.ClearSelection();
             idMaterialTerpilih = -1;
+            ClearKetersediaanIcon();
         }
 
         private void ClearForm()
@@ -41,6 +53,7 @@ namespace MaterialOrderingApp.Forms.Admin
             txtSatuan.Clear();
             chkTersedia.Checked = false;
             idMaterialTerpilih = -1;
+            ClearKetersediaanIcon();
         }
 
         private void btnKembali_Click(object sender, EventArgs e)
@@ -62,6 +75,8 @@ namespace MaterialOrderingApp.Forms.Admin
                     txtStock.Text = row.Cells["Stock"].Value?.ToString() ?? "";
                     txtSatuan.Text = row.Cells["Satuan"].Value?.ToString() ?? "";
                     chkTersedia.Checked = Convert.ToBoolean(row.Cells["IsAvailable"].Value);
+
+                    SetKetersediaanIcon(chkTersedia.Checked);
                 }
                 catch (Exception ex)
                 {
@@ -152,19 +167,30 @@ namespace MaterialOrderingApp.Forms.Admin
             ClearForm();
         }
 
+        private void chkTersedia_CheckedChanged(object sender, EventArgs e)
+        {
+            SetKetersediaanIcon(chkTersedia.Checked);
+        }
+
+        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void txtNamaMaterial_TextChanged(object sender, EventArgs e) { }
-
         private void txtHarga_TextChanged(object sender, EventArgs e) { }
-
         private void txtStock_TextChanged(object sender, EventArgs e) { }
-
         private void txtSatuan_TextChanged(object sender, EventArgs e) { }
 
-        private void chkTersedia_CheckedChanged(object sender, EventArgs e) { }
-
-        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Utility untuk icon ketersediaan
+        private void SetKetersediaanIcon(bool tersedia)
         {
+            var resource = tersedia ? "icons8-check-100.png" : "icons8-cross-100.png";
+            // Ganti sesuai cara load gambar di resource proyek kamu!
+            pictureBoxKetersediaan.Image = ResourceHelper.LoadImageFromResources(resource);
+            toolTip1.SetToolTip(pictureBoxKetersediaan, tersedia ? "Material tersedia" : "Material tidak tersedia");
+        }
 
+        private void ClearKetersediaanIcon()
+        {
+            pictureBoxKetersediaan.Image = null;
+            toolTip1.SetToolTip(pictureBoxKetersediaan, "");
         }
     }
 }
