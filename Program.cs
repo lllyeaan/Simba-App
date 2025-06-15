@@ -12,6 +12,8 @@ namespace Project_PBO
         {
             try
             {
+                Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+
                 string errorMessage;
                 if (DbConnectionHelper.TestConnection(out errorMessage))
                 {
