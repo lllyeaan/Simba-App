@@ -136,35 +136,35 @@
             // 
             groupPanelForm.BackColor = Color.Transparent;
             groupPanelForm.ColumnCount = 2;
-            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            groupPanelForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             groupPanelForm.Controls.Add(labelCustomer, 0, 0);
-            groupPanelForm.Controls.Add(txtCustomer, 1, 0);
-            groupPanelForm.Controls.Add(labelTanggal, 0, 1);
-            groupPanelForm.Controls.Add(txtTanggal, 1, 1);
-            groupPanelForm.Controls.Add(labelTruk, 0, 2);
-            groupPanelForm.Controls.Add(comboBoxTruk, 1, 2);
-            groupPanelForm.Controls.Add(btnKonfirmasi, 0, 3);
+            groupPanelForm.Controls.Add(txtCustomer, 0, 1);
+            groupPanelForm.Controls.Add(labelTanggal, 0, 2);
+            groupPanelForm.Controls.Add(txtTanggal, 0, 3);
+            groupPanelForm.Controls.Add(labelTruk, 1, 0);
+            groupPanelForm.Controls.Add(comboBoxTruk, 1, 1);
+            groupPanelForm.Controls.Add(btnKonfirmasi, 1, 2);
             groupPanelForm.Dock = DockStyle.Top;
             groupPanelForm.Location = new Point(3, 263);
             groupPanelForm.Name = "groupPanelForm";
-            groupPanelForm.Padding = new Padding(60, 25, 60, 0);
+            groupPanelForm.Padding = new Padding(20);
             groupPanelForm.RowCount = 4;
-            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            groupPanelForm.Size = new Size(810, 203);
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            groupPanelForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            groupPanelForm.Size = new Size(810, 261);
             groupPanelForm.TabIndex = 1;
             // 
             // labelCustomer
             // 
             labelCustomer.Dock = DockStyle.Fill;
-            labelCustomer.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelCustomer.Font = new Font("Verdana", 12F, FontStyle.Bold);
             labelCustomer.ForeColor = Color.White;
-            labelCustomer.Location = new Point(63, 25);
+            labelCustomer.Location = new Point(23, 20);
             labelCustomer.Name = "labelCustomer";
-            labelCustomer.Size = new Size(134, 48);
+            labelCustomer.Size = new Size(379, 40);
             labelCustomer.TabIndex = 0;
             labelCustomer.Text = "Customer";
             labelCustomer.TextAlign = ContentAlignment.MiddleLeft;
@@ -173,19 +173,20 @@
             // 
             txtCustomer.Dock = DockStyle.Fill;
             txtCustomer.Font = new Font("Verdana", 11F);
-            txtCustomer.Location = new Point(203, 28);
+            txtCustomer.Location = new Point(23, 63);
             txtCustomer.Name = "txtCustomer";
-            txtCustomer.Size = new Size(544, 34);
+            txtCustomer.ReadOnly = true;
+            txtCustomer.Size = new Size(379, 34);
             txtCustomer.TabIndex = 1;
             // 
             // labelTanggal
             // 
             labelTanggal.Dock = DockStyle.Fill;
-            labelTanggal.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelTanggal.Font = new Font("Verdana", 12F, FontStyle.Bold);
             labelTanggal.ForeColor = Color.White;
-            labelTanggal.Location = new Point(63, 73);
+            labelTanggal.Location = new Point(23, 110);
             labelTanggal.Name = "labelTanggal";
-            labelTanggal.Size = new Size(134, 48);
+            labelTanggal.Size = new Size(379, 58);
             labelTanggal.TabIndex = 2;
             labelTanggal.Text = "Tanggal";
             labelTanggal.TextAlign = ContentAlignment.MiddleLeft;
@@ -194,19 +195,20 @@
             // 
             txtTanggal.Dock = DockStyle.Fill;
             txtTanggal.Font = new Font("Verdana", 11F);
-            txtTanggal.Location = new Point(203, 76);
+            txtTanggal.Location = new Point(23, 171);
             txtTanggal.Name = "txtTanggal";
-            txtTanggal.Size = new Size(544, 34);
+            txtTanggal.ReadOnly = true;
+            txtTanggal.Size = new Size(379, 34);
             txtTanggal.TabIndex = 3;
             // 
             // labelTruk
             // 
             labelTruk.Dock = DockStyle.Fill;
-            labelTruk.Font = new Font("Verdana", 11F, FontStyle.Bold);
+            labelTruk.Font = new Font("Verdana", 12F, FontStyle.Bold);
             labelTruk.ForeColor = Color.White;
-            labelTruk.Location = new Point(63, 121);
+            labelTruk.Location = new Point(408, 20);
             labelTruk.Name = "labelTruk";
-            labelTruk.Size = new Size(134, 48);
+            labelTruk.Size = new Size(379, 40);
             labelTruk.TabIndex = 4;
             labelTruk.Text = "Truk";
             labelTruk.TextAlign = ContentAlignment.MiddleLeft;
@@ -214,23 +216,24 @@
             // comboBoxTruk
             // 
             comboBoxTruk.Dock = DockStyle.Fill;
+            comboBoxTruk.DropDownHeight = 120;
             comboBoxTruk.Font = new Font("Segoe UI", 11F);
-            comboBoxTruk.Location = new Point(203, 124);
+            comboBoxTruk.IntegralHeight = false;
+            comboBoxTruk.Location = new Point(408, 63);
             comboBoxTruk.Name = "comboBoxTruk";
-            comboBoxTruk.Size = new Size(544, 38);
+            comboBoxTruk.Size = new Size(379, 38);
             comboBoxTruk.TabIndex = 5;
             // 
             // btnKonfirmasi
             // 
-            btnKonfirmasi.Anchor = AnchorStyles.Top;
             btnKonfirmasi.BackColor = Color.White;
-            groupPanelForm.SetColumnSpan(btnKonfirmasi, 2);
+            btnKonfirmasi.Dock = DockStyle.Fill;
             btnKonfirmasi.Font = new Font("Verdana", 12F, FontStyle.Bold);
             btnKonfirmasi.ForeColor = Color.Black;
-            btnKonfirmasi.Location = new Point(255, 184);
-            btnKonfirmasi.Margin = new Padding(0, 15, 0, 0);
+            btnKonfirmasi.Location = new Point(415, 178);
+            btnKonfirmasi.Margin = new Padding(10);
             btnKonfirmasi.Name = "btnKonfirmasi";
-            btnKonfirmasi.Size = new Size(300, 40);
+            btnKonfirmasi.Size = new Size(365, 53);
             btnKonfirmasi.TabIndex = 6;
             btnKonfirmasi.Text = "Konfirmasi Pengiriman";
             btnKonfirmasi.UseVisualStyleBackColor = false;
@@ -259,7 +262,6 @@
         private System.Windows.Forms.TableLayoutPanel tablePanelKiri;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button btnKembali;
-
         private System.Windows.Forms.TableLayoutPanel tablePanelKanan;
         private System.Windows.Forms.DataGridView dgvPesanan;
         private System.Windows.Forms.TableLayoutPanel groupPanelForm;

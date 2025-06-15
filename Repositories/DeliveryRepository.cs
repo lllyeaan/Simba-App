@@ -18,11 +18,17 @@ namespace MaterialOrderingApp.Repositories
             {
                 conn.Open();
                 string query = @"
-                    SELECT o.id_order, o.order_date, o.delivery_status, 
-                           c.nama_customer
-                    FROM orders o
-                    JOIN customer c ON o.id_customer = c.id_customer
-                    ORDER BY o.id_order DESC";
+            SELECT o.id_order, o.order_date, o.delivery_status, c.nama_customer,
+                   t.no_polisi AS TruckNoPolisi, t.nama AS DriverName,
+                   CASE 
+                        WHEN o.delivery_status = 'Pending' THEN 'Belum Diproses'
+                        WHEN o.delivery_status = 'Shipped' THEN 'Dikirim'
+                        ELSE 'Tidak Diketahui'
+                   END AS StatusLabel
+            FROM orders o
+            JOIN customer c ON o.id_customer = c.id_customer
+            LEFT JOIN truck t ON o.id_truck = t.id_truck
+            ORDER BY o.id_order DESC";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
@@ -34,13 +40,16 @@ namespace MaterialOrderingApp.Repositories
                             IdOrder = Convert.ToInt32(reader["id_order"]),
                             OrderDate = Convert.ToDateTime(reader["order_date"]),
                             DeliveryStatus = reader["delivery_status"].ToString()!,
-                            CustomerName = reader["nama_customer"].ToString()!
+                            CustomerName = reader["nama_customer"].ToString()!,
+                            TruckNoPolisi = reader["TruckNoPolisi"]?.ToString() ?? "-",
+                            DriverName = reader["DriverName"]?.ToString() ?? "-",
                         });
                     }
                 }
             }
             return list;
         }
+
 
         public List<Order> GetByCustomer(int idCustomer)
         {
