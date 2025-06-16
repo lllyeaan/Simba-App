@@ -95,6 +95,8 @@ namespace MaterialOrderingApp.Forms.Customer
                 };
 
                 _transactionService.TambahPesanan(transaction);
+                var materialRepo = new MaterialRepository(); 
+                materialRepo.UpdateStock(_materialDipilih.Id, 1);
 
                 MessageBox.Show("Pesanan Berhasil Dibuat!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainForm.LoadUserControl(new CustomerDashboardControl(mainForm));

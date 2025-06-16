@@ -34,19 +34,20 @@ namespace MaterialOrderingApp.Repositories
                     {
                         if (reader.Read())
                         {
-                            user = new User
-                            {
-                                Id = reader.GetInt32(reader.GetOrdinal("id_user")),
-                                Username = reader.GetString(reader.GetOrdinal("username")),
-                                Password = reader.GetString(reader.GetOrdinal("password")),
-                                Role = reader.GetString(reader.GetOrdinal("role")),
-                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")),
-                                 IdCustomer = reader.IsDBNull(reader.GetOrdinal("id_customer"))
+                            string role = reader.GetString(reader.GetOrdinal("role"));
+                            if (role == "admin")
+                                user = new AdminUser();
+                            else
+                                user = new CustomerUser();
+                            
+                                user.Id = reader.GetInt32(reader.GetOrdinal("id_user"));
+                                user.Username = reader.GetString(reader.GetOrdinal("username"));
+                                user.Password = reader.GetString(reader.GetOrdinal("password"));
+                            user.Role = reader.GetString(reader.GetOrdinal("role"));
+                            user.CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"));
+                            user.IdCustomer = reader.IsDBNull(reader.GetOrdinal("id_customer"))
                                      ? 0
-                                     : reader.GetInt32(reader.GetOrdinal("id_customer"))
-                            };
-
-                            Debug.WriteLine("ID Customer dari database: " + user.IdCustomer);
+                                     : reader.GetInt32(reader.GetOrdinal("id_customer"));
                         }
                     }
                 }

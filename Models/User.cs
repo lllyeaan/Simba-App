@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaterialOrderingApp.Models
 {
-    public class User
+    public abstract class User
     {
 
         public int IdCustomer { get; set; }
@@ -22,7 +22,7 @@ namespace MaterialOrderingApp.Models
         public string Kecamatan { get; set; }
         public string Jalan { get; set; }
         public int Id { get; set; }
-
+        public abstract string GetDisplayRole();
 
     }
 

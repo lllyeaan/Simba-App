@@ -92,5 +92,20 @@ namespace MaterialOrderingApp.Repositories
                 }
             }
         }
+
+        public void UpdateStock(int idMaterial, int jumlah)
+        {
+            using (NpgsqlConnection conn = DbConnectionHelper.GetConnection())
+            {
+                string query = "UPDATE materials SET stock = stock - @jumlah WHERE id_material = @idMaterial";
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@jumlah", jumlah);
+                    cmd.Parameters.AddWithValue("@idmaterial", idMaterial);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
