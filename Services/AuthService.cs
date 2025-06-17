@@ -1,15 +1,16 @@
 ﻿using MaterialOrderingApp.Models;
 using MaterialOrderingApp.Repositories;
 using MaterialOrderingApp.Utils;
-using NpgsqlTypes;
+using System;
 
 namespace MaterialOrderingApp.Services
 {
     public class AuthService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AuthService(UserRepository userRepository)
+        // DIREFRACTOR agar pakai interface
+        public AuthService(IUserRepository userRepository)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
@@ -23,7 +24,7 @@ namespace MaterialOrderingApp.Services
                 throw new Exception("Username tidak ditemukan. Silakan Sign Up dulu.");
             }
 
-            if (user.Password != password) 
+            if (user.Password != password)
             {
                 throw new Exception("Password salah. Silakan coba lagi.");
             }
@@ -44,8 +45,7 @@ namespace MaterialOrderingApp.Services
             }
 
             User newUser = _userRepository.CreateUser(username, password, role, customer);
-            return newUser != null; 
-
+            return newUser != null;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace MaterialOrderingApp.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         public User GetUserByUsername(string username)
         {
